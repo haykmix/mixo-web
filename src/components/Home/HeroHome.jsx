@@ -1,4 +1,9 @@
-import { faFile, faMessage } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFile,
+  faMessage,
+  faCompress,
+  faVideo,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -54,6 +59,12 @@ function HeroHomeOne({ className, text, innerRef }) {
                   data-wow-delay="600ms"
                   onClick={handleVideo}
                 >
+                  <VideoOpen toggle={videoToggle}> 
+                    <FontAwesomeIcon
+                      icon={faCompress}
+                      style={{ color: "#fff" }}
+                    />
+                  </VideoOpen>
                   <Video
                     autoPlay={true}
                     muted={true}
@@ -68,7 +79,8 @@ function HeroHomeOne({ className, text, innerRef }) {
             </div>
           </div>
         </div>
-        {/* <div className="hero-shape-1">
+        {/* 
+        <div className="hero-shape-1">
           <img src={shapeThree} alt="" width="100px" height="100px" />
         </div>
         <div className="hero-shape-2">
@@ -89,6 +101,12 @@ const Video = styled.video`
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0px 30px 70px 0px rgba(0, 0, 0, 0.349);
+`;
+
+const VideoOpen = styled.span`
+  position: absolute;
+  top: ${(props) => (props.toggle === true ? 85 : 74)}%;;
+  left: ${(props) => (props.toggle === true ? 3 : 5)}%;;
 `;
 
 export default HeroHomeOne;
