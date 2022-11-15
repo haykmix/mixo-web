@@ -56,7 +56,7 @@ function HeroHomeOne({ className, text, innerRef }) {
                 >
                   <Video
                     autoPlay={true}
-                    muted={videoToggle}
+                    muted={true}
                     loop={true}
                     toggle={videoToggle}
                     className="video"
