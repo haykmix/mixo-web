@@ -14,6 +14,7 @@ import TeamHome from "./TeamHome";
 import TrafficHome from "./TrafficHome";
 
 import { LanguageContext } from "../../context/LanguageContext";
+import Calculator from '../Calculator/Calculator';
 
 function Home() {
   const [drawer, drawerAction] = useToggle(false);
@@ -48,6 +49,7 @@ function Home() {
       <FaqHome text={language}/>
       <BlogHome text={language}/>
       <ProjectHome />
+      <Calculator />
       <FooterHome />
       <BackToTop />
     </>

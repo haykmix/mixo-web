@@ -11,7 +11,7 @@ import styled from "styled-components";
 import heroThumbOne from "../../assets/images/hero-thumb-1-new.png";
 import video from "../../assets/video/video-cover.mp4";
 
-function HeroHomeOne({ className, text, innerRef }) {
+function HeroHome({ className, text, innerRef }) {
   const { upTitle, title, subtitle, buttonDemo, buttonInfo } = text.homeCover;
 
   const [videoToggle, setVideoToggle] = useState(false);
@@ -109,4 +109,4 @@ const VideoOpen = styled.span`
   left: ${(props) => (props.toggle === true ? 3 : 5)}%;;
 `;
 
-export default HeroHomeOne;
+export default HeroHome;
