@@ -8380,7 +8380,7 @@ input {
   }
 
   .calc-content {
-    width: 260px;
+    width: 350px;
     border-radius: 10px;
     background: #fff;
     padding: 30px;
@@ -8400,7 +8400,7 @@ input {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
-    width: 200px;
+    width: 290px;
     font-size: 15px;
   }
 }
