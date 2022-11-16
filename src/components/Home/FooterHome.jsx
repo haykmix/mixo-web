@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo-new-2.png';
 
 function FooterHome({ className }) {
     return (
@@ -12,12 +12,9 @@ function FooterHome({ className }) {
                             <div className="footer-about-widget">
                                 <div className="logo">
                                     <a href="/">
-                                        <img src={logo} alt="" />
+                                        <img src={logo} alt="" height={"80px"}/>
                                     </a>
                                 </div>
-                                <p>
-                                    Appie WordPress is theme is the last theme you will ever have.
-                                </p>
                                 <a href="/">
                                     Read More <i className="fal fa-arrow-right" />
                                 </a>
@@ -25,17 +22,7 @@ function FooterHome({ className }) {
                                     <ul>
                                         <li>
                                             <a href="/">
-                                                <i className="fab fa-facebook-f" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/">
-                                                <i className="fab fa-twitter" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/">
-                                                <i className="fab fa-pinterest-p" />
+                                                <i className="fab fa-instagram" />
                                             </a>
                                         </li>
                                         <li>
@@ -54,18 +41,6 @@ function FooterHome({ className }) {
                                     <li>
                                         <Link to="/about-us">About Us</Link>
                                     </li>
-                                    <li>
-                                        <Link to="/Service">Service</Link>
-                                    </li>
-                                    <li>
-                                        <a href="/">Case Studies</a>
-                                    </li>
-                                    <li>
-                                        <Link to="/news">Blog</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/contact">Contact</Link>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -75,18 +50,6 @@ function FooterHome({ className }) {
                                 <ul>
                                     <li>
                                         <Link to="/about-us">Community</Link>
-                                    </li>
-                                    <li>
-                                        <a href="/">Resources</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Faqs</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Privacy Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Careers</a>
                                     </li>
                                 </ul>
                             </div>
@@ -112,30 +75,6 @@ function FooterHome({ className }) {
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="footer-copyright d-flex align-items-center justify-content-between pt-35">
-                                <div className="apps-download-btn">
-                                    <ul>
-                                        <li>
-                                            <a href="/">
-                                                <i className="fab fa-apple" /> Download for iOS
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="item-2" href="/">
-                                                <i className="fab fa-google-play" /> Download for
-                                                Android
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="copyright-text">
-                                    <p>Copyright © 2021 Appie. All rights reserved.</p>
-                                </div>
                             </div>
                         </div>
                     </div>

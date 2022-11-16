@@ -8,7 +8,7 @@ function BackToTop({ className }) {
     return (
         <>
             <div className={`back-to-top ${className || ''}`}>
-                <a href="/">
+                <a href="">
                     <i className="fal fa-arrow-up" />
                 </a>
             </div>

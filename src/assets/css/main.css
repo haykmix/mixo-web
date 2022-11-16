@@ -3974,6 +3974,12 @@ p {
   height: 700px;
 }
 
+@media only screen and (max-width: 425px) {
+  .appie-faq-area {
+    height: fit-content;
+  }
+}
+
 .faq-accrodion {
   margin-top: 8px;
 }
@@ -5446,7 +5452,7 @@ blockquote cite {
     line-height: 46px;
   }
 }
-.appie-project-content p {
+.appie-project-content h5 {
   color: #fff;
   opacity: 0.8;
 }
@@ -5466,7 +5472,7 @@ blockquote cite {
 .appie-project-content .input-box input {
   width: 100%;
   height: 50px;
-  padding-left: 30px;
+  padding-left: 10px;
   border-radius: 6px;
   border: 0;
 }
@@ -8204,27 +8210,7 @@ blockquote cite {
 
 /* Calculadora */
 
-.calculatorContainer {
-  width: 100%;
-  height: 750px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.calcultaroTitle h1 {
-  font-size: 60px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.calcultaroTitle h3 {
-  font-size: 27px;
-}
-
-form label {
+.calc-container form label {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -8246,7 +8232,7 @@ form label {
   display: none;
 }
 
-input {
+.calc-container .calc-content input {
   margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -8348,13 +8334,13 @@ input {
 
 .calc-button {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
   margin-right: 30px;
   background-color: #fff;
   box-shadow: 0px 5px 5px 0px rgb(0 0 0 / 10%);
   padding: 10px;
-  height: fit-content;
+  height: 73px;
   bottom: 24px;
   position: fixed;
   border-radius: 10px;
@@ -8374,9 +8360,20 @@ input {
 }
 
 @media only screen and (max-width: 425px) {
-  .calc-button img{
+  .calc-button {
+    width: fit-content;
+    height: 52px;
+    display: flex;
+    align-items: center;
+  }
+
+  .calc-button img {
     width: 30px;
     height: 30px;
+  }
+
+  .calc-button h4 {
+    font-size: 15px;
   }
 
   .calc-content {
@@ -8391,16 +8388,27 @@ input {
     box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 10%);
   }
 
-  .calc-content h2{
-   font-size: 28px;
-   margin-bottom: 10px;
+  .calc-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
   }
 
-  input {
+  .calc-container .calc-content input {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
     width: 290px;
     font-size: 15px;
   }
+}
+
+.PhoneInput {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.PhoneInputCountry {
+  margin-left: 20px;
 }

@@ -9,7 +9,7 @@ const en = {
     buttonInfo: "Know more",
   },
   homeService: {
-    title: "Developing software" + <br /> + "and collecting data",
+    title: "Developing software and collecting data",
     subtitle:
       "Control your billing and collect data for better decision making while saving on costs",
     items: [

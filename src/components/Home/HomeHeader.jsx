@@ -6,7 +6,6 @@ import { LanguageContext } from "../../context/LanguageContext";
 import StickyMenu from "../../lib/StickyMenu";
 
 function HomeHeader({
-  language,
   darkEnable = false,
   action,
   langEnabled = false,
@@ -31,6 +30,7 @@ function HomeHeader({
       ? history.push("/")
       : homeRef.current.scrollIntoView();
   }
+  
   function executeScrollService() {
     window.location.pathname !== "/"
       ? history.push("/")

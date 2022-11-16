@@ -5,10 +5,12 @@ function Calculator() {
   const daysInput = useRef();
   const peopleInput = useRef();
   const [toggleCalc, setToggleCalc] = useState(false);
+  const [showText, setShowText] = useState(false);
   const [result, setResult] = useState(0);
   const [error, setError] = useState("");
 
   const handleToggleCalc = () => {
+    setShowText(!showText);
     setToggleCalc(!toggleCalc);
   };
 
@@ -31,15 +33,34 @@ function Calculator() {
     }
   };
 
+  const handleShowText = () => {
+    setShowText(!showText);
+  };
+
+  const currencyFormat = (num) => {
+    return num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "€";
+  };
+
   return (
     <section className="calc-container">
-      <div className="calc-button" onClick={handleToggleCalc}>
+      <div
+        className="calc-button"
+        onClick={handleToggleCalc}
+        onMouseEnter={toggleCalc ? () => 0 : handleShowText}
+        onMouseLeave={toggleCalc ? () => 0 : handleShowText}
+        style={{ width: showText ? "210px" : "" }}
+      >
         <img
           src={calulatorImg}
           width={"50px"}
           height={"50px"}
           alt="Icon calc"
         />
+        <h4
+          style={{ marginLeft: "15px", display: showText ? "block" : "none" }}
+        >
+          Calculadora ahorro
+        </h4>
       </div>
       <div
         className="calc-content"
@@ -75,10 +96,12 @@ function Calculator() {
               onChange={handleCalculation}
             />
           </label>
-          <p style={{ fontSize: "14px", fontWeight: "bold", color: "red" }}>{error}</p>
+          <p style={{ fontSize: "14px", fontWeight: "bold", color: "red" }}>
+            {error}
+          </p>
         </form>
         <section className="result-container">
-          <h3>{result}€ Ahorro</h3>
+          <h3>{currencyFormat(result)} Ahorro</h3>
         </section>
       </div>
     </section>

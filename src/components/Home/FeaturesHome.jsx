@@ -23,7 +23,6 @@ function FeaturesHomeOne({ className }) {
       upTitle: "Custom One",
       title: "Let the Conversation flow",
       text: "Car boot absolutely bladdered posh burke the wireless mush some dodg.",
-      button: "Learn More",
       image: thumbOne,
       width: "300px"
     },
@@ -35,7 +34,6 @@ function FeaturesHomeOne({ className }) {
       upTitle: "Custom Two",
       title: "Let the Conversation flow",
       text: "Car boot absolutely bladdered posh burke the wireless mush some dodg.",
-      button: "Learn More",
       image: thumbThree,
       width: "275px"
     },
@@ -47,7 +45,6 @@ function FeaturesHomeOne({ className }) {
       upTitle: "Custom Three",
       title: "Let the Conversation flow",
       text: "Car boot absolutely bladdered posh burke the wireless mush some dodg.",
-      button: "Learn More",
       image: thumbTwo,
     },
     {
@@ -58,14 +55,13 @@ function FeaturesHomeOne({ className }) {
       upTitle: "Custom Four",
       title: "Let the Conversation flow",
       text: "Car boot absolutely bladdered posh burke the wireless mush some dodg.",
-      button: "Learn More",
       image: thumbTwo,
     },
   ];
 
   return (
     <section
-      className={`appie-features-area pt-100 ${className}`}
+      className={`appie-features-area pt-100 mb-65 mt-65 ${className}`}
       id="features"
     >
       <div className="container">
@@ -132,9 +128,6 @@ function FeaturesHomeOne({ className }) {
                           <span>{item.upTitle}</span>
                           <h3 className="title">{item.title}</h3>
                           <p>{item.text}</p>
-                          <Link className="main-btn" to="/about-us">
-                            {item.button}
-                          </Link>
                         </div>
                       </div>
                     </div>

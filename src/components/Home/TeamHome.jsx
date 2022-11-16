@@ -26,23 +26,6 @@ function TeamHome({ className }) {
               >
                 <div className="thumb">
                   <img src={teamOne} alt="" />
-                  <ul>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-facebook-f" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-pinterest-p" />
-                      </a>
-                    </li>
-                  </ul>
                 </div>
                 <div className="content text-center">
                   <h5 className="title">Martin Cohen Leibenberg</h5>
@@ -58,23 +41,6 @@ function TeamHome({ className }) {
               >
                 <div className="thumb">
                   <img src={teamTwo} alt="" />
-                  <ul>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-facebook-f" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-pinterest-p" />
-                      </a>
-                    </li>
-                  </ul>
                 </div>
                 <div className="content text-center">
                   <h5 className="title">Xavier Olivé Galán</h5>
@@ -90,23 +56,6 @@ function TeamHome({ className }) {
               >
                 <div className="thumb">
                   <img src={teamThree} alt="" />
-                  <ul>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-facebook-f" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-pinterest-p" />
-                      </a>
-                    </li>
-                  </ul>
                 </div>
                 <div className="content text-center">
                   <h5 className="title">Hayk Petrosyan Elmayan</h5>
@@ -122,36 +71,11 @@ function TeamHome({ className }) {
               >
                 <div className="thumb">
                   <img src={teamFour} alt="" />
-                  <ul>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-facebook-f" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <i className="fab fa-pinterest-p" />
-                      </a>
-                    </li>
-                  </ul>
                 </div>
                 <div className="content text-center">
                   <h5 className="title">Eric Achtman</h5>
                   <span>Advisor</span>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="team-btn text-center mt-50">
-                <a className="main-btn" href="/">
-                  {" "}
-                  View all Members <i className="fal fa-arrow-right" />
-                </a>
               </div>
             </div>
           </div>
