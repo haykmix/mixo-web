@@ -41,13 +41,7 @@ function Forms() {
                 <div className="ab-social">
                   <h5>Follow Us</h5>
                   <a className="fac" href="/">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a className="twi" href="/">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a className="you" href="/">
-                    <i className="fab fa-youtube"></i>
+                    <i className="fab fa-instagram"></i>
                   </a>
                   <a className="lin" href="/">
                     <i className="fab fa-linkedin-in"></i>
@@ -81,7 +75,7 @@ function Forms() {
                     />
                   </div>
                   <div className="col-md-12">
-                    <input type="text" name="suject" placeholder="Subject" />
+                    <input type="text" name="subject" placeholder="Subject" />
                   </div>
                   <div className="col-md-12">
                     <textarea
@@ -114,9 +108,9 @@ function Forms() {
           width="600"
           height="450"
           style={{ border: "0" }}
-          allowfullscreen=""
+          allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </>

@@ -2201,8 +2201,8 @@ p {
 }
 
 .appie-page-title-area {
-  height: 450px;
-  background-image: url(../images/page-bg.jpg);
+  height: 250px;
+  background-image: url(../images/project-bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2252,7 +2252,7 @@ p {
 }
 
 .appie-page-title-item {
-  margin-top: 80px;
+  margin-top: 110px;
   position: relative;
 }
 .appie-page-title-item .thumb {
@@ -3565,7 +3565,6 @@ p {
   top: 0;
   height: 100%;
   width: 100%;
-  background: #000;
   opacity: 0.5;
   z-index: 9;
   opacity: 0;
@@ -3974,7 +3973,13 @@ p {
   height: 700px;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .appie-faq-area {
+    height: 800px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
   .appie-faq-area {
     height: fit-content;
   }
@@ -5406,12 +5411,12 @@ blockquote cite {
 }
 .appie-project-area .appie-project-box .appie-project-thumb {
   position: absolute;
-  right: 70px;
+  right: 0px;
   bottom: 0;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .appie-project-area .appie-project-box .appie-project-thumb {
-    right: 30px;
+    right: 0px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -5476,16 +5481,29 @@ blockquote cite {
   border-radius: 6px;
   border: 0;
 }
-.appie-project-content .input-box button {
-  margin-left: 10px;
+.appie-project-content .input-box a {
   padding: 0 30px;
   border-radius: 6px;
   padding: 0 25px;
-  background: #0e1133;
+  background: #25D366;
   border: 0;
   color: #fff;
   line-height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
+
+.appie-project-content .input-box a:active {
+  scale: 0.95 ;
+}
+
+.appie-project-content .input-box a img {
+  width: 30px;
+  height: 30px;
+}
+
 @media (max-width: 767px) {
   .appie-project-content .input-box button {
     margin-top: 20px;

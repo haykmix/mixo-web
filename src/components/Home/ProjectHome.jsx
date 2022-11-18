@@ -1,6 +1,6 @@
 import React from "react";
-import projectThumb from "../../assets/images/project-thumb.png";
-import PhoneNumber from "../PhoneNumber/PhoneNumber";
+import projectThumb from "../../assets/images/hand-3d.jpg";
+import whatsapp from "../../assets/images/whatsapp.png";
 
 function ProjectHomeOne({ className }) {
   return (
@@ -18,15 +18,19 @@ function ProjectHomeOne({ className }) {
                   <div className="col-lg-6">
                     <div className="appie-project-content">
                       <h3 className="title">
-                        Dejanos tu número y nos ponemos en contacto contigo
+                        ¿Hablamos? Escribenos al Whatsapp
                       </h3>
-                      <h5>Respondemos a todas tus preguntas</h5>
-                      <form onSubmit={() => console.log(1)}>
-                        <div className="input-box mt-30">
-                          <PhoneNumber />
-                          <button type="submit">Enviar</button>
-                        </div>
-                      </form>
+                      <h5>Clikc aquí para empezar a chateare</h5>
+                      <div className="input-box mt-30">
+                        <a
+                          href="https://wa.me/34695273507?text=Hola Martin, ¿te va bien hablar?"
+                          target={"_blank"}
+                          rel="noreferrer"
+                        >
+                        <img src={whatsapp} />
+                          Empezar chat
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

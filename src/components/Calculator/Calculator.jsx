@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import calulatorImg from "../../assets/images/icon/calculator.png";
+import crossImg from "../../assets/images/icon/cross.png";
 
 function Calculator() {
   const daysInput = useRef();
@@ -51,7 +52,7 @@ function Calculator() {
         style={{ width: showText ? "210px" : "" }}
       >
         <img
-          src={calulatorImg}
+          src={toggleCalc ? crossImg : calulatorImg}
           width={"50px"}
           height={"50px"}
           alt="Icon calc"
@@ -78,7 +79,7 @@ function Calculator() {
             <input
               type="number"
               name="days"
-              placeholder="100"
+              placeholder="0"
               min="0"
               onChange={handleCalculation}
               ref={peopleInput}
@@ -91,7 +92,7 @@ function Calculator() {
               name="people"
               max="7"
               min="0"
-              placeholder="5"
+              placeholder="0"
               ref={daysInput}
               onChange={handleCalculation}
             />

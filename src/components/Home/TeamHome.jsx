@@ -3,6 +3,7 @@ import teamTwo from "../../assets/images/team-1.jpg";
 import teamOne from "../../assets/images/team-2.jpg";
 import teamThree from "../../assets/images/team-3.jpg";
 import teamFour from "../../assets/images/team-4.jpg";
+import teamFive from "../../assets/images/team-5.jpg";
 
 function TeamHome({ className }) {
   return (
@@ -17,8 +18,8 @@ function TeamHome({ className }) {
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-lg-3 col-md-6">
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-2 col-md-6">
               <div
                 className="appie-team-item mt-30 wow animated fadeInUp"
                 data-wow-duration="2000ms"
@@ -28,12 +29,12 @@ function TeamHome({ className }) {
                   <img src={teamOne} alt="" />
                 </div>
                 <div className="content text-center">
-                  <h5 className="title">Martin Cohen Leibenberg</h5>
+                  <h5 className="title">Martin Cohen</h5>
                   <span>CEO-Founder</span>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-2 col-md-6">
               <div
                 className="appie-team-item mt-30 wow animated fadeInUp"
                 data-wow-duration="2000ms"
@@ -48,7 +49,7 @@ function TeamHome({ className }) {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-2 col-md-6">
               <div
                 className="appie-team-item mt-30 wow animated fadeInUp"
                 data-wow-duration="2000ms"
@@ -58,12 +59,12 @@ function TeamHome({ className }) {
                   <img src={teamThree} alt="" />
                 </div>
                 <div className="content text-center">
-                  <h5 className="title">Hayk Petrosyan Elmayan</h5>
+                  <h5 className="title">Hayk Petrosyan</h5>
                   <span>Full Stack Developer</span>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-2 col-md-6">
               <div
                 className="appie-team-item mt-30 wow animated fadeInUp"
                 data-wow-duration="2000ms"
@@ -74,6 +75,21 @@ function TeamHome({ className }) {
                 </div>
                 <div className="content text-center">
                   <h5 className="title">Eric Achtman</h5>
+                  <span>Advisor</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-2 col-md-6">
+              <div
+                className="appie-team-item mt-30 wow animated fadeInUp"
+                data-wow-duration="2000ms"
+                data-wow-delay="600ms"
+              >
+                <div className="thumb">
+                  <img src={teamFive} alt="" />
+                </div>
+                <div className="content text-center">
+                  <h5 className="title">Xavier Guillem</h5>
                   <span>Advisor</span>
                 </div>
               </div>

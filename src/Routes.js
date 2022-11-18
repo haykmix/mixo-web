@@ -4,8 +4,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ScrollToTop from "./components/Helper/ScrollToTop";
 import Home from "./components/Home";
-import News from "./components/News";
-import SingleNews from "./components/News/SingleNews";
+import SingleNews from "./components/News";
 
 function Routes() {
   const [loading, setLoading] = useState(true);
@@ -24,8 +23,9 @@ function Routes() {
           <ScrollToTop>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/news" component={News} />
-              <Route exact path="/news/single-news" component={SingleNews} />
+              <Route exact path="/news/single-news-0" component={SingleNews} />
+              <Route exact path="/news/single-news-1" component={SingleNews} />
+              <Route exact path="/news/single-news-2" component={SingleNews} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/error" component={Error} />
               <Route component={Error} />
