@@ -28,7 +28,12 @@ function HeroHome({ className, text, innerRef }) {
             <div className="col-lg-6">
               <div className="appie-hero-content">
                 <span>{upTitle}</span>
-                <h1 className="appie-title">{title}</h1>
+                <p className="glitch">
+                  <span aria-hidden="true">{title}</span>
+                  {title}
+                  <span aria-hidden="true">{title}</span>
+                </p>
+                {/* <h1 className="appie-title">{title}</h1> */}
                 <p>{subtitle}</p>
                 <ul>
                   <li>
@@ -59,7 +64,7 @@ function HeroHome({ className, text, innerRef }) {
                   data-wow-delay="600ms"
                   onClick={handleVideo}
                 >
-                  <VideoOpen toggle={videoToggle}> 
+                  <VideoOpen toggle={videoToggle}>
                     <FontAwesomeIcon
                       icon={faCompress}
                       style={{ color: "#fff" }}
@@ -105,8 +110,8 @@ const Video = styled.video`
 
 const VideoOpen = styled.span`
   position: absolute;
-  top: ${(props) => (props.toggle === true ? 85 : 74)}%;;
-  left: ${(props) => (props.toggle === true ? 3 : 5)}%;;
+  top: ${(props) => (props.toggle === true ? 85 : 74)}%;
+  left: ${(props) => (props.toggle === true ? 3 : 5)}%; ;
 `;
 
 export default HeroHome;

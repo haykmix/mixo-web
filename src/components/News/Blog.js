@@ -6,8 +6,30 @@ import cmnt2 from "../../assets/images/single-post/c2.png";
 import cmnt3 from "../../assets/images/single-post/c3.png";
 
 function Blog({ text }) {
-  let path = window.location.pathname;
-  let number = path.substr(-1, path.indexOf("-"));
+  const handleShowBlogText = (text) => {
+    let path = window.location.pathname;
+    let number = path.substr(-1, path.indexOf("-"));
+
+    return (
+      <>
+        <h1>{text.newsPage.posts[number].title}</h1>
+        <br></br>
+        {text.newsPage.posts[number].text.map((item, index) => {
+          if (typeof item === "string" || item instanceof String) {
+            return <p key={index}>{item}</p>;
+          } else {
+            return (
+              <div key={index}>
+                <h3>{item.title}</h3>
+                <br></br>
+                <p>{item.text}</p>
+              </div>
+            );
+          }
+        })}
+      </>
+    );
+  };
   return (
     <>
       <div className="single-post-area">
@@ -101,7 +123,7 @@ function Blog({ text }) {
             <i className="fab fa-google"></i>
           </a>
         </div> */}
-        <p>{text.newsPage.posts[number].text}</p>
+        {handleShowBlogText(text)}
       </div>
     </>
   );

@@ -49,7 +49,7 @@ function Home() {
       {/* <HomeVideo /> */}
       <HeroHome text={language} innerRef={homeRef} />
       <ServicesHome text={language} innerRef={serviceRef} />
-      <FeaturesHome />
+      <FeaturesHome text={language}/>
       <TrafficHome />
       {/* <TestimonialHome /> */}
       <TeamHome />

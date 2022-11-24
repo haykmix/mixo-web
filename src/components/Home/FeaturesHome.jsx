@@ -7,7 +7,8 @@ import shapeSix from "../../assets/images/shape/shape-6.png";
 import shapeSeven from "../../assets/images/shape/shape-7.png";
 import shapeEight from "../../assets/images/shape/shape-8.png";
 
-function FeaturesHomeOne({ className }) {
+function FeaturesHomeOne({ className, text }) {
+  const { items } = text.homeProduct;
   const [tab, setTab] = useState("setting");
   const handleClick = (e, value) => {
     e.preventDefault();
@@ -16,45 +17,33 @@ function FeaturesHomeOne({ className }) {
 
   const data = [
     {
+      ...items[0],
       name: "setting",
       pill: "home",
-      menu: "Prototype",
       icon: "fas fa-cog",
-      upTitle: "Custom One",
-      title: "Let the Conversation flow",
-      text: "Car boot absolutely bladdered posh burke the wireless mush some dodg.",
       image: thumbOne,
-      width: "300px"
+      width: "300px",
     },
     {
+      ...items[1],
       name: "report",
       pill: "profile",
-      menu: "Custom",
       icon: "fas fa-exclamation-triangle",
-      upTitle: "Custom Two",
-      title: "Let the Conversation flow",
-      text: "Car boot absolutely bladdered posh burke the wireless mush some dodg.",
       image: thumbThree,
-      width: "275px"
+      width: "275px",
     },
     {
+      ...items[2],
       name: "notice",
       pill: "messages",
-      menu: "Software",
       icon: "fas fa-bell",
-      upTitle: "Custom Three",
-      title: "Let the Conversation flow",
-      text: "Car boot absolutely bladdered posh burke the wireless mush some dodg.",
       image: thumbTwo,
     },
     {
+      ...items[3],
       name: "app",
       pill: "settings",
-      menu: "Porduct",
       icon: "fas fa-lock",
-      upTitle: "Custom Four",
-      title: "Let the Conversation flow",
-      text: "Car boot absolutely bladdered posh burke the wireless mush some dodg.",
       image: thumbTwo,
     },
   ];
@@ -116,7 +105,17 @@ function FeaturesHomeOne({ className }) {
                           data-wow-duration="2000ms"
                           data-wow-delay="200ms"
                         >
-                          <img src={item.image} alt="" width={item.width} height="500px"/>
+                          <img
+                            src={item.image}
+                            alt=""
+                            width={item.width}
+                            height="500px"
+                            style={
+                              index === 0
+                                ? { marginLeft: "20px" }
+                                : { marginLeft: "0px" }
+                            }
+                          />
                         </div>
                       </div>
                       <div className="col-lg-6">
