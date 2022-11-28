@@ -4,22 +4,24 @@ import teamOne from "../../assets/images/team-2.jpg";
 import teamThree from "../../assets/images/team-3.jpg";
 import teamFour from "../../assets/images/team-4.jpg";
 import teamFive from "../../assets/images/team-5.jpg";
+import teamSix from "../../assets/images/team-6.jpg";
 
-function TeamHome({ className }) {
+function TeamHome({ className, text, innerRef }) {
+  const { title, subtitle } = text.homeTeam;
   return (
     <>
-      <section className={`appie-team-area pb-100 ${className || ""}`}>
+      <section className={`appie-team-area pb-100 ${className || ""}`} ref={innerRef}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="appie-section-title text-center">
-                <h3 className="appie-title">Meet our Team Members</h3>
-                <p>Different layouts and styles for team sections.</p>
+                <h3 className="appie-title">{title}</h3>
+                <p>{subtitle}</p>
               </div>
             </div>
           </div>
           <div className="row d-flex justify-content-center">
-            <div className="col-lg-2 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <div
                 className="appie-team-item mt-30 wow animated fadeInUp"
                 data-wow-duration="2000ms"
@@ -34,7 +36,7 @@ function TeamHome({ className }) {
                 </div>
               </div>
             </div>
-            <div className="col-lg-2 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <div
                 className="appie-team-item mt-30 wow animated fadeInUp"
                 data-wow-duration="2000ms"
@@ -49,7 +51,7 @@ function TeamHome({ className }) {
                 </div>
               </div>
             </div>
-            <div className="col-lg-2 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <div
                 className="appie-team-item mt-30 wow animated fadeInUp"
                 data-wow-duration="2000ms"
@@ -64,7 +66,22 @@ function TeamHome({ className }) {
                 </div>
               </div>
             </div>
-            <div className="col-lg-2 col-md-6">
+            {/* <div className="col-lg-4 col-md-6">
+              <div
+                className="appie-team-item mt-30 wow animated fadeInUp"
+                data-wow-duration="2000ms"
+                data-wow-delay="600ms"
+              >
+                <div className="thumb">
+                  <img src={teamSix} alt="" />
+                </div>
+                <div className="content text-center">
+                  <h5 className="title">Vicente Rubio Villar</h5>
+                  <span>Business Developer</span>
+                </div>
+              </div>
+            </div> */}
+            <div className="col-lg-4 col-md-6">
               <div
                 className="appie-team-item mt-30 wow animated fadeInUp"
                 data-wow-duration="2000ms"
@@ -79,7 +96,7 @@ function TeamHome({ className }) {
                 </div>
               </div>
             </div>
-            <div className="col-lg-2 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <div
                 className="appie-team-item mt-30 wow animated fadeInUp"
                 data-wow-duration="2000ms"

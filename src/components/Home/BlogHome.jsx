@@ -6,25 +6,25 @@ import newsThree from "../../assets/images/blog/news-3.jpg";
 function BlogHomeOne({ className, text }) {
   let data = [
     {
-      title: text.newsPage.posts[0].title,
+      title: text.homeNews.posts[0].title,
       image: newsOne,
-      date: text.newsPage.posts[0].date,
-      text: text.newsPage.posts[0].text,
-      publisher: text.newsPage.posts[0].publisher,
+      date: text.homeNews.posts[0].date,
+      text: text.homeNews.posts[0].text,
+      publisher: text.homeNews.posts[0].publisher,
     },
     {
-      title: text.newsPage.posts[2].title,
+      title: text.homeNews.posts[1].title,
       image: newsThree,
-      date: text.newsPage.posts[2].date,
-      text: text.newsPage.posts[2].text,
-      publisher: text.newsPage.posts[2].publisher,
+      date: text.homeNews.posts[1].date,
+      text: text.homeNews.posts[1].text,
+      publisher: text.homeNews.posts[1].publisher,
     },
     {
-      title: text.newsPage.posts[1].title,
+      title: text.homeNews.posts[2].title,
       image: newsTwo,
-      date: text.newsPage.posts[1].date,
-      text: text.newsPage.posts[1].text,
-      publisher: text.newsPage.posts[1].publisher,
+      date: text.homeNews.posts[2].date,
+      text: text.homeNews.posts[2].text,
+      publisher: text.homeNews.posts[2].publisher,
     },
   ];
   return (
@@ -34,7 +34,7 @@ function BlogHomeOne({ className, text }) {
           <div className="row">
             <div className="col-lg-12">
               <div className="appie-section-title text-center">
-                <h3 className="appie-title">{text.newsPage.title}</h3>
+                <h3 className="appie-title">{text.homeNews.title}</h3>
                 <p>Different layouts and styles for team sections.</p>
               </div>
             </div>
@@ -48,6 +48,12 @@ function BlogHomeOne({ className, text }) {
                     data-wow-duration="3000ms"
                     data-wow-delay="200ms"
                   >
+                  <div className="blog-meta">
+                        <ul>
+                          <li>{item.date}</li>
+                          {item.publisher}
+                        </ul>
+                      </div>
                     <div className="thumb">
                       <img
                         src={item.image}
@@ -57,12 +63,6 @@ function BlogHomeOne({ className, text }) {
                       />
                     </div>
                     <div className="content">
-                      <div className="blog-meta">
-                        <ul>
-                          <li>{item.date}</li>
-                          {item.publisher}
-                        </ul>
-                      </div>
                       <h3 className="title">
                         <a href={"/news/single-news-" + index}>{item.title}</a>
                       </h3>

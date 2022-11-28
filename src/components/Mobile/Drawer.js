@@ -2,10 +2,22 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import logo from "../../assets/images/logo-new-2.png";
 
-function Drawer({ drawer, action, homeRef, serviceRef, featureRef, teamRef }) {
+function Drawer({
+  drawer,
+  action,
+  homeRef,
+  serviceRef,
+  featureRef,
+  teamRef,
+  contactRef,
+  text
+}) {
   const history = useHistory();
   const [itemSize, setSize] = useState("0px");
   const [item, setItem] = useState("home");
+
+  const items = text.menu;
+
   const handler = (e, value) => {
     // e.preventDefault();
     const getItems = document.querySelectorAll(`#${value} li`).length;
@@ -32,6 +44,33 @@ function Drawer({ drawer, action, homeRef, serviceRef, featureRef, teamRef }) {
       handleClose(e);
     }
   };
+
+  function executeScrollFeatures(e) {
+    if (window.location.pathname !== "/") {
+      history.push("/");
+    } else {
+      featureRef.current.scrollIntoView();
+      handleClose(e);
+    }
+  }
+
+  function executeScrollTeam(e) {
+    if (window.location.pathname !== "/") {
+      history.push("/");
+    } else {
+      teamRef.current.scrollIntoView();
+      handleClose(e);
+    }
+  }
+
+  function executeScrollContact(e) {
+    if (window.location.pathname !== "/") {
+      history.push("/");
+    } else {
+      contactRef.current.scrollIntoView();
+      handleClose(e);
+    }
+  }
 
   const handleClose = (e) => {
     action(e);
@@ -61,35 +100,35 @@ function Drawer({ drawer, action, homeRef, serviceRef, featureRef, teamRef }) {
                       id="home"
                       className="menu-item-has-children active"
                     >
-                      <a href="/">Home</a>
+                      <p>{items[0]}</p>
                     </li>
                     <li
                       onClick={executeScrollService}
                       id="service"
                       className="menu-item-has-children active"
                     >
-                      <a href="/">Product</a>
+                      <p>{items[1]}</p>
                     </li>
                     <li
-                      onClick={(e) => handler(e, "pages")}
+                      onClick={executeScrollFeatures}
                       id="pages"
                       className="menu-item-has-children active"
                     >
-                      <a href="/">Software</a>
+                      <p>{items[2]}</p>
                     </li>
                     <li
-                      onClick={(e) => handler(e, "news")}
+                      onClick={executeScrollTeam}
                       id="news"
                       className="menu-item-has-children active"
                     >
-                      <a href="/">Team</a>
+                      <p>{items[3]}</p>
                     </li>
                     <li
-                      onClick={(e) => handler(e, "contact")}
+                      onClick={executeScrollContact}
                       id="contact"
                       className="menu-item-has-children active"
                     >
-                      <Link to="/contact">Contact</Link>
+                      <p>{items[4]}</p>
                     </li>
                   </ul>
                 </div>

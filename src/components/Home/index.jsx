@@ -8,13 +8,15 @@ import FeaturesHome from "./FeaturesHome";
 import FooterHome from "./FooterHome";
 import HeroHome from "./HeroHome";
 import HomeHeader from "./HomeHeader";
-import ProjectHome from "./ProjectHome";
+import WhatsappHome from "./WhatsappHome";
 import ServicesHome from "./ServicesHome";
 import TeamHome from "./TeamHome";
-import TrafficHome from "./TrafficHome";
+import DashboardHome from "./DashboardHome";
 
 import { LanguageContext } from "../../context/LanguageContext";
 import Calculator from "../Calculator/Calculator";
+import GalleryHome from './GalleryHome';
+import Contact from '../Contact/index';
 
 function Home() {
   const [drawer, drawerAction] = useToggle(false);
@@ -27,6 +29,7 @@ function Home() {
   const serviceRef = useRef(null);
   const featureRef = useRef(null);
   const teamRef = useRef(null);
+  const contactRef = useRef(null);
 
   return (
     <>
@@ -37,6 +40,8 @@ function Home() {
         serviceRef={serviceRef}
         featureRef={featureRef}
         teamRef={teamRef}
+        contactRef={contactRef}
+        text={language}
       />
       <HomeHeader
         text={language}
@@ -45,17 +50,19 @@ function Home() {
         serviceRef={serviceRef}
         featureRef={featureRef}
         teamRef={teamRef}
+        contactRef={contactRef}
       />
       {/* <HomeVideo /> */}
-      <HeroHome text={language} innerRef={homeRef} />
+      <HeroHome text={language} innerRef={homeRef} featureRef={featureRef} contactRef={contactRef}/>
       <ServicesHome text={language} innerRef={serviceRef} />
-      <FeaturesHome text={language}/>
-      <TrafficHome />
-      {/* <TestimonialHome /> */}
-      <TeamHome />
-      <FaqHome text={language} />
+      <FeaturesHome text={language} innerRef={featureRef}/>
+      <DashboardHome text={language} />
+      <GalleryHome />
+      <TeamHome text={language} innerRef={teamRef}/>
       <BlogHome text={language} />
-      <ProjectHome />
+      <Contact innerRef={contactRef}/>
+      <WhatsappHome text={language} />
+      <FaqHome text={language} />
       <Calculator />
       <FooterHome />
       <BackToTop />

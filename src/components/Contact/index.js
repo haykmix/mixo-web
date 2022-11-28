@@ -8,36 +8,10 @@ import Forms from "./Forms";
 import HomeHeader from "../Home/HomeHeader";
 import { LanguageContext } from "../../context/LanguageContext";
 
-function Contact() {
-  const [drawer, drawerAction] = useToggle(false);
-  const { language } = useContext(LanguageContext);
-
-  const homeRef = useRef(null);
-  const serviceRef = useRef(null);
-  const featureRef = useRef(null);
-  const teamRef = useRef(null);
-
+function Contact({innerRef}) {
   return (
     <>
-      <Drawer drawer={drawer} action={drawerAction.toggle} />
-      <HomeHeader
-        text={language}
-        action={drawerAction.toggle}
-        homeRef={homeRef}
-        serviceRef={serviceRef}
-        featureRef={featureRef}
-        teamRef={teamRef}
-      />
-      <HeroNews
-        title="Contact"
-        breadcrumb={[
-          { link: "/", title: "home" },
-          { link: "/contact", title: "contacto" },
-        ]}
-      />
-      <Forms />
-      <FooterHomeOne />
-      <BackToTop />
+      <Forms innerRef={innerRef}/>
     </>
   );
 }

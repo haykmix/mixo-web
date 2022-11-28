@@ -1,9 +1,4 @@
 import React from "react";
-import singlePost from "../../assets/images/single-post/1.jpg";
-import author from "../../assets/images/single-post/author.png";
-import cmnt1 from "../../assets/images/single-post/c1.png";
-import cmnt2 from "../../assets/images/single-post/c2.png";
-import cmnt3 from "../../assets/images/single-post/c3.png";
 
 function Blog({ text }) {
   const handleShowBlogText = (text) => {
@@ -12,9 +7,9 @@ function Blog({ text }) {
 
     return (
       <>
-        <h1>{text.newsPage.posts[number].title}</h1>
+        <h1>{text.homeNews.posts[number].title}</h1>
         <br></br>
-        {text.newsPage.posts[number].text.map((item, index) => {
+        {text.homeNews.posts[number].text.map((item, index) => {
           if (typeof item === "string" || item instanceof String) {
             return <p key={index}>{item}</p>;
           } else {

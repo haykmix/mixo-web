@@ -2,23 +2,37 @@ import {
   faFile,
   faMessage,
   faCompress,
-  faVideo,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import heroThumbOne from "../../assets/images/hero-thumb-1-new.png";
 import video from "../../assets/video/video-cover.mp4";
 
-function HeroHome({ className, text, innerRef }) {
+function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
+  const history = useHistory();
   const { upTitle, title, subtitle, buttonDemo, buttonInfo } = text.homeCover;
 
   const [videoToggle, setVideoToggle] = useState(false);
 
+
   const handleVideo = () => {
     setVideoToggle(!videoToggle);
   };
+
+  function executeScrollContact() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : contactRef.current.scrollIntoView();
+  }
+
+  function executeScrollFeatures() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : featureRef.current.scrollIntoView();
+  }
 
   return (
     <>
@@ -37,14 +51,14 @@ function HeroHome({ className, text, innerRef }) {
                 <p>{subtitle}</p>
                 <ul>
                   <li>
-                    <a href="/">
+                    <p onClick={executeScrollContact}>
                       <FontAwesomeIcon icon={faMessage} /> &nbsp; {buttonDemo}
-                    </a>
+                    </p>
                   </li>
                   <li>
-                    <a href="/">
+                    <p onClick={executeScrollFeatures}>
                       <FontAwesomeIcon icon={faFile} /> &nbsp; {buttonInfo}
-                    </a>
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -84,16 +98,6 @@ function HeroHome({ className, text, innerRef }) {
             </div>
           </div>
         </div>
-        {/* 
-        <div className="hero-shape-1">
-          <img src={shapeThree} alt="" width="100px" height="100px" />
-        </div>
-        <div className="hero-shape-2">
-          <img src={shapeFour} alt="" width="100px" height="100px" />
-        </div>
-        <div className="hero-shape-3">
-          <img src={shapeTwo} alt="" width="100px" height="100px" />
-        </div> */}
       </section>
     </>
   );

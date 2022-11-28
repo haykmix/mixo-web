@@ -15,6 +15,9 @@ function HomeHeader({
   className,
   homeRef,
   serviceRef,
+  featureRef,
+  teamRef,
+  contactRef,
   text,
 }) {
   const history = useHistory();
@@ -35,6 +38,24 @@ function HomeHeader({
     window.location.pathname !== "/"
       ? history.push("/")
       : serviceRef.current.scrollIntoView();
+  }
+
+  function executeScrollFeatures() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : featureRef.current.scrollIntoView();
+  }
+
+  function executeScrollTeam() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : teamRef.current.scrollIntoView();
+  }
+
+  function executeScrollContact() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : contactRef.current.scrollIntoView();
   }
 
   useEffect(() => {
@@ -61,11 +82,14 @@ function HomeHeader({
                   <li onClick={executeScrollService}>
                     <span>{text.menu[1]}</span>
                   </li>
-                  <li>
+                  <li onClick={executeScrollFeatures}>
                     <span>{text.menu[2]}</span>
                   </li>
-                  <li>
+                  <li onClick={executeScrollTeam}>
                     <span>{text.menu[3]}</span>
+                  </li>
+                  <li onClick={executeScrollContact}>
+                    <span>{text.menu[4]}</span>
                   </li>
                 </ul>
               </div>
@@ -112,22 +136,6 @@ function HomeHeader({
                       </svg>
                     </span>
                   ))}
-                {langEnabled &&
-                  (lang ? (
-                    <span
-                      className="align-content-center ml-3"
-                      onClick={(e) => changeModeLan(e)}
-                    >
-                      RTL
-                    </span>
-                  ) : (
-                    <span
-                      className="align-content-center mr-3"
-                      onClick={(e) => changeModeLan(e)}
-                    >
-                      LTR
-                    </span>
-                  ))}
                 <Select
                   name="lang"
                   id="lang"
@@ -137,9 +145,6 @@ function HomeHeader({
                   <option value="es">🇪🇸ES</option>
                   <option value="en">🇬🇧EN</option>
                 </Select>
-                <a className="main-btn ml-30" href="/contact">
-                  Contact
-                </a>
                 <div
                   onClick={(e) => action(e)}
                   className="toggle-btn ml-30 canvas_open d-lg-none d-block"

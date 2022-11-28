@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import thumbOne from "../../assets/images/features/features-thumb-1.png";
 import thumbTwo from "../../assets/images/features/features-thumb-2.png";
-import thumbThree from "../../assets/images/renders/render-color.png";
+import thumbThree from "../../assets/images/features/features-thumb-3.png";
+import thumbFour from "../../assets/images/features/features-thumb-4.png";
 import shapeSix from "../../assets/images/shape/shape-6.png";
 import shapeSeven from "../../assets/images/shape/shape-7.png";
 import shapeEight from "../../assets/images/shape/shape-8.png";
 
-function FeaturesHomeOne({ className, text }) {
+function FeaturesHomeOne({ className, text, innerRef }) {
   const { items } = text.homeProduct;
   const [tab, setTab] = useState("setting");
   const handleClick = (e, value) => {
@@ -22,36 +23,34 @@ function FeaturesHomeOne({ className, text }) {
       pill: "home",
       icon: "fas fa-cog",
       image: thumbOne,
-      width: "300px",
     },
     {
       ...items[1],
       name: "report",
       pill: "profile",
       icon: "fas fa-exclamation-triangle",
-      image: thumbThree,
-      width: "275px",
+      image: thumbTwo,
     },
     {
       ...items[2],
       name: "notice",
       pill: "messages",
       icon: "fas fa-bell",
-      image: thumbTwo,
+      image: thumbThree,
     },
     {
       ...items[3],
       name: "app",
       pill: "settings",
       icon: "fas fa-lock",
-      image: thumbTwo,
+      image: thumbFour,
     },
   ];
 
   return (
     <section
       className={`appie-features-area pt-100 mb-65 mt-65 ${className}`}
-      id="features"
+      id="features" ref={innerRef}
     >
       <div className="container">
         <div className="row align-items-center">

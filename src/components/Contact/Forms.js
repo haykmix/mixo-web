@@ -1,6 +1,6 @@
 import React from "react";
 
-function Forms() {
+function Forms({innerRef}) {
   return (
     <>
       <section className="contact-section">
@@ -16,26 +16,22 @@ function Forms() {
                   <h5>Headquaters</h5>
                   <p>
                     <i className="fal fa-home"></i>
-                    744 New York Ave, Brooklyn, Kings,
-                    <br /> New York 10224
+                    C/ Valencia 359, 4-2
+                    <br /> Barcelona
                   </p>
                 </div>
                 <div className="single-info">
                   <h5>Phone</h5>
                   <p>
                     <i className="fal fa-phone"></i>
-                    (+642) 245 356 432
-                    <br />
-                    (+420) 336 476 328
+                    +(34) 695 273 507
                   </p>
                 </div>
                 <div className="single-info">
                   <h5>Support</h5>
                   <p>
                     <i className="fal fa-envelope"></i>
-                    bisy@support.com
-                    <br />
-                    help@education.com
+                    hola@mixodrink.com
                   </p>
                 </div>
                 <div className="ab-social">
@@ -49,10 +45,10 @@ function Forms() {
                 </div>
               </div>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-8" ref={innerRef}>
               <div className="contact-form">
                 <h4>Let’s Connect</h4>
-                <p>Integer at lorem eget diam facilisis lacinia ac id massa.</p>
+                <p>We will help you with anu question anout MIXO, contact us!</p>
                 <form action="#" method="post" className="row">
                   <div className="col-md-6">
                     <input type="text" name="f-name" placeholder="First Name" />
@@ -101,7 +97,7 @@ function Forms() {
         </div>
       </section>
 
-      <div className="bisylms-map">
+      {/* <div className="bisylms-map">
         <iframe
           title="map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.719249001063!2d2.1460253326436036!3d41.380184038091954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a27de6725ae5%3A0xd831c7b60f5fd4cf!2sC%2F%20d&#39;Enten%C3%A7a%2C%2094%2C%2008015%20Barcelona!5e0!3m2!1ses!2ses!4v1668012592345!5m2!1ses!2ses"
@@ -112,7 +108,7 @@ function Forms() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-      </div>
+      </div> */}
     </>
   );
 }

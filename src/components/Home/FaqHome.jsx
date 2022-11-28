@@ -14,14 +14,14 @@ function FaqHomeOne({ className, text }) {
             <div className="col-lg-12">
               <div className="appie-section-title text-center">
                 <h3 className="appie-title" style={{ color: "#fff" }}>
-                  Frequently asked questions
+                  {text.homeFaq.title}
                 </h3>
-                <p>Different layouts and styles for team sections.</p>
+                <p>{text.homeFaq.subtitle}</p>
               </div>
             </div>
           </div>
           <div className="row">
-            {text.faq.map((item, index) => {
+            {text.homeFaq.items.map((item, index) => {
               return (
                 <div className="col-lg-6" key={index}>
                   <div

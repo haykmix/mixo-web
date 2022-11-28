@@ -14,7 +14,7 @@ function SingleNews() {
     const [drawer, drawerAction] = useToggle(false);
     return (
         <>
-            <Drawer drawer={drawer} action={drawerAction.toggle} />
+            <Drawer drawer={drawer} action={drawerAction.toggle} text={language}/>
             <HomeHeader action={drawerAction.toggle} text={language}/>
             <HeroNews
                 title="Noticias"

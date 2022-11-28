@@ -1,32 +1,32 @@
 const en = {
-  menu: ["Home", "Product", "Software", "Team", "News"],
+  menu: ["Home", "Product", "Software", "Team", "Contact"],
   homeCover: {
     upTitle: "Welcome To Mixo",
     title: "The first fully automated cocktail machine",
     subtitle:
-      "Enjoy what really matters, avoid queues and drink safely and responsibly",
+      "Enjoy what really matters, avoid queues, drink safely and responsibly",
     buttonDemo: "Get a demo",
     buttonInfo: "Know more",
   },
   homeService: {
-    title: "Developing software and collecting data",
+    title: "Software development and data collection",
     subtitle:
       "Control your billing and collect data for better decision making while saving on costs",
     items: [
       {
-        title: "Automating",
-        text: "Mixo serves ready to drink cocktails",
+        title: "Automation",
+        text: "Mixo serves combined ready to drink",
       },
       {
-        title: "Securing",
-        text: "Control the entire service process",
+        title: "Security",
+        text: "Control of the entire service process",
       },
       {
         title: "Organization",
         text: "Collect strategic data",
       },
       {
-        title: "Saving",
+        title: "Economy",
         text: "Reduce costs and increase sales",
       },
     ],
@@ -34,7 +34,7 @@ const en = {
   homeProduct: {
     items: [
       {
-        menu: "Prototypo",
+        menu: "Prototype",
         upTitle: "Mixo protorype",
         title: "La simplicidad y la eficacia unidas",
         text: "Nuestros procesos de desarrollo se centran en perfecionar todos los detalles que hacen de Mixo la revolución del servicio de combinados",
@@ -59,33 +59,65 @@ const en = {
       },
     ],
   },
-  faq: [
-    {
-      q: "What do I need to have MIXO?",
-      a: "Any local, organization or room can have MIXO. The necessary elements to install it are a water source, a plug and a drain. MIXO has to be leaning against a wall to be fixed.",
-    },
-    {
-      q: "Who installs MIXO and who does the maintenance?",
-      a: "MIXO is responsible for installation and maintenance",
-    },
-    {
-      q: "What payment systems does MIXO offer?",
-      a: "Credit card and NFC ",
-    },
-    {
-      q: "How long does MIXO take to serve a combo?",
-      a: "The time it takes to select the combination, serve the glass (with ice and drink) and payment is about 35 seconds.",
-    },
-    {
-      q: "Can I put MIXO in an outdoor festival?",
-      a: "Of course, MIXO is designed to be able to be in open spaces. In this case it is recommended to add a base to give stability to the device and we recommend that it is not in full sun at high temperatures. ",
-    },
-    {
-      q: "Does MIXO comply with the relevant regulations?",
-      a: "Of course, MIXO has all the certifications and the materials used for its manufacture are under the strictest regulations; CE marking and FDA.",
-    },
-  ],
-  newsPage: {
+  homeDashboard: {
+    uptitle: "Dashboard",
+    title: "Dashboard para la gestion centralizada",
+    subtitle:
+      "Gestiona la facturacíon, disponibilidad y mantenimiento de forma rápida y senzilla",
+    items: [
+      {
+        title: "Facturación",
+        subtitle: "Mucker plastered bugger all mate morish are.",
+      },
+      {
+        title: "Estadisticas",
+        subtitle: "Mucker plastered bugger all mate morish are.",
+      },
+      {
+        title: "Mantenimiento",
+        subtitle: "Mucker plastered bugger all mate morish are.",
+      },
+      {
+        title: "Customización",
+        subtitle: "Mucker plastered bugger all mate morish are.",
+      },
+    ],
+  },
+  homeTeam: {
+    title: "Meet our team members",
+    subtitle: "The team that makes it possible  ",
+  },
+  homeFaq: {
+    title: "Frequently asked questions",
+    subtitle: "You can find the most asked information quickly",
+    items: [
+      {
+        q: "What do I need to have MIXO?",
+        a: "Any local, organization or room can have MIXO. The necessary elements to install it are a water source, a plug and a drain. MIXO has to be leaning against a wall to be fixed.",
+      },
+      {
+        q: "Who installs MIXO and who does the maintenance?",
+        a: "MIXO is responsible for installation and maintenance",
+      },
+      {
+        q: "What payment systems does MIXO offer?",
+        a: "Credit card and NFC ",
+      },
+      {
+        q: "How long does MIXO take to serve a combo?",
+        a: "The time it takes to select the combination, serve the glass (with ice and drink) and payment is about 35 seconds.",
+      },
+      {
+        q: "Can I put MIXO in an outdoor festival?",
+        a: "Of course, MIXO is designed to be able to be in open spaces. In this case it is recommended to add a base to give stability to the device and we recommend that it is not in full sun at high temperatures. ",
+      },
+      {
+        q: "Does MIXO comply with the relevant regulations?",
+        a: "Of course, MIXO has all the certifications and the materials used for its manufacture are under the strictest regulations; CE marking and FDA.",
+      },
+    ],
+  },
+  homeNews: {
     title: "Latest news",
     posts: [
       {
@@ -153,42 +185,6 @@ const en = {
         ],
       },
       {
-        date: "3 octubre, 2022",
-        publisher: "EcosistemStartup",
-        title:
-          "MIXO closes a €500,000 round and aims to grow in the Spanish market",
-        text: [
-          `
-          MIXO, the startup that created the first machine that combined in less than 12 seconds (also called Mixo),
-          closed a €500,000 round with investors from Spain, France, the United States, Argentina and Uruguay, and contracts
-          Buy with heavy Spanish customers.`,
-
-          `These investments of strategic actors with knowledge of the sector and ability to monitor and accompany
-          means an opportunity to further develop the company, extend the team and create more machines "Mixos" growing
-          in the Spanish market.`,
-
-          `"We are in the 21st century and process automation is the present. Time is what we value and want
-          everything that makes us earn it. With Mixo, technology came to records, we gained time and there is no going back," he says
-          its founder and CEO, the 23-year-old Uruguayan, Martín Cohen.`,
-
-          `Since March 2022, MIXO was in discos, festivals, weddings and events all over Spain: from Pacha Barcelona,
-          to the East Coast Carps on the Costa Brava. Currently the startup has date for the first batch of units
-          For the Spanish market and is closing pre-computer contracts with great advantages for the first customers.`,
-
-          {
-            title: "ABOUT MIXO",
-            text: `MIXO was born in 2020 in Barcelona as a response to a very clear need: in festivals and discos you have to
-            wait more than 20 minutes to buy a gin and tonic and that’s a long time for a single drink. At weddings and events
-            They line up for a drink, which is a long time for a combo.`,
-          },
-
-          `After 2 years of R&D came Mixo, a self-service machine capable of serving more than 500 combined without human help,
-          with a capacity of 10 different alcohols and 4 soft drinks. Thus, the user creates his own combined and
-          takes seconds. Added to this is NFC (Near Field Communication) technology for users to have wristbands
-          and they can give Mixo the order from there so he can create the perfect combination.`,
-        ],
-      },
-      {
         date: "1 July, 2022",
         publisher: "infonegocios",
         title:
@@ -222,24 +218,65 @@ const en = {
         events where the desks get stuck.`,
         ],
       },
+      {
+        date: "3 octubre, 2022",
+        publisher: "EcosistemStartup",
+        title:
+          "MIXO closes a €500,000 round and aims to grow in the Spanish market",
+        text: [
+          `
+          MIXO, the startup that created the first machine that combined in less than 12 seconds (also called Mixo),
+          closed a €500,000 round with investors from Spain, France, the United States, Argentina and Uruguay, and contracts
+          Buy with heavy Spanish customers.`,
+
+          `These investments of strategic actors with knowledge of the sector and ability to monitor and accompany
+          means an opportunity to further develop the company, extend the team and create more machines "Mixos" growing
+          in the Spanish market.`,
+
+          `"We are in the 21st century and process automation is the present. Time is what we value and want
+          everything that makes us earn it. With Mixo, technology came to records, we gained time and there is no going back," he says
+          its founder and CEO, the 23-year-old Uruguayan, Martín Cohen.`,
+
+          `Since March 2022, MIXO was in discos, festivals, weddings and events all over Spain: from Pacha Barcelona,
+          to the East Coast Carps on the Costa Brava. Currently the startup has date for the first batch of units
+          For the Spanish market and is closing pre-computer contracts with great advantages for the first customers.`,
+
+          {
+            title: "About MIXO",
+            text: `MIXO was born in 2020 in Barcelona as a response to a very clear need: in festivals and discos you have to
+            wait more than 20 minutes to buy a gin and tonic and that’s a long time for a single drink. At weddings and events
+            They line up for a drink, which is a long time for a combo.`,
+          },
+
+          `After 2 years of R&D came Mixo, a self-service machine capable of serving more than 500 combined without human help,
+          with a capacity of 10 different alcohols and 4 soft drinks. Thus, the user creates his own combined and
+          takes seconds. Added to this is NFC (Near Field Communication) technology for users to have wristbands
+          and they can give Mixo the order from there so he can create the perfect combination.`,
+        ],
+      },
     ],
+  },
+  homeCta: {
+    title: "Let's talk! Write us on Whatsapp",
+    subtitle: "Click here to start chatting",
+    button: "Start chat",
   },
 };
 
 const es = {
-  menu: ["Inicio", "Producto", "Software", "Equipo", "Noticias"],
+  menu: ["Inicio", "Producto", "Software", "Equipo", "Contacto"],
   homeCover: {
     upTitle: "Bienvenido a Mixo",
     title: "La primera máquina de cócteles totalmente automatizada",
     subtitle:
-      "Disfrutar de lo que realmente importa, evitar colas y beber de forma segura y responsable",
+      "Disfrutar de lo que realmente importa, evita colas, bebe de forma segura y responsable",
     buttonDemo: "Obtener una demostración",
     buttonInfo: "Conoce más",
   },
   homeService: {
     title: "Desarrollo de software y recopilación de datos",
     subtitle:
-      "Controle su facturación y recopile datos para una mejor toma de decisiones al tiempo que ahorra en costos",
+      "Controla tu facturación y recopila datos para una mejor toma de decisiones mientras ahorras en costos",
     items: [
       {
         title: "Automatización",
@@ -247,11 +284,11 @@ const es = {
       },
       {
         title: "Asegurar",
-        text: "Control el todo el proceso de servicio",
+        text: "Control de todo el proceso de servicio",
       },
       {
         title: "Organización",
-        text: "Recopila datos estrategicos",
+        text: "Recopila datos estratégicos",
       },
       {
         title: "Ahorro",
@@ -287,33 +324,65 @@ const es = {
       },
     ],
   },
-  faq: [
-    {
-      q: "¿Qué necesito para tener MIXO?",
-      a: "Cualquier local, organización o sala puede tener MIXO. Los elementos necesarios para poder instalarla son una fuente de agua, un enchufe y un desagüe. MIXO tiene que estar apoyada contra una pared donde fijarse.",
-    },
-    {
-      q: "¿Quién instala MIXO y quién se encarga del mantenimiento?",
-      a: "MIXO se encarga de la instalación y del mantenimiento",
-    },
-    {
-      q: "¿Qué sistemas de pago ofrece MIXO?",
-      a: "Tarjeta de crédito y NFC ",
-    },
-    {
-      q: "¿Cuánto tiempo tarda MIXO en servir un combinado?",
-      a: "El tiempo que se tarda en seleccionar el combinado, servir el vaso (con hielo y bebida) y el pago son unos 35 segundos.",
-    },
-    {
-      q: "¿Puedo poner MIXO en un festival al aire libre?",
-      a: "Por supuesto, MIXO está diseñada para poder estar en espacios abiertos. En tal caso se recomienda añadir una base para dar estabilidad al dispositivo y recomendamos que no esté a pleno sol a altas temperaturas. ",
-    },
-    {
-      q: "¿MIXO cumple con las regulaciones correspondientes?",
-      a: "Por su puesto, MIXO cuenta con todas las certificaciones y los materiales utilizados para su fabricación están bajo las regulaciones más estrictas; marcado CE y FDA.",
-    },
-  ],
-  newsPage: {
+  homeDashboard: {
+    uptitle: "Dashboard",
+    title: "Dashboard para la gestion centralizada",
+    subtitle:
+      "Gestiona la facturacíon, disponibilidad y mantenimiento de forma rápida y senzilla",
+    items: [
+      {
+        title: "Facturación",
+        subtitle: "Mucker plastered bugger all mate morish are.",
+      },
+      {
+        title: "Estadisticas",
+        subtitle: "Mucker plastered bugger all mate morish are.",
+      },
+      {
+        title: "Mantenimiento",
+        subtitle: "Mucker plastered bugger all mate morish are.",
+      },
+      {
+        title: "Customización",
+        subtitle: "Mucker plastered bugger all mate morish are.",
+      },
+    ],
+  },
+  homeTeam: {
+    title: "Conozca a los miembros del equipo",
+    subtitle: "El equipo que lo hace todo posible",
+  },
+  homeFaq: {
+    title: "Preguntas frequentes",
+    subtitle: "Podrás encontrar la información más buscada de forma rápida",
+    items: [
+      {
+        q: "¿Qué necesito para tener MIXO?",
+        a: "Cualquier local, organización o sala puede tener MIXO. Los elementos necesarios para poder instalarla son una fuente de agua, un enchufe y un desagüe. MIXO tiene que estar apoyada contra una pared donde fijarse.",
+      },
+      {
+        q: "¿Quién instala MIXO y quién se encarga del mantenimiento?",
+        a: "MIXO se encarga de la instalación y del mantenimiento",
+      },
+      {
+        q: "¿Qué sistemas de pago ofrece MIXO?",
+        a: "Tarjeta de crédito y NFC ",
+      },
+      {
+        q: "¿Cuánto tiempo tarda MIXO en servir un combinado?",
+        a: "El tiempo que se tarda en seleccionar el combinado, servir el vaso (con hielo y bebida) y el pago son unos 35 segundos.",
+      },
+      {
+        q: "¿Puedo poner MIXO en un festival al aire libre?",
+        a: "Por supuesto, MIXO está diseñada para poder estar en espacios abiertos. En tal caso se recomienda añadir una base para dar estabilidad al dispositivo y recomendamos que no esté a pleno sol a altas temperaturas. ",
+      },
+      {
+        q: "¿MIXO cumple con las regulaciones correspondientes?",
+        a: "Por su puesto, MIXO cuenta con todas las certificaciones y los materiales utilizados para su fabricación están bajo las regulaciones más estrictas; marcado CE y FDA.",
+      },
+    ],
+  },
+  homeNews: {
     title: "Latest news",
     posts: [
       {
@@ -385,42 +454,6 @@ const es = {
         ],
       },
       {
-        date: "3 October, 2022",
-        publisher: "EcosistemStartup",
-        title:
-          "MIXO cierra una ronda de 500.000€ y apunta a crecer en el mercado español",
-        text: [
-          `
-        MIXO, la startup creadora de la primera máquina que hace combinados en menos de 12 segundos (también llamada Mixo),
-        cerró una ronda de 500.000€ con inversores de España, Francia, Estados Unidos, Argentina y Uruguay, y contratos de
-        precompra con clientes españoles de gran peso.`,
-
-          `Estas inversiones de actores estratégicos con conocimientos del sector y capacidad de hacer seguimiento y acompañamiento
-        significan una oportunidad para seguir desarrollando la empresa, extender el equipo y crear más máquinas “Mixos” creciendo
-        en el mercado español.`,
-
-          `“Estamos en el siglo XXI y la automatización de procesos es el presente. El tiempo es lo que más valoramos y queremos
-        todo lo que nos haga ganarlo. Con Mixo, la tecnología llegó a las discos, ganamos tiempo y no hay vuelta atrás”, dice
-        su fundador y CEO, el uruguayo de 23 años, Martín Cohen.`,
-
-          `Desde marzo de 2022, MIXO estuvo en discotecas, festivales, bodas y eventos por toda España: desde Pacha Barcelona,
-        hasta las Carpas de la Costa Este en la Costa Brava. Actualmente la startup tiene fecha para el primer lote de unidades
-        para el mercado español y está cerrando contratos de precompra con grandes ventajas para los primeros clientes.`,
-
-          {
-            title: "SOBRE MIXO",
-            text: `MIXO nace en el 2020 en Barcelona como respuesta a una necesidad muy clara: en los festivales y discotecas hay que
-        esperar más de 20 minutos para comprarse un gin tonic y eso es mucho tiempo para un solo trago. En las bodas y eventos
-        se arman filas para tomar algo, lo cual es mucho tiempo para un combinado.`,
-          },
-
-          `Tras 2 años de I+D  surgió Mixo, una máquina self-service capaz de servir más de 500 combinados sin ayuda humana,
-        con una capacidad de 10 alcoholes diferentes y 4 bebidas gaseosas. Así, el usuario crea su propio combinado y se lo
-        lleva en segundos. A esto se suma la tecnología NFC (Near Field Communication) para que los usuarios tengan pulseras
-        y puedan darle desde allí la orden a Mixo para que les cree el combinado perfecto.`,
-        ],
-      },
-      {
         date: "1 July, 2022",
         publisher: "infonegocios",
         title:
@@ -456,7 +489,48 @@ const es = {
         implica una facturación interesante para eventos de alta concurrencia donde las barras de despacho se atascan.`,
         ],
       },
+      {
+        date: "3 October, 2022",
+        publisher: "EcosistemStartup",
+        title:
+          "MIXO cierra una ronda de 500.000€ y apunta a crecer en el mercado español",
+        text: [
+          `
+        MIXO, la startup creadora de la primera máquina que hace combinados en menos de 12 segundos (también llamada Mixo),
+        cerró una ronda de 500.000€ con inversores de España, Francia, Estados Unidos, Argentina y Uruguay, y contratos de
+        precompra con clientes españoles de gran peso.`,
+
+          `Estas inversiones de actores estratégicos con conocimientos del sector y capacidad de hacer seguimiento y acompañamiento
+        significan una oportunidad para seguir desarrollando la empresa, extender el equipo y crear más máquinas “Mixos” creciendo
+        en el mercado español.`,
+
+          `“Estamos en el siglo XXI y la automatización de procesos es el presente. El tiempo es lo que más valoramos y queremos
+        todo lo que nos haga ganarlo. Con Mixo, la tecnología llegó a las discos, ganamos tiempo y no hay vuelta atrás”, dice
+        su fundador y CEO, el uruguayo de 23 años, Martín Cohen.`,
+
+          `Desde marzo de 2022, MIXO estuvo en discotecas, festivales, bodas y eventos por toda España: desde Pacha Barcelona,
+        hasta las Carpas de la Costa Este en la Costa Brava. Actualmente la startup tiene fecha para el primer lote de unidades
+        para el mercado español y está cerrando contratos de precompra con grandes ventajas para los primeros clientes.`,
+
+          {
+            title: "Sobre MIXO",
+            text: `MIXO nace en el 2020 en Barcelona como respuesta a una necesidad muy clara: en los festivales y discotecas hay que
+        esperar más de 20 minutos para comprarse un gin tonic y eso es mucho tiempo para un solo trago. En las bodas y eventos
+        se arman filas para tomar algo, lo cual es mucho tiempo para un combinado.`,
+          },
+
+          `Tras 2 años de I+D  surgió Mixo, una máquina self-service capaz de servir más de 500 combinados sin ayuda humana,
+        con una capacidad de 10 alcoholes diferentes y 4 bebidas gaseosas. Así, el usuario crea su propio combinado y se lo
+        lleva en segundos. A esto se suma la tecnología NFC (Near Field Communication) para que los usuarios tengan pulseras
+        y puedan darle desde allí la orden a Mixo para que les cree el combinado perfecto.`,
+        ],
+      },
     ],
+  },
+  homeCta: {
+    title: "¡Hablemos! Escribenos por Whatsapp",
+    subtitle: "Click aquí para empezar a chatear",
+    button: "Empezar chat",
   },
 };
 
