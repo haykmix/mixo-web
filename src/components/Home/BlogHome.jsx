@@ -35,7 +35,7 @@ function BlogHomeOne({ className, text }) {
             <div className="col-lg-12">
               <div className="appie-section-title text-center">
                 <h3 className="appie-title">{text.homeNews.title}</h3>
-                <p>Different layouts and styles for team sections.</p>
+                <p>{text.homeNews.subtitle}</p>
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@ function BlogHomeOne({ className, text }) {
                         <a href={"/news/single-news-" + index}>{item.title}</a>
                       </h3>
                       <a href="/news/single-news">
-                        Learn More <i className="fal fa-arrow-right" />
+                      {text.homeNews.button} <i className="fal fa-arrow-right" />
                       </a>
                     </div>
                   </div>

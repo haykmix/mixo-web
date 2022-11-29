@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import Modal from "react-modal";
 
-import image from "../../assets/images/about-thumb-2.png";
 import videoOne from "../../assets/video/video-voice-gallery.mp4";
 import videotwo from "../../assets/video/video-voice-gallery.mp4";
 import videoThree from "../../assets/video/video-voice-gallery.mp4";

@@ -1,17 +1,17 @@
 const en = {
   menu: ["Home", "Product", "Software", "Team", "Contact"],
   homeCover: {
-    upTitle: "Welcome To Mixo",
-    title: "The first fully automated cocktail machine",
+    upTitle: "👋 Welcome To Mixo",
+    title: "The first fully automated cocktail 🍹 machine",
     subtitle:
       "Enjoy what really matters, avoid queues, drink safely and responsibly",
     buttonDemo: "Get a demo",
     buttonInfo: "Know more",
   },
   homeService: {
-    title: "Software development and data collection",
+    title: "Automatic beverage service",
     subtitle:
-      "Control your billing and collect data for better decision making while saving on costs",
+      "Control your billing, save costs and offer your customers a fast and secure service",
     items: [
       {
         title: "Automation",
@@ -119,6 +119,8 @@ const en = {
   },
   homeNews: {
     title: "Latest news",
+    subtitle: "Read the latest Mixo news",
+    button: "Read article",
     posts: [
       {
         date: "2 April, 2022",
@@ -261,22 +263,31 @@ const en = {
     subtitle: "Click here to start chatting",
     button: "Start chat",
   },
+  calculator: {
+    buttonText: "Saving calculator",
+    title: "Calculator",
+    subtitle:
+      "With this calculator you can value the savings in one year with Mixo",
+    inputClients: "Average number of customers in a day",
+    inputDays: "Number of days open per week",
+    saving: "Savings",
+  },
 };
 
 const es = {
   menu: ["Inicio", "Producto", "Software", "Equipo", "Contacto"],
   homeCover: {
-    upTitle: "Bienvenido a Mixo",
-    title: "La primera máquina de cócteles totalmente automatizada",
+    upTitle: "👋 Bienvenid@ a Mixo",
+    title: "La primera máquina de cócteles 🍹 totalmente automatizada",
     subtitle:
       "Disfrutar de lo que realmente importa, evita colas, bebe de forma segura y responsable",
     buttonDemo: "Obtener una demostración",
     buttonInfo: "Conoce más",
   },
   homeService: {
-    title: "Desarrollo de software y recopilación de datos",
+    title: "Servicio de beibida de forma autotamitca",
     subtitle:
-      "Controla tu facturación y recopila datos para una mejor toma de decisiones mientras ahorras en costos",
+      "Controla tu facturación, ahorra costes y ofrece a tus clientes un servicio rápido y seguro",
     items: [
       {
         title: "Automatización",
@@ -299,28 +310,28 @@ const es = {
   homeProduct: {
     items: [
       {
-        menu: "Prototipo",
-        upTitle: "Mixo prototipo",
-        title: "La simplicidad y la eficacia unidas",
-        text: "Nuestros procesos de desarrollo se centran en perfecionar todos los detalles que hacen de Mixo la revolución del servicio de combinados",
+        menu: "Integración",
+        upTitle: "Todo en uno",
+        title: "La simplicidad & la eficacia unidas",
+        text: "Mixo integra todos los servicio necesarios para la dispensación de bebidas 🍹 totalmente integrado de forma modular",
       },
       {
-        menu: "Custom",
-        upTitle: "Custom Two",
-        title: "Let the Conversation flow",
-        text: "Nuestros procesos de desarrollo se centran en perfecionar todos los detalles que hacen de Mixo la revolución del servicio de combinados",
+        menu: "Pantalla",
+        upTitle: "Interacción",
+        title: "Los detalles ✨ estan en la experiencia",
+        text: "Una pantalla infinita que atrae la atención de cualquiera que la vea combinada con una funcionalidad atractiva",
       },
       {
-        menu: "Software",
-        upTitle: "Custom Three",
-        title: "Let the Conversation flow",
-        text: "Nuestros procesos de desarrollo se centran en perfecionar todos los detalles que hacen de Mixo la revolución del servicio de combinados",
+        menu: "Servicio",
+        upTitle: "Servicio de Bebida",
+        title: "Velocidad & fiabilidad",
+        text: "El tiempo importa y más cuando estas esperando a tu artista favorito, por eso Mixo sirve copas como un rayo ⚡ en 12 segundos",
       },
       {
-        menu: "Marketing",
-        upTitle: "Custom Four",
-        title: "Let the Conversation flow",
-        text: "Nuestros procesos de desarrollo se centran en perfecionar todos los detalles que hacen de Mixo la revolución del servicio de combinados",
+        menu: "Pago",
+        upTitle: "Metodos de pago",
+        title: "Facilidad de pago",
+        text: "Mixo ofrece pago por tarjeta o por nfc permitiendo así integrarse con el modelo de negocio de tu empresa",
       },
     ],
   },
@@ -383,7 +394,9 @@ const es = {
     ],
   },
   homeNews: {
-    title: "Latest news",
+    title: "Noticias recientes",
+    subtitle: "Lee las últimas noticas de Mixo",
+    button: "Leer artículo",
     posts: [
       {
         date: "2 abril, 2022",
@@ -531,6 +544,15 @@ const es = {
     title: "¡Hablemos! Escribenos por Whatsapp",
     subtitle: "Click aquí para empezar a chatear",
     button: "Empezar chat",
+  },
+  calculator: {
+    buttonText: "Calculadora ahorro",
+    title: "Calculadora",
+    subtitle:
+      "Con esta calculadora se puede valorar el ahorro en un año con Mixo",
+    inputClients: "Número promedio de clientes en un día",
+    inputDays: "Número de días abiertos por semana",
+    saving: "Ahorro",
   },
 };
 

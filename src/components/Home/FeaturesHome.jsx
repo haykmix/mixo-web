@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import thumbOne from "../../assets/images/features/features-thumb-1.png";
-import thumbTwo from "../../assets/images/features/features-thumb-2.png";
-import thumbThree from "../../assets/images/features/features-thumb-3.png";
-import thumbFour from "../../assets/images/features/features-thumb-4.png";
+import thumbOneEs from "../../assets/images/features/features-thumb-1-es.png";
+import thumbTwoEs from "../../assets/images/features/features-thumb-2-es.png";
+import thumbThreeEs from "../../assets/images/features/features-thumb-3-es.png";
+import thumbFourEs from "../../assets/images/features/features-thumb-4-es.png";
+import thumbOneEn from "../../assets/images/features/features-thumb-1-en.png";
+import thumbTwoEn from "../../assets/images/features/features-thumb-2-en.png";
+import thumbThreeEn from "../../assets/images/features/features-thumb-3-en.png";
+import thumbFourEn from "../../assets/images/features/features-thumb-4-en.png";
 import shapeSix from "../../assets/images/shape/shape-6.png";
 import shapeSeven from "../../assets/images/shape/shape-7.png";
 import shapeEight from "../../assets/images/shape/shape-8.png";
 
 function FeaturesHomeOne({ className, text, innerRef }) {
   const { items } = text.homeProduct;
+  let lang = localStorage.getItem('language');
   const [tab, setTab] = useState("setting");
   const handleClick = (e, value) => {
     e.preventDefault();
@@ -22,28 +27,28 @@ function FeaturesHomeOne({ className, text, innerRef }) {
       name: "setting",
       pill: "home",
       icon: "fas fa-cog",
-      image: thumbOne,
+      image: lang === 'es' ? thumbOneEs : thumbOneEn,
     },
     {
       ...items[1],
       name: "report",
       pill: "profile",
       icon: "fas fa-exclamation-triangle",
-      image: thumbTwo,
+      image: lang === 'es' ? thumbTwoEs : thumbTwoEn,
     },
     {
       ...items[2],
       name: "notice",
       pill: "messages",
       icon: "fas fa-bell",
-      image: thumbThree,
+      image: lang === 'es' ? thumbThreeEs : thumbThreeEn,
     },
     {
       ...items[3],
       name: "app",
       pill: "settings",
       icon: "fas fa-lock",
-      image: thumbFour,
+      image: lang === 'es' ? thumbFourEs : thumbFourEn,
     },
   ];
 
@@ -109,11 +114,6 @@ function FeaturesHomeOne({ className, text, innerRef }) {
                             alt=""
                             width={item.width}
                             height="500px"
-                            style={
-                              index === 0
-                                ? { marginLeft: "20px" }
-                                : { marginLeft: "0px" }
-                            }
                           />
                         </div>
                       </div>

@@ -63,7 +63,7 @@ function Home() {
       <Contact innerRef={contactRef}/>
       <WhatsappHome text={language} />
       <FaqHome text={language} />
-      <Calculator />
+      <Calculator text={language}/>
       <FooterHome />
       <BackToTop />
     </>

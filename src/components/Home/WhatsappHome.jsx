@@ -6,7 +6,7 @@ function WhatsappHome({ className, text }) {
   return (
     <>
       <section className={`appie-project-area pb-100 ${className || ""}`}>
-        <div className="container">
+        <div className="container pt-100">
           <div className="row">
             <div className="col-lg-12">
               <div

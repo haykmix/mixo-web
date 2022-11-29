@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import calulatorImg from "../../assets/images/icon/calculator.png";
 import crossImg from "../../assets/images/icon/cross.png";
 
-function Calculator() {
+function Calculator({ text }) {
+  const data = text.calculator;
   const daysInput = useRef();
   const peopleInput = useRef();
   const [toggleCalc, setToggleCalc] = useState(false);
@@ -60,22 +61,18 @@ function Calculator() {
         <h4
           style={{ marginLeft: "15px", display: showText ? "block" : "none" }}
         >
-          Calculadora ahorro
+          {data.buttonText}
         </h4>
       </div>
       <div
         className="calc-content"
         style={{ display: toggleCalc ? "block" : "none" }}
       >
-        <h2>CALCULADORA</h2>
-        <h5>
-          Con esta <span style={{ color: "#5600e1" }}>calculadora</span> puedes
-          valorar el <span style={{ color: "#5600e1" }}>ahorro</span> en un año
-          con Mixo
-        </h5>
+        <h2>{data.title}</h2>
+        <h5>{data.subtitle}</h5>
         <form>
           <label>
-            Número promedio de clientes en una noche
+          {data.inputClients}
             <input
               type="number"
               name="days"
@@ -86,7 +83,7 @@ function Calculator() {
             />
           </label>
           <label>
-            Número de días abiertos por semana
+          {data.inputDays}
             <input
               type="number"
               name="people"
@@ -102,7 +99,7 @@ function Calculator() {
           </p>
         </form>
         <section className="result-container">
-          <h3>{currencyFormat(result)} Ahorro</h3>
+          <h3>{currencyFormat(result)} {data.saving}</h3>
         </section>
       </div>
     </section>
