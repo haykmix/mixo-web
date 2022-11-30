@@ -1,6 +1,97 @@
+import { Formik } from "formik";
 import React from "react";
 
-function Forms({innerRef}) {
+function Forms({ innerRef, text }) {
+  const { title, subtitle, items, form } = text.homeContact;
+  const data = [
+    {
+      icon: <i className="fal fa-home"></i>,
+    },
+    {
+      icon: <i className="fal fa-phone"></i>,
+    },
+    {
+      icon: <i className="fal fa-envelope"></i>,
+    },
+    {
+      icon: [
+        <a className="fac" href="/">
+          <i className="fab fa-instagram"></i>
+        </a>,
+        <a className="lin" href="/">
+          <i className="fab fa-linkedin-in"></i>
+        </a>,
+      ],
+    },
+  ];
+  const renderItems = (items) => {
+    return items.map((item, index) => {
+      if (item.data) {
+        return (
+          <div className="single-info">
+            <h5>{item.title}</h5>
+            <p>
+              {!Array.isArray(data[index].icon) ? data[index].icon : null}
+              {item.data}
+            </p>
+          </div>
+        );
+      } else {
+        return (
+          <div className="ab-social">
+            <h5>{item.title}</h5>
+            <p>
+              {Array.isArray(data[index].icon)
+                ? data[index].icon.map((item) => {
+                    return item;
+                  })
+                : null}
+            </p>
+          </div>
+        );
+      }
+    });
+  };
+
+  const initialValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  };
+
+  const validate = (values) => {
+    const errors = {};
+
+    if (!values.firstName) errors.firstName = form.errors[0];
+    if (!values.lastName) errors.lastName = form.errors[0];
+    if (!values.subject) errors.subject = form.errors[0];
+    if (!values.message) errors.message = form.errors[0];
+
+    if (!values.email) {
+      errors.email = "Required";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+      errors.email = form.errors[1];
+    }
+
+    if (!values.phone) {
+      errors.phone = "Required";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.phone)) {
+      errors.phone = form.errors[2];
+    }
+
+    return errors;
+  };
+
+  const onSubmit = (values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+    }, 400);
+  };
+
   return (
     <>
       <section className="contact-section">
@@ -8,89 +99,147 @@ function Forms({innerRef}) {
           <div className="row">
             <div className="col-md-4">
               <div className="contact--info-area">
-                <h3>Get in touch</h3>
-                <p>
-                  Looking for help? Fill the form and start a new adventure.
-                </p>
-                <div className="single-info">
-                  <h5>Headquaters</h5>
-                  <p>
-                    <i className="fal fa-home"></i>
-                    C/ Valencia 359, 4-2
-                    <br /> Barcelona
-                  </p>
-                </div>
-                <div className="single-info">
-                  <h5>Phone</h5>
-                  <p>
-                    <i className="fal fa-phone"></i>
-                    +(34) 695 273 507
-                  </p>
-                </div>
-                <div className="single-info">
-                  <h5>Support</h5>
-                  <p>
-                    <i className="fal fa-envelope"></i>
-                    hola@mixodrink.com
-                  </p>
-                </div>
-                <div className="ab-social">
-                  <h5>Follow Us</h5>
-                  <a className="fac" href="/">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a className="lin" href="/">
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                </div>
+                <h3>{title}</h3>
+                <p>{subtitle}</p>
+                {renderItems(items)}
               </div>
             </div>
             <div className="col-md-8" ref={innerRef}>
               <div className="contact-form">
-                <h4>Let’s Connect</h4>
-                <p>We will help you with anu question anout MIXO, contact us!</p>
-                <form action="#" method="post" className="row">
-                  <div className="col-md-6">
-                    <input type="text" name="f-name" placeholder="First Name" />
-                  </div>
-                  <div className="col-md-6">
-                    <input type="text" name="l-name" placeholder="Last Name" />
-                  </div>
-                  <div className="col-md-6">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <input
-                      type="number"
-                      name="phone"
-                      placeholder="Phone Number"
-                    />
-                  </div>
-                  <div className="col-md-12">
-                    <input type="text" name="subject" placeholder="Subject" />
-                  </div>
-                  <div className="col-md-12">
-                    <textarea
-                      name="message"
-                      placeholder="How can we help?"
-                    ></textarea>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="condition-check">
-                      <input id="terms-conditions" type="checkbox" />
-                      <label htmlFor="terms-conditions">
-                        I agree to the <a href="/">Terms & Conditions</a>
-                      </label>
-                    </div>
-                  </div>
-                  <div className="col-md-6 text-right">
-                    <input type="submit" name="submit" value="Send Message" />
-                  </div>
-                </form>
+                <h4>{form.title}</h4>
+                <p>{form.subtitle}</p>
+                <div>
+                  <Formik
+                    initialValues={initialValues}
+                    validate={validate}
+                    onSubmit={onSubmit}
+                  >
+                    {({
+                      values,
+                      errors,
+                      touched,
+                      handleChange,
+                      handleBlur,
+                      handleSubmit,
+                      isSubmitting,
+                      /* and other goodies */
+                    }) => (
+                      <form onSubmit={handleSubmit}>
+                        <div
+                          className="col-md-12 d-flex"
+                          style={{ gap: "10px" }}
+                        >
+                          <label htmlFor="" className="input-label">
+                            <input
+                              type="text"
+                              name="firstName"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.firstName}
+                              placeholder="First Name"
+                            />
+                            <span>
+                              {errors.firstName &&
+                                touched.firstName &&
+                                errors.firstName}
+                            </span>
+                          </label>
+                          <label htmlFor="" className="input-label">
+                            <input
+                              type="text"
+                              name="lastName"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.lastName}
+                              placeholder="Last Name"
+                            />
+                            <span>
+                              {errors.lastName &&
+                                touched.lastName &&
+                                errors.lastName}
+                            </span>
+                          </label>
+                        </div>
+                        <div
+                          className="col-md-12 d-flex"
+                          style={{ gap: "10px" }}
+                        >
+                          <label htmlFor="" className="input-label">
+                            <input
+                              type="email"
+                              name="email"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.email}
+                              placeholder="Email Address"
+                            />
+                            <span>
+                              {errors.email && touched.email && errors.email}
+                            </span>
+                          </label>
+                          <label htmlFor="" className="input-label">
+                            <input
+                              type="number"
+                              name="phone"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.phone}
+                              placeholder="Phone Number"
+                            />
+                            <span>
+                              {errors.phone && touched.phone && errors.phone}
+                            </span>
+                          </label>
+                        </div>
+                        <div className="col-md-12">
+                          <label htmlFor="" className="input-label">
+                            <input
+                              type="text"
+                              name="subject"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.subject}
+                              placeholder="Subject"
+                            />
+                            <span>
+                              {" "}
+                              {errors.subject &&
+                                touched.subject &&
+                                errors.subject}
+                            </span>
+                          </label>
+                          <label htmlFor="" className="input-label">
+                            <textarea
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.message}
+                              name="message"
+                              placeholder="How can we help?"
+                            ></textarea>
+                            <span>
+                              {errors.message &&
+                                touched.message &&
+                                errors.message}
+                            </span>
+                          </label>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="condition-check">
+                            <input id="terms-conditions" type="checkbox" />
+                            <label htmlFor="terms-conditions">
+                              I agree to the <a href="/">Terms & Conditions</a>
+                            </label>
+                          </div>
+                        </div>
+                        <div className="col-md-12 text-right">
+                          <button type="submit" disabled={isSubmitting}>
+                            Submit
+                          </button>
+                        </div>
+                      </form>
+                    )}
+                  </Formik>
+                </div>
               </div>
             </div>
           </div>

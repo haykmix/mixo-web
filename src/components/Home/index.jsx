@@ -60,11 +60,11 @@ function Home() {
       <GalleryHome />
       <TeamHome text={language} innerRef={teamRef}/>
       <BlogHome text={language} />
-      <Contact innerRef={contactRef}/>
+      <Contact innerRef={contactRef} text={language}/>
       <WhatsappHome text={language} />
       <FaqHome text={language} />
       <Calculator text={language}/>
-      <FooterHome />
+      <FooterHome text={language}/>
       <BackToTop />
     </>
   );

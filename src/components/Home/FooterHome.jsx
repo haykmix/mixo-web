@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo-new-2.png";
 
-function FooterHome({ className }) {
+function FooterHome({ className, text }) {
+  const { menus, info } = text.homeFooter;
   return (
     <>
       <section className={`appie-footer-area ${className || ""}`}>
@@ -36,18 +37,13 @@ function FooterHome({ className }) {
               <div className="footer-navigation">
                 <h4 className="title">Company</h4>
                 <ul>
-                  <li>
-                    <Link to="/about-us">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/about-us">Product</Link>
-                  </li>
-                  <li>
-                    <Link to="/about-us">Software</Link>
-                  </li>
-                  <li>
-                    <Link to="/about-us">Team</Link>
-                  </li>
+                  {menus.company.data.map((item, index) => {
+                    return (
+                      <li>
+                        <Link to="/about-us">{item}</Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -55,12 +51,13 @@ function FooterHome({ className }) {
               <div className="footer-navigation">
                 <h4 className="title">Contact</h4>
                 <ul>
-                  <li>
-                    <Link to="/about-us">Form</Link>
-                  </li>
-                  <li>
-                    <Link to="/about-us">Whatsapp</Link>
-                  </li>
+                  {menus.contact.data.map((item) => {
+                    return (
+                      <li>
+                        <Link to="/about-us">{item}</Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -70,17 +67,17 @@ function FooterHome({ className }) {
                 <ul>
                   <li>
                     <a href="/">
-                      <i className="fal fa-envelope" /> hola@mixodrink.com
+                      <i className="fal fa-envelope" /> {info.email}
                     </a>
                   </li>
                   <li>
                     <a href="/">
-                      <i className="fal fa-phone" /> +(34) 695 273 507
+                      <i className="fal fa-phone" /> {info.phone}
                     </a>
                   </li>
                   <li>
                     <a href="/">
-                      <i className="fal fa-map-marker-alt" /> C/ Valencia 359, 4-2
+                      <i className="fal fa-map-marker-alt" /> {info.street}
                     </a>
                   </li>
                 </ul>

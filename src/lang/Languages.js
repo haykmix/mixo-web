@@ -34,28 +34,28 @@ const en = {
   homeProduct: {
     items: [
       {
-        menu: "Prototype",
-        upTitle: "Mixo protorype",
-        title: "La simplicidad y la eficacia unidas",
-        text: "Nuestros procesos de desarrollo se centran en perfecionar todos los detalles que hacen de Mixo la revolución del servicio de combinados",
+        menu: "Integration",
+        upTitle: "All in one",
+        title: "Simplicity & Effectiveness United",
+        text: "Mixo integrates all the necessary services for beverage dispensing 🍹 fully integrated in a modular way",
       },
       {
-        menu: "Custom",
-        upTitle: "Custom Two",
-        title: "Let the Conversation flow",
-        text: "Nuestros procesos de desarrollo se centran en perfecionar todos los detalles que hacen de Mixo la revolución del servicio de combinados",
+        menu: "Screen",
+        upTitle: "Interaction",
+        title: "The details ✨ are in the experience",
+        text: "An infinite display that attracts the attention of anyone who sees it combined with attractive functionality",
       },
       {
-        menu: "Software",
-        upTitle: "Custom Three",
-        title: "Let the Conversation flow",
-        text: "Nuestros procesos de desarrollo se centran en perfecionar todos los detalles que hacen de Mixo la revolución del servicio de combinados",
+        menu: "Service",
+        upTitle: "Beverage Service",
+        title: "Speed & Reliability",
+        text: "Time matters and more when you’re waiting for your favorite artist, so Mixo serves drinks like lightning ⚡ in 12 seconds",
       },
       {
-        menu: "Marketing",
-        upTitle: "Custom Four",
-        title: "Let the Conversation flow",
-        text: "Nuestros procesos de desarrollo se centran en perfecionar todos los detalles que hacen de Mixo la revolución del servicio de combinados",
+        menu: "Payment",
+        upTitle: "Methods of payment",
+        title: "Simplified payment",
+        text: "Mixo offers payment by card or nfc allowing to integrate with the business model of your company",
       },
     ],
   },
@@ -222,7 +222,7 @@ const en = {
       },
       {
         date: "3 octubre, 2022",
-        publisher: "EcosistemStartup",
+        publisher: "El Referente",
         title:
           "MIXO closes a €500,000 round and aims to grow in the Spanish market",
         text: [
@@ -258,6 +258,25 @@ const en = {
       },
     ],
   },
+  homeContact: {
+    title: "Get in touch",
+    subtitle: "Looking for help? Fill the form and start a new adventure.",
+    items: [
+      { title: "Headquaters", data: "C/ Valencia 359, 4-2 Barcelona" },
+      { title: "Phone", data: "+(34) 695 273 507" },
+      { title: "Support", data: "hola@mixodrink.com" },
+      { title: "Follow Us" },
+    ],
+    form: {
+      title: "Let’s Connect",
+      subtitle: "We will help you with anu question anout MIXO, contact us!",
+      errors: [
+        "*This field is required",
+        "*The email is not valid",
+        "*The phone is not valid",
+      ],
+    },
+  },
   homeCta: {
     title: "Let's talk! Write us on Whatsapp",
     subtitle: "Click here to start chatting",
@@ -271,6 +290,20 @@ const en = {
     inputClients: "Average number of customers in a day",
     inputDays: "Number of days open per week",
     saving: "Savings",
+  },
+  homeFooter: {
+    menus: {
+      company: {
+        title: "Links",
+        data: ["Home", "Product", "Software", "Team", "Contact"],
+      },
+      contact: { title: "Contact", data: ["Form", "Whtasapp"] },
+    },
+    info: {
+      street: "C/ Valencia 359, 4-2 Barcelona",
+      phone: "+(34) 695 273 507",
+      email: "hola@mixodrink.com",
+    },
   },
 };
 
@@ -504,7 +537,7 @@ const es = {
       },
       {
         date: "3 October, 2022",
-        publisher: "EcosistemStartup",
+        publisher: "El Referente",
         title:
           "MIXO cierra una ronda de 500.000€ y apunta a crecer en el mercado español",
         text: [
@@ -540,6 +573,26 @@ const es = {
       },
     ],
   },
+  homeContact: {
+    title: "Ponte en contacto",
+    subtittle:
+      "¿Busca ayuda? Llene el formulario y comience una nueva aventura.",
+    items: [
+      { title: "Headquaters", data: "C/ Valencia 359, 4-2 Barcelona" },
+      { title: "Teléfono", data: "+(34) 695 273 507" },
+      { title: "Soporte", data: "hola@mixodrink.com" },
+      { title: "Síguenos" },
+    ],
+    form: {
+      title: "Let’s Connect",
+      subtitle: "We will help you with anu question anout MIXO, contact us!",
+      errors: [
+        "*Este campo es obligatorio",
+        "*El email no es valido",
+        "*El teléfono no es valido",
+      ],
+    },
+  },
   homeCta: {
     title: "¡Hablemos! Escribenos por Whatsapp",
     subtitle: "Click aquí para empezar a chatear",
@@ -553,6 +606,20 @@ const es = {
     inputClients: "Número promedio de clientes en un día",
     inputDays: "Número de días abiertos por semana",
     saving: "Ahorro",
+  },
+  homeFooter: {
+    menus: {
+      company: {
+        title: "Links",
+        data: ["Inicio", "Producto", "Software", "Equipo", "Contacto"],
+      },
+      contact: { title: "Contacto", data: ["Formulario", "Whtasapp"] },
+    },
+    info: {
+      street: "C/ Valencia 359, 4-2 Barcelona",
+      phone: "+(34) 695 273 507",
+      email: "hola@mixodrink.com",
+    },
   },
 };
 

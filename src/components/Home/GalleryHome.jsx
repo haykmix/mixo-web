@@ -3,10 +3,11 @@ import styled from "styled-components";
 import Modal from "react-modal";
 
 import videoOne from "../../assets/video/video-voice-gallery.mp4";
-import videotwo from "../../assets/video/video-voice-gallery.mp4";
-import videoThree from "../../assets/video/video-voice-gallery.mp4";
+import videoTwo from "../../assets/video/video-render.mp4";
+import videoThree from "../../assets/video/video-cover.mp4";
 import imageVideoOne from "../../assets/images/video/video-cover.jpg";
 import imageVideoTwo from "../../assets/images/video/image-render.jpg";
+import imageVideoThree from "../../assets/images/video/party-cover.jpg";
 import playButton from "../../assets/images/video/boton-de-play.png";
 
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -49,7 +50,6 @@ function GalleryHome({ className, text }) {
           <div className="gallery_item_container" ref={ref}>
             <ComponentSpan width={spanWidth}>
               <h1>Video presentación</h1>
-              <h4>Conoce la maquina</h4>
               <button onClick={() => handleToggleVideo("v0")}>
                 <img src={playButton} alt="" />
               </button>
@@ -70,7 +70,7 @@ function GalleryHome({ className, text }) {
               loop={true}
               className="video-modal"
             >
-              <source src={videoThree} />
+              <source src={videoOne} />
             </video>
             <button
               onClick={() => handleToggleVideo("v0")}
@@ -83,7 +83,6 @@ function GalleryHome({ className, text }) {
           <div className="gallery_item_container">
             <ComponentSpan width={spanWidth}>
               <h1>Video render</h1>
-              <h4>Render dinámico</h4>
               <button onClick={() => handleToggleVideo("v1")}>
                 <img src={playButton} alt="" />
               </button>
@@ -103,7 +102,7 @@ function GalleryHome({ className, text }) {
               loop={true}
               className="video-modal"
             >
-              <source src={videoThree} />
+              <source src={videoTwo} />
             </video>
             <button
               onClick={() => handleToggleVideo("v1")}
@@ -116,13 +115,12 @@ function GalleryHome({ className, text }) {
         <div className="gallery_Section_right">
           <div className="gallery_item_container">
             <ComponentSpan width={spanWidth}>
-              <h1>Video</h1>
-              <h4>This video with content</h4>
+              <h1>Mixo en Pacha</h1>
               <button onClick={() => handleToggleVideo("v2")}>
                 <img src={playButton} alt="" />
               </button>
             </ComponentSpan>
-            <img src={imageVideoOne} alt="" />
+            <img src={imageVideoThree} alt="" />
           </div>
           <Modal
             isOpen={toggleVideo.v2}

@@ -8,10 +8,10 @@ import Forms from "./Forms";
 import HomeHeader from "../Home/HomeHeader";
 import { LanguageContext } from "../../context/LanguageContext";
 
-function Contact({innerRef}) {
+function Contact({innerRef, text}) {
   return (
     <>
-      <Forms innerRef={innerRef}/>
+      <Forms innerRef={innerRef} text={text}/>
     </>
   );
 }
