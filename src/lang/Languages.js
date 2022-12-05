@@ -83,6 +83,10 @@ const en = {
       },
     ],
   },
+  homeGallery: {
+    title: "Galleria de videos",
+    subtitle: "Conoce más sobre los servicios de Mixo",
+  },
   homeTeam: {
     title: "Meet our team members",
     subtitle: "The team that makes it possible  ",
@@ -262,19 +266,26 @@ const en = {
     title: "Get in touch",
     subtitle: "Looking for help? Fill the form and start a new adventure.",
     items: [
-      { title: "Headquaters", data: "C/ Valencia 359, 4-2 Barcelona" },
+      { title: "Headquarters", data: "C/ Valencia 359, 4-2 Barcelona" },
       { title: "Phone", data: "+(34) 695 273 507" },
       { title: "Support", data: "hola@mixodrink.com" },
       { title: "Follow Us" },
     ],
     form: {
       title: "Let’s Connect",
-      subtitle: "We will help you with anu question anout MIXO, contact us!",
+      subtitle: "We will help you with any question about MIXO, contact us!",
       errors: [
         "*This field is required",
         "*The email is not valid",
         "*The phone is not valid",
       ],
+      inputName: "First Name",
+      inputLastname: "Last Name",
+      inputEmail: "Email Address",
+      inputPhone: "Phone Number",
+      inputSubject: "Subject",
+      inputMessage: "How can we help you?",
+      checkbox: ["I agree to the", "Terms & Conditions"],
     },
   },
   homeCta: {
@@ -318,7 +329,7 @@ const es = {
     buttonInfo: "Conoce más",
   },
   homeService: {
-    title: "Servicio de beibida de forma autotamitca",
+    title: "Servicio de beibida de forma automatica",
     subtitle:
       "Controla tu facturación, ahorra costes y ofrece a tus clientes un servicio rápido y seguro",
     items: [
@@ -391,6 +402,10 @@ const es = {
         subtitle: "Mucker plastered bugger all mate morish are.",
       },
     ],
+  },
+  homeGallery: {
+    title: "Galleria de videos",
+    subtitle: "Conoce más sobre los servicios de Mixo",
   },
   homeTeam: {
     title: "Conozca a los miembros del equipo",
@@ -575,22 +590,28 @@ const es = {
   },
   homeContact: {
     title: "Ponte en contacto",
-    subtittle:
-      "¿Busca ayuda? Llene el formulario y comience una nueva aventura.",
+    subtitle: "¿Busca ayuda? Rellena el formulario y conoce Mixo.",
     items: [
-      { title: "Headquaters", data: "C/ Valencia 359, 4-2 Barcelona" },
+      { title: "Headquarters", data: "C/ Valencia 359, 4-2 Barcelona" },
       { title: "Teléfono", data: "+(34) 695 273 507" },
       { title: "Soporte", data: "hola@mixodrink.com" },
       { title: "Síguenos" },
     ],
     form: {
-      title: "Let’s Connect",
-      subtitle: "We will help you with anu question anout MIXO, contact us!",
+      title: "Contactanos",
+      subtitle: "Te ayudaamos con cualquier pregunta sobre MIXO, contáctanos!",
       errors: [
         "*Este campo es obligatorio",
         "*El email no es valido",
         "*El teléfono no es valido",
       ],
+      inputName: "Nombre",
+      inputLastname: "Apellidos",
+      inputEmail: "Correo electrónico",
+      inputPhone: "Número de teléfono",
+      inputSubject: "Asunto",
+      inputMessage: "¿Cómo podemos ayudarte?",
+      checkbox: ["Accepto los", "Terminos y Condiciones"],
     },
   },
   homeCta: {

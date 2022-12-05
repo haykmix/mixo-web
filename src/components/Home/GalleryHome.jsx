@@ -12,11 +12,10 @@ import playButton from "../../assets/images/video/boton-de-play.png";
 
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import useWindowDimensions from '../../Hooks/useWindowDimensions';
 
 function GalleryHome({ className, text }) {
+  const { title, subtitle } = text.homeGallery;
   const ref = useRef(null);
-  const { height, width } = useWindowDimensions();
 
   const [spanWidth, setSpanWidth] = useState(0);
   const [toggleVideo, setToggleVideo] = useState({
@@ -45,106 +44,105 @@ function GalleryHome({ className, text }) {
 
   return (
     <>
-      <section className="gallery_container">
-        <div className="gallery_Section_left">
-          <div className="gallery_item_container" ref={ref}>
-            <ComponentSpan width={spanWidth}>
-              <h1>Video presentación</h1>
-              <button onClick={() => handleToggleVideo("v0")}>
-                <img src={playButton} alt="" />
-              </button>
-            </ComponentSpan>
-            <img src={imageVideoOne} alt="" />
-          </div>
-
-          <Modal
-            isOpen={toggleVideo.v0}
-            onRequestClose={() => handleToggleVideo("v0")}
-            contentLabel="My dialog"
-            className="my-modal"
-            overlayClassName="my-overlay"
-            closeTimeoutMS={500}
-          >
-            <video
-              autoPlay={true}
-              loop={true}
-              className="video-modal"
-            >
-              <source src={videoOne} />
-            </video>
-            <button
-              onClick={() => handleToggleVideo("v0")}
-              className="close-button"
-            >
-              <FontAwesomeIcon icon={faXmark} className="close-icon" />
-            </button>
-          </Modal>
-
-          <div className="gallery_item_container">
-            <ComponentSpan width={spanWidth}>
-              <h1>Video render</h1>
-              <button onClick={() => handleToggleVideo("v1")}>
-                <img src={playButton} alt="" />
-              </button>
-            </ComponentSpan>
-            <img src={imageVideoTwo} alt="" />
-          </div>
-          <Modal
-            isOpen={toggleVideo.v1}
-            onRequestClose={() => handleToggleVideo("v1")}
-            contentLabel="My dialog"
-            className="my-modal"
-            overlayClassName="my-overlay"
-            closeTimeoutMS={500}
-          >
-            <video
-              autoPlay={true}
-              loop={true}
-              className="video-modal"
-            >
-              <source src={videoTwo} />
-            </video>
-            <button
-              onClick={() => handleToggleVideo("v1")}
-              className="close-button"
-            >
-              <FontAwesomeIcon icon={faXmark} className="close-icon" />
-            </button>
-          </Modal>
+      <section>
+        <div className="appie-section-title text-center pb-40 pt-80">
+          <h3 className="appie-title">{title}</h3>
+          <p>{subtitle}</p>
         </div>
-        <div className="gallery_Section_right">
-          <div className="gallery_item_container">
-            <ComponentSpan width={spanWidth}>
-              <h1>Mixo en Pacha</h1>
-              <button onClick={() => handleToggleVideo("v2")}>
-                <img src={playButton} alt="" />
+        <section className="gallery_container">
+          <div className="gallery_Section_left">
+            <div className="gallery_item_container" ref={ref}>
+              <ComponentSpan width={spanWidth}>
+                <h1>Video presentación</h1>
+                <button onClick={() => handleToggleVideo("v0")}>
+                  <img src={playButton} alt="" />
+                </button>
+              </ComponentSpan>
+              <img src={imageVideoOne} alt="" />
+            </div>
+
+            <Modal
+              isOpen={toggleVideo.v0}
+              onRequestClose={() => handleToggleVideo("v0")}
+              contentLabel="My dialog"
+              className="my-modal"
+              overlayClassName="my-overlay"
+              closeTimeoutMS={100}
+            >
+              <video autoPlay={true} loop={true} className="video-modal">
+                <source src={videoOne} />
+              </video>
+              <button
+                onClick={() => handleToggleVideo("v0")}
+                className="close-button"
+              >
+                <FontAwesomeIcon icon={faXmark} className="close-icon" />
               </button>
-            </ComponentSpan>
-            <img src={imageVideoThree} alt="" />
+            </Modal>
+
+            <div className="gallery_item_container">
+              <ComponentSpan width={spanWidth}>
+                <h1>Video render</h1>
+                <button onClick={() => handleToggleVideo("v1")}>
+                  <img src={playButton} alt="" />
+                </button>
+              </ComponentSpan>
+              <img src={imageVideoTwo} alt="" />
+            </div>
+            <Modal
+              isOpen={toggleVideo.v1}
+              onRequestClose={() => handleToggleVideo("v1")}
+              contentLabel="My dialog"
+              className="my-modal my-modal-two"
+              overlayClassName="my-overlay"
+              closeTimeoutMS={100}
+            >
+              <video
+                autoPlay={true}
+                loop={true}
+                className="video-modal"
+                style={{ width: "560px" }}
+              >
+                <source src={videoTwo} />
+              </video>
+              <button
+                onClick={() => handleToggleVideo("v1")}
+                className="close-button"
+              >
+                <FontAwesomeIcon icon={faXmark} className="close-icon" />
+              </button>
+            </Modal>
           </div>
-          <Modal
-            isOpen={toggleVideo.v2}
-            onRequestClose={() => handleToggleVideo("v2")}
-            contentLabel="My dialog"
-            className="my-modal"
-            overlayClassName="my-overlay"
-            closeTimeoutMS={500}
-          >
-            <video
-              autoPlay={true}
-              loop={true}
-              className="video-modal"
+          <div className="gallery_Section_right">
+            <div className="gallery_item_container">
+              <ComponentSpan width={spanWidth}>
+                <h1>Mixo en Pacha</h1>
+                <button onClick={() => handleToggleVideo("v2")}>
+                  <img src={playButton} alt="" />
+                </button>
+              </ComponentSpan>
+              <img src={imageVideoThree} alt="" />
+            </div>
+            <Modal
+              isOpen={toggleVideo.v2}
+              onRequestClose={() => handleToggleVideo("v2")}
+              contentLabel="My dialog"
+              className="my-modal"
+              overlayClassName="my-overlay"
+              closeTimeoutMS={100}
             >
-              <source src={videoThree} />
-            </video>
-            <button
-              onClick={() => handleToggleVideo("v2")}
-              className="close-button"
-            >
-              <FontAwesomeIcon icon={faXmark} className="close-icon" />
-            </button>
-          </Modal>
-        </div>
+              <video autoPlay={true} loop={true} className="video-modal">
+                <source src={videoThree} />
+              </video>
+              <button
+                onClick={() => handleToggleVideo("v2")}
+                className="close-button"
+              >
+                <FontAwesomeIcon icon={faXmark} className="close-icon" />
+              </button>
+            </Modal>
+          </div>
+        </section>
       </section>
     </>
   );

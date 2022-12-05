@@ -20,12 +20,18 @@ function FooterHome({ className, text }) {
                 <div className="social mt-30">
                   <ul>
                     <li>
-                      <a href="/">
+                      <a
+                        href="https://www.instagram.com/mixo.drink/"
+                        target="blank"
+                      >
                         <i className="fab fa-instagram" />
                       </a>
                     </li>
                     <li>
-                      <a href="/">
+                      <a
+                        href="https://es.linkedin.com/company/mixodrink"
+                        target="blank"
+                      >
                         <i className="fab fa-linkedin-in" />
                       </a>
                     </li>
@@ -39,7 +45,7 @@ function FooterHome({ className, text }) {
                 <ul>
                   {menus.company.data.map((item, index) => {
                     return (
-                      <li>
+                      <li key={index}>
                         <Link to="/about-us">{item}</Link>
                       </li>
                     );
@@ -51,9 +57,9 @@ function FooterHome({ className, text }) {
               <div className="footer-navigation">
                 <h4 className="title">Contact</h4>
                 <ul>
-                  {menus.contact.data.map((item) => {
+                  {menus.contact.data.map((item, index) => {
                     return (
-                      <li>
+                      <li key={index}>
                         <Link to="/about-us">{item}</Link>
                       </li>
                     );

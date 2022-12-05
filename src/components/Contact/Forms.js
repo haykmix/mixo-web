@@ -1,5 +1,7 @@
-import { Formik } from "formik";
-import React from "react";
+import { Field, Formik } from "formik";
+import React, { useState } from "react";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 function Forms({ innerRef, text }) {
   const { title, subtitle, items, form } = text.homeContact;
@@ -15,20 +17,29 @@ function Forms({ innerRef, text }) {
     },
     {
       icon: [
-        <a className="fac" href="/">
+        <a
+          className="fac"
+          href="https://www.instagram.com/mixo.drink/"
+          target="blank"
+        >
           <i className="fab fa-instagram"></i>
         </a>,
-        <a className="lin" href="/">
+        <a
+          className="lin"
+          href="https://es.linkedin.com/company/mixodrink"
+          target="blank"
+        >
           <i className="fab fa-linkedin-in"></i>
         </a>,
       ],
     },
   ];
+
   const renderItems = (items) => {
     return items.map((item, index) => {
       if (item.data) {
         return (
-          <div className="single-info">
+          <div className="single-info" key={index}>
             <h5>{item.title}</h5>
             <p>
               {!Array.isArray(data[index].icon) ? data[index].icon : null}
@@ -38,7 +49,7 @@ function Forms({ innerRef, text }) {
         );
       } else {
         return (
-          <div className="ab-social">
+          <div className="ab-social" key={index}>
             <h5>{item.title}</h5>
             <p>
               {Array.isArray(data[index].icon)
@@ -60,6 +71,7 @@ function Forms({ innerRef, text }) {
     phone: "",
     subject: "",
     message: "",
+    checkbox: "",
   };
 
   const validate = (values) => {
@@ -69,18 +81,21 @@ function Forms({ innerRef, text }) {
     if (!values.lastName) errors.lastName = form.errors[0];
     if (!values.subject) errors.subject = form.errors[0];
     if (!values.message) errors.message = form.errors[0];
+    if (!values.checkbox) errors.checkbox = form.errors[0];
 
     if (!values.email) {
-      errors.email = "Required";
+      errors.email = form.errors[0];
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
       errors.email = form.errors[1];
     }
 
     if (!values.phone) {
-      errors.phone = "Required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.phone)) {
+      errors.phone = form.errors[0];
+    } else if (!/^[679]{1}[0-9]{8}$/.test(values.phone.replace(/\s/g, ''))) {
       errors.phone = form.errors[2];
     }
+
+    if (!values.checkbox) errors.checkbox = form.errors[0];
 
     return errors;
   };
@@ -122,7 +137,6 @@ function Forms({ innerRef, text }) {
                       handleBlur,
                       handleSubmit,
                       isSubmitting,
-                      /* and other goodies */
                     }) => (
                       <form onSubmit={handleSubmit}>
                         <div
@@ -136,7 +150,7 @@ function Forms({ innerRef, text }) {
                               onChange={handleChange}
                               onBlur={handleBlur}
                               value={values.firstName}
-                              placeholder="First Name"
+                              placeholder={form.inputName}
                             />
                             <span>
                               {errors.firstName &&
@@ -151,7 +165,7 @@ function Forms({ innerRef, text }) {
                               onChange={handleChange}
                               onBlur={handleBlur}
                               value={values.lastName}
-                              placeholder="Last Name"
+                              placeholder={form.inputLastname}
                             />
                             <span>
                               {errors.lastName &&
@@ -171,20 +185,20 @@ function Forms({ innerRef, text }) {
                               onChange={handleChange}
                               onBlur={handleBlur}
                               value={values.email}
-                              placeholder="Email Address"
+                              placeholder={form.inputEmail}
                             />
                             <span>
                               {errors.email && touched.email && errors.email}
                             </span>
                           </label>
                           <label htmlFor="" className="input-label">
-                            <input
-                              type="number"
+                          <input
+                              type="tel"
                               name="phone"
                               onChange={handleChange}
                               onBlur={handleBlur}
                               value={values.phone}
-                              placeholder="Phone Number"
+                              placeholder={form.inputPhone}
                             />
                             <span>
                               {errors.phone && touched.phone && errors.phone}
@@ -199,7 +213,7 @@ function Forms({ innerRef, text }) {
                               onChange={handleChange}
                               onBlur={handleBlur}
                               value={values.subject}
-                              placeholder="Subject"
+                              placeholder={form.inputSubject}
                             />
                             <span>
                               {" "}
@@ -214,7 +228,7 @@ function Forms({ innerRef, text }) {
                               onBlur={handleBlur}
                               value={values.message}
                               name="message"
-                              placeholder="How can we help?"
+                              placeholder={form.inputMessage}
                             ></textarea>
                             <span>
                               {errors.message &&
@@ -225,9 +239,23 @@ function Forms({ innerRef, text }) {
                         </div>
                         <div className="col-md-6">
                           <div className="condition-check">
-                            <input id="terms-conditions" type="checkbox" />
-                            <label htmlFor="terms-conditions">
-                              I agree to the <a href="/">Terms & Conditions</a>
+                            <label
+                              htmlFor="terms-conditions"
+                              className="input-label"
+                            >
+                              <Field
+                                type="checkbox"
+                                name="checkbox"
+                                value="checked"
+                                id="checkbox-terms"
+                              />
+                              {form.checkbox[0]}{" "}
+                              <a href="/">{form.checkbox[1]}</a>
+                              <span>
+                                {errors.checkbox &&
+                                  touched.checkbox &&
+                                  errors.checkbox}
+                              </span>
                             </label>
                           </div>
                         </div>

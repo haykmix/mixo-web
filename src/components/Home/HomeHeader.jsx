@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/images/logo-new-2.png";
 import { LanguageContext } from "../../context/LanguageContext";

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
 import useToggle from '../../Hooks/useToggle';
 import BackToTop from '../BackToTop';
-import FooterHomeOne from '../Home/FooterHome';
+import FooterHome from '../Home/FooterHome';
 import HomeHeader from '../Home/HomeHeader';
 import Drawer from '../Mobile/Drawer';
 import Blog from './Blog';
@@ -31,8 +31,7 @@ function SingleNews() {
                     </div>
                 </div>
             </section>
-            <FooterHomeOne />
-            <BackToTop />
+            <FooterHome text={language}/>
         </>
     );
 }

@@ -27,7 +27,7 @@ function DashboardHome({ className, text }) {
   };
   return (
     <section
-      className={`appie-traffic-area pt-140 pb-180 mb-65 mt-65 ${
+      className={`appie-traffic-area pt-140 pb-100 mb-45 mt-65 ${
         className || ""
       }`}
     >

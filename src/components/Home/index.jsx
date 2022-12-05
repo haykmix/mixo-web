@@ -15,8 +15,8 @@ import DashboardHome from "./DashboardHome";
 
 import { LanguageContext } from "../../context/LanguageContext";
 import Calculator from "../Calculator/Calculator";
-import GalleryHome from './GalleryHome';
-import Contact from '../Contact/index';
+import GalleryHome from "./GalleryHome";
+import Contact from "../Contact/index";
 
 function Home() {
   const [drawer, drawerAction] = useToggle(false);
@@ -52,20 +52,23 @@ function Home() {
         teamRef={teamRef}
         contactRef={contactRef}
       />
-      {/* <HomeVideo /> */}
-      <HeroHome text={language} innerRef={homeRef} featureRef={featureRef} contactRef={contactRef}/>
+      <HeroHome
+        text={language}
+        innerRef={homeRef}
+        featureRef={featureRef}
+        contactRef={contactRef}
+      />
       <ServicesHome text={language} innerRef={serviceRef} />
-      <FeaturesHome text={language} innerRef={featureRef}/>
+      <FeaturesHome text={language} innerRef={featureRef} />
       <DashboardHome text={language} />
-      <GalleryHome />
-      <TeamHome text={language} innerRef={teamRef}/>
+      <GalleryHome text={language} />
+      <TeamHome text={language} innerRef={teamRef} />
       <BlogHome text={language} />
-      <Contact innerRef={contactRef} text={language}/>
+      <Contact innerRef={contactRef} text={language} />
       <WhatsappHome text={language} />
       <FaqHome text={language} />
-      <Calculator text={language}/>
-      <FooterHome text={language}/>
-      <BackToTop />
+      <Calculator text={language} />
+      <FooterHome text={language} />
     </>
   );
 }

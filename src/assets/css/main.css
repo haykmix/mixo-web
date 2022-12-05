@@ -2290,7 +2290,7 @@ p {
 ===========================*/
 .appie-service-area {
   position: relative;
-  background-color: #f8f8f8;
+  background-color: #f7f6fa;
 }
 .appie-service-area.appie-service-3-area {
   background: none;
@@ -6798,6 +6798,7 @@ blockquote cite {
 
 .contact-form input[type="text"],
 .contact-form input[type="number"],
+.contact-form input[type="tel"],
 .contact-form textarea,
 .contact-form input[type="email"] {
   width: 100%;
@@ -6883,27 +6884,6 @@ blockquote cite {
   box-shadow: 0px 20px 30px 0px rgba(26, 8, 119, 0.24);
 }
 
-.condition-check {
-  position: relative;
-  margin: 10px 0 0;
-}
-
-.condition-check input[type="checkbox"] {
-  display: none;
-}
-
-.condition-check label {
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0;
-  font-weight: 400;
-  padding-left: 31px;
-  position: relative;
-  cursor: pointer;
-  color: #686875;
-  margin: 0 0 0;
-}
-
 .condition-check label a {
   color: #2b70fa;
 }
@@ -6912,34 +6892,8 @@ blockquote cite {
   color: #686875;
 }
 
-.condition-check label:before {
-  background: transparent;
-  content: "";
-  height: 16px;
-  left: 0;
-  position: absolute;
-  border-radius: 3px;
-  top: 3px;
-  width: 16px;
-  border: 2px solid #ababb1;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.condition-check input:checked + label::after {
-  background: transparent;
-  bottom: 0;
-  font-family: "Font Awesome 5 Pro";
-  content: "\f00c";
-  color: #2b70fa;
-  font-size: 10px;
-  left: 3px;
-  position: absolute;
-  top: -1px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+#checkbox-terms {
+  margin-right: 10px;
 }
 
 .ab-social {
@@ -7947,7 +7901,7 @@ blockquote cite {
   gap: 20px;
   align-items: center;
   width: 100%;
-  padding: 0px 30px 200px 30px;
+  padding: 60px 30px 200px 30px;
 }
 
 .gallery_Section_left {
@@ -8026,12 +7980,12 @@ blockquote cite {
   transform: translate(-50%, -50%);
   border-radius: 4px;
   outline: none;
-  padding: 20px;
   z-index: 20;
   width: 700px;
   height: 500px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .my-modal .close-button {
@@ -8067,10 +8021,6 @@ blockquote cite {
 }
 
 @media only screen and (min-width: 450px) and (max-width: 770px) {
-  .my-modal {
-    width: 700px;
-  }
-
   .my-modal .close-button .close-icon {
     color: #fff;
     width: 30px;

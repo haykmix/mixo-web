@@ -16,6 +16,7 @@ function Routes() {
       setLoading(false);
     }, 250);
   });
+  
   return (
     <>
       <div className={`appie-visible ${loading === false ? "active" : ""}`}>
