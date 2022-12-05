@@ -61,31 +61,31 @@ const en = {
   },
   homeDashboard: {
     uptitle: "Dashboard",
-    title: "Dashboard para la gestion centralizada",
-    subtitle:
-      "Gestiona la facturacíon, disponibilidad y mantenimiento de forma rápida y senzilla",
+    title: "Dashboard for centralized management",
+    subtitle: "Manage billing, availability and maintenance quickly and simply",
     items: [
       {
-        title: "Facturación",
-        subtitle: "Mucker plastered bugger all mate morish are.",
+        title: "Accounting",
+        subtitle: "View billing data in a simple way.",
       },
       {
-        title: "Estadisticas",
-        subtitle: "Mucker plastered bugger all mate morish are.",
+        title: "Statistics",
+        subtitle:
+          "Find improvements in your service and manage according to your metrics.",
       },
       {
-        title: "Mantenimiento",
-        subtitle: "Mucker plastered bugger all mate morish are.",
+        title: "Maintenance",
+        subtitle: "Control your Mixo machines centrally",
       },
       {
-        title: "Customización",
-        subtitle: "Mucker plastered bugger all mate morish are.",
+        title: "Customization",
+        subtitle: "We adapt Mixo Dashboard to your business. ",
       },
     ],
   },
   homeGallery: {
-    title: "Galleria de videos",
-    subtitle: "Conoce más sobre los servicios de Mixo",
+    title: "Gallery of videos",
+    subtitle: "Learn more about Mixo services",
   },
   homeTeam: {
     title: "Meet our team members",
@@ -268,7 +268,7 @@ const en = {
     items: [
       { title: "Headquarters", data: "C/ Valencia 359, 4-2 Barcelona" },
       { title: "Phone", data: "+(34) 695 273 507" },
-      { title: "Support", data: "hola@mixodrink.com" },
+      { title: "Support", data: "clientes@mixodrink.com" },
       { title: "Follow Us" },
     ],
     form: {
@@ -329,7 +329,7 @@ const es = {
     buttonInfo: "Conoce más",
   },
   homeService: {
-    title: "Servicio de beibida de forma automatica",
+    title: "Servicio de bebida de forma automática",
     subtitle:
       "Controla tu facturación, ahorra costes y ofrece a tus clientes un servicio rápido y seguro",
     items: [
@@ -357,49 +357,50 @@ const es = {
         menu: "Integración",
         upTitle: "Todo en uno",
         title: "La simplicidad & la eficacia unidas",
-        text: "Mixo integra todos los servicio necesarios para la dispensación de bebidas 🍹 totalmente integrado de forma modular",
+        text: "Mixo integra todos los servicios necesarios para la dispensación de bebidas 🍹 totalmente integrado de forma modular",
       },
       {
         menu: "Pantalla",
         upTitle: "Interacción",
-        title: "Los detalles ✨ estan en la experiencia",
+        title: "Los detalles ✨ están en la experiencia",
         text: "Una pantalla infinita que atrae la atención de cualquiera que la vea combinada con una funcionalidad atractiva",
       },
       {
         menu: "Servicio",
         upTitle: "Servicio de Bebida",
         title: "Velocidad & fiabilidad",
-        text: "El tiempo importa y más cuando estas esperando a tu artista favorito, por eso Mixo sirve copas como un rayo ⚡ en 12 segundos",
+        text: "El tiempo importa y más cuando estás esperando a tu artista favorito, por eso Mixo sirve copas como un rayo ⚡ en 12 segundos",
       },
       {
         menu: "Pago",
-        upTitle: "Metodos de pago",
+        upTitle: "Métodos de pago",
         title: "Facilidad de pago",
-        text: "Mixo ofrece pago por tarjeta o por nfc permitiendo así integrarse con el modelo de negocio de tu empresa",
+        text: "Mixo ofrece pago por tarjeta o por NFC permitiendo así integrarse con el modelo de negocio de tu empresa",
       },
     ],
   },
   homeDashboard: {
     uptitle: "Dashboard",
-    title: "Dashboard para la gestion centralizada",
+    title: "Dashboard para la gestión centralizada",
     subtitle:
-      "Gestiona la facturacíon, disponibilidad y mantenimiento de forma rápida y senzilla",
+      "Gestiona la facturación, disponibilidad y mantenimiento de forma rápida y sencilla",
     items: [
       {
         title: "Facturación",
-        subtitle: "Mucker plastered bugger all mate morish are.",
+        subtitle: "Visualiza datos de facturación de una forma sencilla.",
       },
       {
         title: "Estadisticas",
-        subtitle: "Mucker plastered bugger all mate morish are.",
+        subtitle:
+          "Encuentra mejoras en tu servicio y gestión segun tus metricas.",
       },
       {
         title: "Mantenimiento",
-        subtitle: "Mucker plastered bugger all mate morish are.",
+        subtitle: "Controla tus máquinas Mixo de forma centraliza",
       },
       {
         title: "Customización",
-        subtitle: "Mucker plastered bugger all mate morish are.",
+        subtitle: "Adaptamos Mixo Dashboard a tu negocio. ",
       },
     ],
   },
@@ -412,7 +413,7 @@ const es = {
     subtitle: "El equipo que lo hace todo posible",
   },
   homeFaq: {
-    title: "Preguntas frequentes",
+    title: "Preguntas frecuentes",
     subtitle: "Podrás encontrar la información más buscada de forma rápida",
     items: [
       {
@@ -425,7 +426,7 @@ const es = {
       },
       {
         q: "¿Qué sistemas de pago ofrece MIXO?",
-        a: "Tarjeta de crédito y NFC ",
+        a: "Tarjeta de crédito y NFC",
       },
       {
         q: "¿Cuánto tiempo tarda MIXO en servir un combinado?",
@@ -443,7 +444,7 @@ const es = {
   },
   homeNews: {
     title: "Noticias recientes",
-    subtitle: "Lee las últimas noticas de Mixo",
+    subtitle: "Lee las últimas noticias de Mixo",
     button: "Leer artículo",
     posts: [
       {
@@ -452,66 +453,66 @@ const es = {
         title: "Mixo, la máquina española que pone cubatas en 12 segundos",
         text: [
           `Del furor de las cafeteras con cápsulas impulsado por Nespresso, surgen ahora las cocteleras automáticas,
-            máquinas diseñadas para crear bebidas refrescantes cuando cae la noche. Muy pronto podrían verse en las discotecas de
-            España y conseguir en pocos segundos un gintonic como el que saca una botella de Coca-Cola o un café en la oficina
-            de una máquina de vending: así es Mixo.`,
+          máquinas diseñadas para crear bebidas refrescantes cuando cae la noche. Muy pronto podrían verse en las discotecas de
+          España y conseguir en pocos segundos un gin-tonic como el que saca una botella de Coca-Cola o un café en la oficina
+          de una máquina de vending: así es Mixo.`,
 
           `Elegir, pagar y disfrutar de tu copa, los creadores de Mixo quieren revolucionar las discotecas, festivales de música e,
-            incluso, cruceros de todo el mundo desde su sede en Barcelona. Para ello han desarrollado en los últimos dos años
-            "la primera máquina self service que fusiona bebidas alcohólicas y gaseosas para crear combinados perfectos", describe
-            Martin Cohen, CEO y fundador de la compañía.`,
+          incluso, cruceros de todo el mundo desde su sede en Barcelona. Para ello han desarrollado en los últimos dos años
+          "la primera máquina self-service que fusiona bebidas alcohólicas y gaseosas para crear combinados perfectos", describe
+          Martin Cohen, CEO y fundador de la compañía.`,
 
           `Cohen explica a EL ESPAÑOL cómo surgió la idea: "En 2019, vine a Barcelona y, luego de asistir a distintos
-            festivales y eventos, me di cuenta de que cada vez que me quería comprar un gintonic o un ron cola, me llevaba más de
-            20 minutos en la fila para poder comprármelo.En el siglo en que estamos era completamente inviable. Y entonces, se empezó a 
-            desarrollar la primera máquina self service que fusiona bebidas alcohólicas y gaseosas para ser un combinado perfecto".`,
+          festivales y eventos, me di cuenta de que cada vez que me quería comprar un gin-tonic o un ron cola, me llevaba más de
+          20 minutos en la fila para poder comprármelo. En el siglo en que estamos era completamente inviable. Y entonces, se empezó a
+          desarrollar la primera máquina self-service que fusiona bebidas alcohólicas y gaseosas para ser un combinado perfecto".`,
 
           {
-            title: `Una experiencia total`,
+            title: "Una experiencia total",
             text: `Dos años de trabajo han dado como resultado una máquina expendedora que se puede personalizar con diferentes acabados
-            para que se vean las bebidas de una determinada marca. Un gran armario capaz de almacenar 42 litros de bebidas alcohólicas
-            que se mezclan con 36 litros de bebidas gaseosas, para terminar sirviendo la mezcla en un número máximo de 500 vasos.
-    
-            La bebida se hace en el momento, el consumidor puede ver el proceso a través del vidrio en el frontal.
-            "Queremos que sea una experiencia 360 grados, que el consumidor pueda interactuar con la pantalla táctil,
-            que con la vista pueda ver cómo se vacían las botellas y se crea su bebida, para después tomarla, que básicamente
-            intervengan todos los sentidos".
-
-            Así, el usuario se acerca a Mixo eligen entre los diferentes cócteles que se muestran en la pantalla y paga su consumición.
-            La máquina cuenta con tecnología NFC para pagar con la tarjeta de crédito o el móvil de forma rápida y fácil.
-            En solo unos pocos segundos ya puede recoger la bebida en la base y seguir disfrutando de la fiesta. Una conexión
-            con el móvil que recuerda a la máquina Freestyle de Coca-Cola.`,
+              para que se vean las bebidas de una determinada marca. Un gran armario capaz de almacenar 42 litros de bebidas alcohólicas
+              que se mezclan con 36 litros de bebidas gaseosas, para terminar sirviendo la mezcla en un número máximo de 500 vasos.
+  
+              La bebida se hace en el momento, el consumidor puede ver el proceso a través del vidrio en el frontal.
+              "Queremos que sea una experiencia 360 grados, que el consumidor pueda interactuar con la pantalla táctil,
+              que con la vista pueda ver cómo se vacían las botellas y se crea su bebida, para después tomarla, que básicamente
+              intervengan todos los sentidos".
+  
+              Así, el usuario se acerca a Mixo eligen entre los diferentes cócteles que se muestran en la pantalla y paga su consumición.
+              La máquina cuenta con tecnología NFC para pagar con la tarjeta de crédito o el móvil de forma rápida y fácil.
+              En solo unos pocos segundos ya puede recoger la bebida en la base y seguir disfrutando de la fiesta. Una conexión
+              con el móvil que recuerda a la máquina Freestyle de Coca-Cola.`,
           },
 
           `Aunque en la página web se indica que la máquina tarda solo 15 segundos en hacer cada bebida para cada consumidor,
-            este tiempo sigue ajustándose. "Estamos constantemente tratando de reducir el tiempo y hemos conseguido bajarlos a solo 12 segundos",
-            explica Martín. Asegura la empresa que el cliente puede personalizar su copa, "si quiere tomar un ron con naranja o con limón,
-            también puede elegir si quiere dos o tres hielos, no hay problema". Dentro de Mixo se guarda la mezcla entre
-            bebidas alcohólicas y gaseosas, junto con los vasos y los cubitos de hielo, todo refrigerado.`,
+          este tiempo sigue ajustándose. "Estamos constantemente tratando de reducir el tiempo y hemos conseguido bajarlos a solo 12 segundos",
+          explica Martín. Asegura la empresa que el cliente puede personalizar su copa, "si quiere tomar un ron con naranja o con limón,
+          también puede elegir si quiere dos o tres hielos, no hay problema". Dentro de Mixo se guarda la mezcla entre
+          bebidas alcohólicas y gaseosas, junto con los vasos y los cubitos de hielo, todo refrigerado.`,
 
           {
-            title: `Menos gasto y residuos`,
+            title: "Menos gasto y residuos",
             text: `Además de disminuir el tiempo que pasan los clientes haciendo cola en la barra de las discotecas o en los conciertos,
-            soluciones como Mixo defienden sus propuestas como una alternativa más ecológica al consumo tradicional y el desperdicio
-            que generan las cápsulas de café. Así, sus creadores defienden que reduce el gasto de materiales y supone un ahorro para
-            los empresarios: "por cada vaso servido de manera tradicional se desperdician 80ml de bebida gaseosa y se utiliza una
-            botella de vidrio. Con Mixo ya no hay más desperdicio de bebida", explica Martin.`,
+              soluciones como Mixo defienden sus propuestas como una alternativa más ecológica al consumo tradicional y el desperdicio
+              que generan las cápsulas de café. Así, sus creadores defienden que reduce el gasto de materiales y supone un ahorro para
+              los empresarios: "por cada vaso servido de manera tradicional se desperdician 80 ml de bebida gaseosa y se utiliza una
+              botella de vidrio. Con Mixo ya no hay más desperdicio de bebida", explica Martin.`,
           },
 
           `"Se elimina el desperdicio de materiales, hay ingresos extra por publicidad y también reduce los costes operativos".
-            Para demostrarlo, cuentan con una calculadora en su página web donde cada negocio puede calcular el ahorro económico
-            que puede conseguir al año al usar una máquina Mixo dependiendo del número de clientes que suele tener y los días que
-            está abierto el local.`,
+          Para demostrarlo, cuentan con una calculadora en su página web donde cada negocio puede calcular el ahorro económico
+          que puede conseguir al año al usar una máquina Mixo dependiendo del número de clientes que suele tener y los días que
+          está abierto el local.`,
 
           `A este ahorro también contribuye la recogida de daros que genera Mixo con su uso: "estamos hablando de que es una fuente
-            de datos y de que genera un dashboard con métricas muy importantes para nuestros clientes". Al final de la noche, los dueños
-            pueden conocer los gustos de sus consumidores y gestionar mejor la compra de suministros. También puede servir como estudio
-            de mercado a marcas de bebidas que quieran anunciar su mezcla en las discotecas.`,
+          de datos y de que genera un dashboard con métricas muy importantes para nuestros clientes". Al final de la noche, los dueños
+          pueden conocer los gustos de sus consumidores y gestionar mejor la compra de suministros. También puede servir como estudio
+          de mercado a marcas de bebidas que quieran anunciar su mezcla en las discotecas.`,
 
           `Pendientes de conseguir la patente de su invento, el personal de Mixo ya ha puesto a prueba en algún festival y discoteca
-            de la Ciudad Condal su máquina. No quieren revelar aún el precio de Mixo, pero aspiran a venderlo por todo el mundo,
-            "estamos en España, pero vamos a intentar abarcar el mercado mundial, como nuestro equipo que es internacional, yo soy
-            uruguayo y el Lead Engineer es español".`,
+          de la Ciudad Condal su máquina. No quieren revelar aún el precio de Mixo, pero aspiran a venderlo por todo el mundo,
+          "estamos en España, pero vamos a intentar abarcar el mercado mundial, como nuestro equipo que es internacional, yo soy
+          uruguayo y el Lead Engineer es español".`,
         ],
       },
       {
@@ -520,70 +521,68 @@ const es = {
         title:
           "Este uruguayo quiere cambiar las largas esperas para tomar un trago en recitales y eventos masivos: así funciona Mixo",
         text: [
-          `
-        Cómo sucede con los grandes inventos, Mixo provino del "dolor" de su creador.
-        Martín Cohen estaba fastidiado de tener que esperar 20 minutos o más para que le sirvieran un ron con cola en recitales
-        o eventos donde las barras "se atascan" por exceso de demanda. Su solución es una máquina de auto expendio de tragos
-        que expuso en el Mobile World Congress de Barcelona. Cómo es el modelo de negocios.`,
+          `Cómo sucede con los grandes inventos, Mixo provino del "dolor" de su creador.
+          Martín Cohen estaba fastidiado de tener que esperar 20 minutos o más para que le sirvieran un ron con cola en recitales
+          o eventos donde las barras "se atascan" por exceso de demanda. Su solución es una máquina de auto expendio de tragos
+          que expuso en el Mobile World Congress de Barcelona. Cómo es el modelo de negocios.`,
 
           `Está buscando la primera ronda de inversión que le permita clonar el primer prototipo, incluso sumándole nuevas tecnologías.
-        Pero Cohen, uruguayo de nacimiento y radicado en Barcelona, ya tiene su MPV (mínimo producto viable) que fue una de las
-        estrellas del MWC porque en vez de QR o realidad aumentada entregaba un trago listo para beber.`,
+          Pero Cohen, uruguayo de nacimiento y radicado en Barcelona, ya tiene su MPV (mínimo producto viable) que fue una de las
+          estrellas del MWC porque en vez de QR o realidad aumentada entregaba un trago listo para beber.`,
 
           `Mixo es un aparato robusto (ideal para ambientes con gente un poco "alegre de más") con una pantalla antibalas que
-        muestra qué tragos disponibles tiene: solo hay que tomar un vaso descartable y seleccionar la opción, pagar con
-        tarjeta contactless y ¡listo! En 15 segundos tenés una bebida lista para tomar, combinando botellas de distintos
-        licores y gaseosas.`,
+          muestra qué tragos disponibles tiene: solo hay que tomar un vaso descartable y seleccionar la opción, pagar con
+          tarjeta contactless y ¡listo! En 15 segundos tienes una bebida lista para tomar, combinando botellas de distintos
+          licores y gaseosas.`,
 
           `Mixo está ultimando su presentación de patentes y ajustando detalles para los siguientes prototipos, mientras camina
-        hacia dos objetivos: montará este primer prototipo en un chiringuito de playa para someterlo a condiciones reales de
-        mercado y busca inversores. "No vamos a ir a buscar inversores, estamos seguros que vendrán a nosotros", dice Cohen.`,
+          hacia dos objetivos: montará este primer prototipo en un chiringuito de playa para someterlo a condiciones reales de
+          mercado y busca inversores. "No vamos a ir a buscar inversores, estamos seguros de que vendrán a nosotros", dice Cohen.`,
 
-          `El modelo de negocio de Mixo no es ni vender ni alquilar los equipos sino cobrar una comisión sobre cada trago vendido:
-        "el sector de la gastronomía y la restauración ha sufrido mucho y no está en condiciones de hacer inversiones -explica
-        el emprendedor-; ofrecemos una solución lista para generar ingresos".`,
+          `El modelo de negocio de Mixo no es ni vender ni alquilar los equipos, sino cobrar una comisión sobre cada trago vendido:
+          "el sector de la gastronomía y la restauración ha sufrido mucho y no está en condiciones de hacer inversiones -explica
+          el emprendedor-; ofrecemos una solución lista para generar ingresos".`,
 
           `El uruguayo Cohen ya reclutó tres socios en Barcelona: dos españoles y un italiano, entusiasmados con las perspectivas
-        de este desarrollo que tiene mucho de ingeniería por detrás.`,
+          de este desarrollo que tiene mucho de ingeniería por detrás.`,
 
           `Cargado con 50 botellas, un equipo Mixo puede entregar 500 vasos sin mantenimiento, lo que a un valor de € 10 el trago,
-        implica una facturación interesante para eventos de alta concurrencia donde las barras de despacho se atascan.`,
+          implica una facturación interesante para eventos de alta concurrencia donde las barras de despacho se atascan.`,
         ],
       },
       {
-        date: "3 October, 2022",
+        date: "3 Octubre, 2022",
         publisher: "El Referente",
         title:
-          "MIXO cierra una ronda de 500.000€ y apunta a crecer en el mercado español",
+          "MIXO cierra una ronda de 500.000 € y apunta a crecer en el mercado español",
         text: [
-          `
-        MIXO, la startup creadora de la primera máquina que hace combinados en menos de 12 segundos (también llamada Mixo),
-        cerró una ronda de 500.000€ con inversores de España, Francia, Estados Unidos, Argentina y Uruguay, y contratos de
-        precompra con clientes españoles de gran peso.`,
+          `MIXO, la startup creadora de la primera máquina que hace combinados en menos de 12 segundos (también llamada Mixo),
+          cerró una ronda de 500.000 € con inversores de España, Francia, Estados Unidos, Argentina y Uruguay, y contratos de
+          precompra con clientes españoles de gran peso.`,
 
           `Estas inversiones de actores estratégicos con conocimientos del sector y capacidad de hacer seguimiento y acompañamiento
-        significan una oportunidad para seguir desarrollando la empresa, extender el equipo y crear más máquinas “Mixos” creciendo
-        en el mercado español.`,
+          significan una oportunidad para seguir desarrollando la empresa, extender el equipo y crear más máquinas “Mixos” creciendo
+          en el mercado español.`,
 
           `“Estamos en el siglo XXI y la automatización de procesos es el presente. El tiempo es lo que más valoramos y queremos
-        todo lo que nos haga ganarlo. Con Mixo, la tecnología llegó a las discos, ganamos tiempo y no hay vuelta atrás”, dice
-        su fundador y CEO, el uruguayo de 23 años, Martín Cohen.`,
+          todo lo que nos haga ganarlo. Con Mixo, la tecnología llegó a las discos, ganamos tiempo y no hay vuelta atrás”, dice
+          su fundador y CEO, el uruguayo de 23 años, Martín Cohen.`,
 
           `Desde marzo de 2022, MIXO estuvo en discotecas, festivales, bodas y eventos por toda España: desde Pacha Barcelona,
-        hasta las Carpas de la Costa Este en la Costa Brava. Actualmente la startup tiene fecha para el primer lote de unidades
-        para el mercado español y está cerrando contratos de precompra con grandes ventajas para los primeros clientes.`,
+          hasta las Carpas de la Costa Este, en la Costa Brava. Actualmente, la startup tiene fecha para el primer lote de unidades
+          para el mercado español y está cerrando contratos de pre compra con grandes ventajas para los primeros clientes.`,
 
           {
             title: "Sobre MIXO",
             text: `MIXO nace en el 2020 en Barcelona como respuesta a una necesidad muy clara: en los festivales y discotecas hay que
-        esperar más de 20 minutos para comprarse un gin tonic y eso es mucho tiempo para un solo trago. En las bodas y eventos
-        se arman filas para tomar algo, lo cual es mucho tiempo para un combinado.`,
+              esperar más de 20 minutos para comprarse un gin tonic y eso es mucho tiempo para un solo trago. En las bodas y eventos
+              se arman filas para tomar algo, lo cual es mucho tiempo para un combinado.`,
           },
 
-          `Tras 2 años de I+D  surgió Mixo, una máquina self-service capaz de servir más de 500 combinados sin ayuda humana,
-        con una capacidad de 10 alcoholes diferentes y 4 bebidas gaseosas. Así, el usuario crea su propio combinado y se lo
-        lleva en segundos. A esto se suma la tecnología NFC (Near Field Communication) para que los usuarios tengan pulseras
-        y puedan darle desde allí la orden a Mixo para que les cree el combinado perfecto.`,
+          `Tras 2 años de I+D surgió Mixo, una máquina self-service capaz de servir más de 500 combinados sin ayuda humana,
+          con una capacidad de 10 alcoholes diferentes y 4 bebidas gaseosas. Así, el usuario crea su propio combinado y se lo
+          lleva en segundos. A esto se suma la tecnología NFC (Near Field Communication) para que los usuarios tengan pulseras
+          y puedan darle desde allí la orden a Mixo para que les cree el combinado perfecto.`,
         ],
       },
     ],
@@ -592,18 +591,18 @@ const es = {
     title: "Ponte en contacto",
     subtitle: "¿Busca ayuda? Rellena el formulario y conoce Mixo.",
     items: [
-      { title: "Headquarters", data: "C/ Valencia 359, 4-2 Barcelona" },
+      { title: "Headquarters", data: "C/ Valencia, 359, 4-2 Barcelona" },
       { title: "Teléfono", data: "+(34) 695 273 507" },
-      { title: "Soporte", data: "hola@mixodrink.com" },
+      { title: "Soporte", data: "clientes@mixodrink.com" },
       { title: "Síguenos" },
     ],
     form: {
-      title: "Contactanos",
-      subtitle: "Te ayudaamos con cualquier pregunta sobre MIXO, contáctanos!",
+      title: "Contáctanos",
+      subtitle: "Te ayudamos con cualquier pregunta sobre MIXO, contáctanos!",
       errors: [
         "*Este campo es obligatorio",
-        "*El email no es valido",
-        "*El teléfono no es valido",
+        "*El email no es válido",
+        "*El teléfono no es válido",
       ],
       inputName: "Nombre",
       inputLastname: "Apellidos",
@@ -611,12 +610,12 @@ const es = {
       inputPhone: "Número de teléfono",
       inputSubject: "Asunto",
       inputMessage: "¿Cómo podemos ayudarte?",
-      checkbox: ["Accepto los", "Terminos y Condiciones"],
+      checkbox: ["Acepto los", "Términos y Condiciones"],
     },
   },
   homeCta: {
-    title: "¡Hablemos! Escribenos por Whatsapp",
-    subtitle: "Click aquí para empezar a chatear",
+    title: "¡Hablemos! Escríbenos por WhatsApp",
+    subtitle: "Clic aquí para empezar a chatear",
     button: "Empezar chat",
   },
   calculator: {
@@ -634,12 +633,12 @@ const es = {
         title: "Links",
         data: ["Inicio", "Producto", "Software", "Equipo", "Contacto"],
       },
-      contact: { title: "Contacto", data: ["Formulario", "Whtasapp"] },
+      contact: { title: "Contacto", data: ["Formulario", "WhtasApp"] },
     },
     info: {
-      street: "C/ Valencia 359, 4-2 Barcelona",
+      street: "C/ Valencia, 359, 4-2 Barcelona",
       phone: "+(34) 695 273 507",
-      email: "hola@mixodrink.com",
+      email: "clientes@mixodrink.com",
     },
   },
 };
