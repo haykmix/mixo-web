@@ -405,7 +405,7 @@ const es = {
     ],
   },
   homeGallery: {
-    title: "Galleria de videos",
+    title: "Galería de videos",
     subtitle: "Conoce más sobre los servicios de Mixo",
   },
   homeTeam: {
