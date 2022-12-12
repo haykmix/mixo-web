@@ -1,7 +1,7 @@
 import { Field, Formik } from "formik";
-import React, { useState } from "react";
-import PhoneInput from "react-phone-number-input";
+import React, { useRef, useState } from "react";
 import "react-phone-number-input/style.css";
+import emailjs from "@emailjs/browser";
 
 function Forms({ innerRef, text }) {
   const { title, subtitle, items, form } = text.homeContact;
@@ -74,6 +74,9 @@ function Forms({ innerRef, text }) {
     checkbox: "",
   };
 
+  const contactForm = useRef();
+  const [emailSended, setEmailSended] = useState(false);
+
   const validate = (values) => {
     const errors = {};
 
@@ -91,7 +94,7 @@ function Forms({ innerRef, text }) {
 
     if (!values.phone) {
       errors.phone = form.errors[0];
-    } else if (!/^[679]{1}[0-9]{8}$/.test(values.phone.replace(/\s/g, ''))) {
+    } else if (!/^[679]{1}[0-9]{8}$/.test(values.phone.replace(/\s/g, ""))) {
       errors.phone = form.errors[2];
     }
 
@@ -101,10 +104,21 @@ function Forms({ innerRef, text }) {
   };
 
   const onSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 400);
+    emailjs
+      .sendForm(
+        "service_e20fvmh",
+        "template_7mxez0m",
+        contactForm.current,
+        "JC6TfpE6R6LwzwFwc"
+      )
+      .then(
+        function (response) {
+          setEmailSended(true);
+        },
+        function (error) {
+          setEmailSended(false);
+        }
+      );
   };
 
   return (
@@ -138,7 +152,7 @@ function Forms({ innerRef, text }) {
                       handleSubmit,
                       isSubmitting,
                     }) => (
-                      <form onSubmit={handleSubmit}>
+                      <form onSubmit={handleSubmit} ref={contactForm}>
                         <div
                           className="col-md-12 d-flex"
                           style={{ gap: "10px" }}
@@ -192,7 +206,7 @@ function Forms({ innerRef, text }) {
                             </span>
                           </label>
                           <label htmlFor="" className="input-label">
-                          <input
+                            <input
                               type="tel"
                               name="phone"
                               onChange={handleChange}
@@ -263,6 +277,9 @@ function Forms({ innerRef, text }) {
                           <button type="submit" disabled={isSubmitting}>
                             Submit
                           </button>
+                          <h4>
+                            {emailSended ? "Tu mensaje ha sido enviado" : ""}
+                          </h4>
                         </div>
                       </form>
                     )}

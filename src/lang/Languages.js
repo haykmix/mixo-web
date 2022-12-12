@@ -329,7 +329,7 @@ const es = {
     buttonInfo: "Conoce más",
   },
   homeService: {
-    title: "Servicio de bebida de forma automática",
+    title: "Servicio de bebidas de forma automática",
     subtitle:
       "Controla tu facturación, ahorra costes y ofrece a tus clientes un servicio rápido y seguro",
     items: [
@@ -338,8 +338,8 @@ const es = {
         text: "Mixo sirve combinados listos para tomar",
       },
       {
-        title: "Asegurar",
-        text: "Control de todo el proceso de servicio",
+        title: "Control",
+        text: "Visibilidad de todo el proceso de servicio",
       },
       {
         title: "Organización",
