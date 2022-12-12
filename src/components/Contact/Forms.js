@@ -1,6 +1,8 @@
 import { Field, Formik } from "formik";
 import React, { useRef, useState } from "react";
-import "react-phone-number-input/style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+
 import emailjs from "@emailjs/browser";
 
 function Forms({ innerRef, text }) {
@@ -273,13 +275,24 @@ function Forms({ innerRef, text }) {
                             </label>
                           </div>
                         </div>
-                        <div className="col-md-12 text-right">
+                        <div
+                          className="col-md-12 text-right d-flex align-items-center justify-content-end"
+                          style={{ gap: "10px" }}
+                        >
+                          {emailSended ? (
+                            <>
+                              <FontAwesomeIcon
+                                icon={faCircleCheck}
+                                style={{ color: "green" }}
+                              />
+                              <h6>{form.emailSended}</h6>
+                            </>
+                          ) : (
+                            ""
+                          )}
                           <button type="submit" disabled={isSubmitting}>
-                            Submit
+                            {form.buttonSubmit}
                           </button>
-                          <h4>
-                            {emailSended ? "Tu mensaje ha sido enviado" : ""}
-                          </h4>
                         </div>
                       </form>
                     )}

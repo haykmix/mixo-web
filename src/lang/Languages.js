@@ -286,6 +286,8 @@ const en = {
       inputSubject: "Subject",
       inputMessage: "How can we help you?",
       checkbox: ["I agree to the", "Terms & Conditions"],
+      emailSended: "Your message has been sent!",
+      buttonSubmit: "Submit",
     },
   },
   homeCta: {
@@ -611,6 +613,8 @@ const es = {
       inputSubject: "Asunto",
       inputMessage: "¿Cómo podemos ayudarte?",
       checkbox: ["Acepto los", "Términos y Condiciones"],
+      emailSended: "¡Tu mensaje ha sido enviado!",
+      buttonSubmit: "Enviar",
     },
   },
   homeCta: {
