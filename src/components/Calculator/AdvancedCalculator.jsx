@@ -167,7 +167,7 @@ function AdvancedCalculator() {
                   <LabelContent htmlFor="">
                     <h5>Promedio servico</h5>
                     <p>
-                      Promedio de combinados que 1 bartender sirve en 1 hora{" "}
+                      Promedio de combinados que 1 bartender sirve en 1 hora
                     </p>
                     <InputField
                       type="number"
@@ -182,7 +182,7 @@ function AdvancedCalculator() {
               <section>
                 <LabelContent htmlFor="">
                   <h5>Número de camareros</h5>
-                  <p>Número de camareros durante 1 dia</p>
+                  <p>Número de camareros durante 1 día</p>
                   <InputField
                     type="number"
                     placeholder=""
@@ -199,7 +199,7 @@ function AdvancedCalculator() {
 
           <section style={{ display: "flex" }}>
             <section style={{ padding: "20px" }}>
-              <h3>Ingresos totales</h3>
+              <h3>Ingreso total</h3>
 
               <section style={{ marginTop: "20px" }}>
                 <h5 style={{ color: "#4242fb" }}>Bartender</h5>
