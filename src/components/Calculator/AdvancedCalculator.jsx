@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { LanguageContext } from "../../context/LanguageContext";
+import { ColorRing } from "react-loader-spinner";
 
 import coverImage from "../../assets/images/cover/cover-back.png";
 
@@ -13,6 +14,7 @@ function AdvancedCalculator() {
   };
 
   const [show, setShow] = useState("none");
+  const [loading, setLoading] = useState("none");
   const [options, setOptions] = useState({
     totalRevenueBartender: 0,
     totalCostBartender: 0,
@@ -58,40 +60,92 @@ function AdvancedCalculator() {
       return 0;
     }
 
-    let serveRate = data.drinkDay / data.operatingHours / data.numberElements;
+    let servingRate = data.drinkDay / data.operatingHours / data.numberElements;
+    let servingRateBartender = servingRate * data.numberElements;
+    let servingRateMixo = data.drinkDay / data.operatingHours;
 
+    console.log(data.drinkDay, data.operatingHours, data.numberElements);
     // Revenue Bartender
-    let valuesBartender = [46, data.operatingDays, data.operatingHours];
-    let prodOHY = valuesBartender.reduce((a, n) => (a *= n), 1);
-    let drinkSY = serveRate * prodOHY;
-    let totalRev = drinkSY * data.price;
+    let OperatingHoursData = [46, data.operatingDays, data.operatingHours];
+    let operatingHours = OperatingHoursData.reduce((a, n) => (a *= n), 1);
+    let drinksServedYearly =
+      servingRateBartender * operatingHours * data.numberElements;
+    let totalRevenue = drinksServedYearly * data.price;
 
     setOptions((state) => ({
       ...state,
-      totalRevenueBartender: numberWithCommas(totalRev.toFixed(2)),
+      totalRevenueBartender: numberWithCommas(totalRevenue.toFixed(2)),
     }));
 
     // Revenue Mixo
-    let valuesMixo = [52, data.operatingDays, data.operatingHours];
-    let prodOHYMixo = valuesMixo.reduce((a, n) => (a *= n), 1);
-    let marketingCost = prodOHYMixo * 5;
-    let drinkSYMixo = serveRate * prodOHYMixo;
-    let totalRevMixo = drinkSYMixo * data.price + marketingCost;
+    let operatingHoursDataMixo = [52, data.operatingDays, data.operatingHours];
+    let operatingHoursMixo = operatingHoursDataMixo.reduce(
+      (a, n) => (a *= n),
+      1
+    );
+    let marketingIncome = operatingHoursMixo * 5;
+    let drinksServedYearlyMixo = servingRateMixo * operatingHoursMixo;
+    let totalRevenueMixo =
+      drinksServedYearlyMixo * data.price + marketingIncome;
+
+    console.log({
+      operatingHoursDataMixo,
+      operatingHoursMixo,
+      marketingIncome,
+      drinksServedYearlyMixo,
+      totalRevenueMixo,
+    });
 
     setOptions((state) => ({
       ...state,
-      totalRevenueMixo: numberWithCommas(totalRevMixo.toFixed(2)),
+      totalRevenueMixo: numberWithCommas(totalRevenueMixo.toFixed(2)),
     }));
 
     // Cost Bartender
-    let prodOD = multiplicationFc([46, data.operatingDays, 8, 12.5]);
-    let prodOC = multiplicationFc([46, data.operatingDays, 2, 12.5]);
-    let prodOA = multiplicationFc([drinkSY, 0.5, 0.05, 12]);
-    let prodOS = multiplicationFc([drinkSY, 0.5, 0.23, 2.6]);
-    let prodOI = multiplicationFc([drinkSY, 0.18, 0.6]);
+    let bartenderCost = multiplicationFc([
+      46,
+      data.operatingDays,
+      8,
+      12.5,
+      data.numberElements,
+    ]);
+    let bartenderCleaningCost = multiplicationFc([
+      46,
+      data.operatingDays,
+      2,
+      12.5,
+    ]);
+    let bartenderAlcoholCost = multiplicationFc([
+      drinksServedYearly,
+      0.5,
+      0.05,
+      12,
+      data.numberElements,
+    ]);
+    let bartenderSoftDrinkCost = multiplicationFc([
+      drinksServedYearly,
+      0.5,
+      0.23,
+      2.6,
+    ]);
+    let bartenderIceCost = multiplicationFc([drinksServedYearly, 0.18, 0.6]);
+
+    console.log({
+      bartenderCost,
+      bartenderCleaningCost,
+      bartenderAlcoholCost,
+      bartenderSoftDrinkCost,
+      drinksServedYearly,
+    });
 
     let totalBartenderCost =
-      prodOD + prodOC + prodOA + prodOS + prodOI + 3511 + 192;
+      bartenderCost +
+      bartenderCleaningCost +
+      bartenderAlcoholCost +
+      bartenderSoftDrinkCost +
+      bartenderIceCost +
+      3511 +
+      192;
 
     setOptions((state) => ({
       ...state,
@@ -99,21 +153,62 @@ function AdvancedCalculator() {
     }));
 
     // Cost Mixo
-    let prodODM = multiplicationFc([52, data.operatingDays, 0.25, 12.5]);
-    let prodOCM = multiplicationFc([52, data.operatingDays, 0.25, 12.5]);
-    let prodOAM = multiplicationFc([drinkSYMixo, 0.5, 0.05, 12]);
-    let prodOSM = multiplicationFc([drinkSYMixo, 0.5, 0.038, 1.5]);
+    let mixoCleaningCost = multiplicationFc([
+      52,
+      data.operatingDays,
+      0.25,
+      12.5,
+    ]);
+    let mixoManitenceCost = multiplicationFc([
+      52,
+      data.operatingDays,
+      0.25,
+      12.5,
+    ]);
+    let mixoAlcoholCost = multiplicationFc([
+      drinksServedYearlyMixo,
+      0.5,
+      0.05,
+      12,
+    ]);
+    let mixoSoftDrinkCost = multiplicationFc([
+      drinksServedYearlyMixo,
+      0.5,
+      0.038,
+      1.5,
+    ]);
+    let mixoWaterCost = multiplicationFc([
+      drinksServedYearlyMixo,
+      0.5,
+      0.192,
+      0.002,
+    ]);
+
+    console.log({
+      mixoCleaningCost,
+      mixoManitenceCost,
+      mixoAlcoholCost,
+      mixoSoftDrinkCost,
+      mixoWaterCost,
+    });
 
     let totalMixoCost =
-      prodODM + prodOCM + prodOAM + prodOSM + 10800 + 3969 + 49.92;
+      mixoCleaningCost +
+      mixoManitenceCost +
+      mixoSoftDrinkCost +
+      mixoAlcoholCost +
+      mixoWaterCost +
+      10800 +
+      3969 +
+      49.92;
 
     setOptions((state) => ({
       ...state,
       totalCostMixo: numberWithCommas(totalMixoCost.toFixed(2)),
     }));
 
-    let netIncomeB = (totalRev - totalBartenderCost) * data.numberElements;
-    let netIncomeM = (totalRevMixo - totalMixoCost) * data.numberElements;
+    let netIncomeB = (totalRevenue - totalBartenderCost);
+    let netIncomeM = (totalRevenueMixo - totalMixoCost);
 
     let netIncome = netIncomeM - netIncomeB;
     let netIncomePercent = netIncome / netIncomeB;
@@ -126,7 +221,13 @@ function AdvancedCalculator() {
       netIncomePercent: numberWithCommas(netIncomePercent.toFixed(2) * 100),
     }));
 
-    setShow("flex");
+    setTimeout(() => {
+      setLoading("none");
+      setShow("flex");
+    }, 3000);
+
+    setShow("none");
+    setLoading("flex");
   };
 
   return (
@@ -230,6 +331,23 @@ function AdvancedCalculator() {
             </FormWrapper>
           </FormComponent>
 
+          <SectionData
+            display={loading}
+            style={{
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "150px",
+            }}
+          >
+            <ColorRing
+              visible={true}
+              height="80"
+              width="80"
+              colors={["#9012fb", "#9012fb", "#9012fb", "#9012fb", "#9012fb"]}
+            />
+            <p>Loading...</p>
+          </SectionData>
           <SectionData display={show}>
             <DataWrapper>
               <DataSection>
