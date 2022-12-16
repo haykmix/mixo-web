@@ -40,8 +40,23 @@ function AdvancedCalculator() {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   };
 
+  const multiplicationFc = (arr) => {
+    let res = arr.reduce((a, n) => (a *= n), 1);
+    return res;
+  };
+
   const handleCalculations = (e) => {
     e.preventDefault();
+
+    if (
+      data.operatingDays === "" ||
+      data.operatingHours === "" ||
+      data.drinkDay === "" ||
+      data.price === "" ||
+      data.numberElements === ""
+    ) {
+      return 0;
+    }
 
     let serveRate = data.drinkDay / data.operatingHours / data.numberElements;
 
@@ -69,20 +84,11 @@ function AdvancedCalculator() {
     }));
 
     // Cost Bartender
-    let valuesBartenderCost = [46, data.operatingDays, 8, 12.5];
-    let prodOD = valuesBartenderCost.reduce((a, n) => (a *= n), 1);
-
-    let valuesBartenderCleaningCost = [46, data.operatingDays, 2, 12.5];
-    let prodOC = valuesBartenderCleaningCost.reduce((a, n) => (a *= n), 1);
-
-    let valuesBartenderAlcoholCost = [drinkSY, 0.5, 0.05, 12];
-    let prodOA = valuesBartenderAlcoholCost.reduce((a, n) => (a *= n), 1);
-
-    let valuesBartenderSoftDrinkCost = [drinkSY, 0.5, 0.23, 2.6];
-    let prodOS = valuesBartenderSoftDrinkCost.reduce((a, n) => (a *= n), 1);
-
-    let valuesBartenderIceCost = [drinkSY, 0.18, 0.6];
-    let prodOI = valuesBartenderIceCost.reduce((a, n) => (a *= n), 1);
+    let prodOD = multiplicationFc([46, data.operatingDays, 8, 12.5]);
+    let prodOC = multiplicationFc([46, data.operatingDays, 2, 12.5]);
+    let prodOA = multiplicationFc([drinkSY, 0.5, 0.05, 12]);
+    let prodOS = multiplicationFc([drinkSY, 0.5, 0.23, 2.6]);
+    let prodOI = multiplicationFc([drinkSY, 0.18, 0.6]);
 
     let totalBartenderCost =
       prodOD + prodOC + prodOA + prodOS + prodOI + 3511 + 192;
@@ -93,20 +99,10 @@ function AdvancedCalculator() {
     }));
 
     // Cost Mixo
-    let valuesMixoCost = [52, data.operatingDays, 0.25, 12.5];
-    let prodODM = valuesMixoCost.reduce((a, n) => (a *= n), 1);
-
-    let valuesMixoMachineCost = [52, data.operatingDays, 0.25, 12.5];
-    let prodOCM = valuesMixoMachineCost.reduce((a, n) => (a *= n), 1);
-
-    let valuesMixoAlcoholCost = [drinkSYMixo, 0.5, 0.05, 12];
-    let prodOAM = valuesMixoAlcoholCost.reduce((a, n) => (a *= n), 1);
-
-    let valuesMixoSoftDrinkCost = [drinkSYMixo, 0.5, 0.038, 1.5];
-    let prodOSM = valuesMixoSoftDrinkCost.reduce((a, n) => (a *= n), 1);
-
-    // let valuesMixoIceCost = [drinkSYMixo, 0.18, 0.6];
-    // let prodOIM = valuesMixoIceCost.reduce((a, n) => (a *= n), 1);
+    let prodODM = multiplicationFc([52, data.operatingDays, 0.25, 12.5]);
+    let prodOCM = multiplicationFc([52, data.operatingDays, 0.25, 12.5]);
+    let prodOAM = multiplicationFc([drinkSYMixo, 0.5, 0.05, 12]);
+    let prodOSM = multiplicationFc([drinkSYMixo, 0.5, 0.038, 1.5]);
 
     let totalMixoCost =
       prodODM + prodOCM + prodOAM + prodOSM + 10800 + 3969 + 49.92;
@@ -116,10 +112,7 @@ function AdvancedCalculator() {
       totalCostMixo: numberWithCommas(totalMixoCost.toFixed(2)),
     }));
 
-    // Net income Bartender
     let netIncomeB = (totalRev - totalBartenderCost) * data.numberElements;
-
-    // Net income Mixo
     let netIncomeM = (totalRevMixo - totalMixoCost) * data.numberElements;
 
     let netIncome = netIncomeM - netIncomeB;

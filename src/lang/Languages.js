@@ -673,7 +673,7 @@ const es = {
   },
   advancedCalc: {
     title:
-      "Maximiza tus ahorros con nuestra calculadora avanzada. Calcula el tus ahorros en un año con una sola unidad MIXO.",
+      "Maximiza tus ahorros con nuestra calculadora avanzada. Calcula tus ahorros en un año con una sola unidad MIXO.",
     inputs: {
       days: "Días operativos",
       hours: "Horas por día",
