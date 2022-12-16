@@ -318,6 +318,32 @@ const en = {
       email: "hola@mixodrink.com",
     },
   },
+  advancedCalc: {
+    title:
+      "Maximize your savings with our advanced calculator. Calculate your savings in one year with a single MIXO unit.",
+    inputs: {
+      days: "Operating days",
+      hours: "Hours per day",
+      price: "Price",
+      served: "Combined served",
+      bartender: "Number of bartenders",
+    },
+    labels: {
+      days: "*Number of days per week the bar is used",
+      hours: "*Hours a day the bar is running",
+      price: "*Average combined price",
+      served: "*Combined that 1 bartender serves the day",
+      bartender: "*Number of waiters for 1 day",
+    },
+    results: {
+      totalIncome: "Total Revenue",
+      totalCost: "Total Costs",
+      netIncome: "Net Income",
+      percentage: "Percentage of the total",
+    },
+    button: "Calculate",
+    year: "(Year)",
+  },
 };
 
 const es = {
@@ -644,6 +670,32 @@ const es = {
       phone: "+(34) 695 273 507",
       email: "clientes@mixodrink.com",
     },
+  },
+  advancedCalc: {
+    title:
+      "Maximiza tus ahorros con nuestra calculadora avanzada. Calcula el tus ahorros en un año con una sola unidad MIXO.",
+    inputs: {
+      days: "Días operativos",
+      hours: "Horas por día",
+      price: "Precio",
+      served: "Combinados servidos",
+      bartender: "Número de camarer@s",
+    },
+    labels: {
+      days: "*Cantidad de días a la semana que se utiliza la barra",
+      hours: "*Horas al día que está en funcionamiento la barra",
+      price: "*Precio promedio del combinado",
+      served: "*Combinados que 1 bartender sirve al día",
+      bartender: "*Número de camareros durante 1 día",
+    },
+    results: {
+      totalIncome: "Ingresos Totales",
+      totalCost: "Costes Totales",
+      netIncome: "Ingresos Netos",
+      percentage: "Porcentage",
+    },
+    button: "Calcular",
+    year: "(Año)",
   },
 };
 

@@ -1,7 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import { LanguageContext } from "../../context/LanguageContext";
+
+import coverImage from "../../assets/images/cover/cover-back.png";
+import coverGif from "../../assets/images/cover/cover-gif.gif";
 
 function AdvancedCalculator() {
+  const { language, changeLanguage } = useContext(LanguageContext);
+  let lang = localStorage.getItem("language");
+
+  const handleSelectedLanguage = (e) => {
+    changeLanguage(e.target.value);
+  };
+
+  const [show, setShow] = useState("none");
   const [options, setOptions] = useState({
     totalRevenueBartender: 0,
     totalCostBartender: 0,
@@ -16,7 +28,7 @@ function AdvancedCalculator() {
   const [data, setData] = useState({
     operatingDays: "",
     operatingHours: "",
-    serveRate: "",
+    drinkDay: "",
     price: "",
     numberElements: "",
   });
@@ -32,27 +44,29 @@ function AdvancedCalculator() {
   const handleCalculations = (e) => {
     e.preventDefault();
 
+    let serveRate = data.drinkDay / data.operatingHours / data.numberElements;
+
     // Revenue Bartender
     let valuesBartender = [46, data.operatingDays, data.operatingHours];
     let prodOHY = valuesBartender.reduce((a, n) => (a *= n), 1);
-    let drinkSY = data.serveRate * prodOHY;
+    let drinkSY = serveRate * prodOHY;
     let totalRev = drinkSY * data.price;
 
     setOptions((state) => ({
       ...state,
-      totalRevenueBartender: numberWithCommas(totalRev),
+      totalRevenueBartender: numberWithCommas(totalRev.toFixed(2)),
     }));
 
     // Revenue Mixo
     let valuesMixo = [52, data.operatingDays, data.operatingHours];
     let prodOHYMixo = valuesMixo.reduce((a, n) => (a *= n), 1);
     let marketingCost = prodOHYMixo * 5;
-    let drinkSYMixo = data.serveRate * prodOHYMixo;
+    let drinkSYMixo = serveRate * prodOHYMixo;
     let totalRevMixo = drinkSYMixo * data.price + marketingCost;
 
     setOptions((state) => ({
       ...state,
-      totalRevenueMixo: numberWithCommas(totalRevMixo),
+      totalRevenueMixo: numberWithCommas(totalRevMixo.toFixed(2)),
     }));
 
     // Cost Bartender
@@ -62,35 +76,45 @@ function AdvancedCalculator() {
     let valuesBartenderCleaningCost = [46, data.operatingDays, 2, 12.5];
     let prodOC = valuesBartenderCleaningCost.reduce((a, n) => (a *= n), 1);
 
-    let personnelBartender = prodOD + prodOC;
+    let valuesBartenderAlcoholCost = [drinkSY, 0.5, 0.05, 12];
+    let prodOA = valuesBartenderAlcoholCost.reduce((a, n) => (a *= n), 1);
 
-    let totalBartenderCost = personnelBartender + 15611 + 3511 + 192;
+    let valuesBartenderSoftDrinkCost = [drinkSY, 0.5, 0.23, 2.6];
+    let prodOS = valuesBartenderSoftDrinkCost.reduce((a, n) => (a *= n), 1);
+
+    let valuesBartenderIceCost = [drinkSY, 0.18, 0.6];
+    let prodOI = valuesBartenderIceCost.reduce((a, n) => (a *= n), 1);
+
+    let totalBartenderCost =
+      prodOD + prodOC + prodOA + prodOS + prodOI + 3511 + 192;
 
     setOptions((state) => ({
       ...state,
-      totalCostBartender: numberWithCommas(totalBartenderCost),
+      totalCostBartender: numberWithCommas(totalBartenderCost.toFixed(2)),
     }));
 
     // Cost Mixo
     let valuesMixoCost = [52, data.operatingDays, 0.25, 12.5];
     let prodODM = valuesMixoCost.reduce((a, n) => (a *= n), 1);
 
-    console.log(prodODM);
-
     let valuesMixoMachineCost = [52, data.operatingDays, 0.25, 12.5];
     let prodOCM = valuesMixoMachineCost.reduce((a, n) => (a *= n), 1);
 
-    console.log(prodOCM);
+    let valuesMixoAlcoholCost = [drinkSYMixo, 0.5, 0.05, 12];
+    let prodOAM = valuesMixoAlcoholCost.reduce((a, n) => (a *= n), 1);
 
-    let personnelMixo = prodODM + prodOCM;
+    let valuesMixoSoftDrinkCost = [drinkSYMixo, 0.5, 0.038, 1.5];
+    let prodOSM = valuesMixoSoftDrinkCost.reduce((a, n) => (a *= n), 1);
 
-    console.log(personnelMixo);
+    // let valuesMixoIceCost = [drinkSYMixo, 0.18, 0.6];
+    // let prodOIM = valuesMixoIceCost.reduce((a, n) => (a *= n), 1);
 
-    let totalMixoCost = personnelMixo + 8204 + 10800 + 3969 + 49.92;
+    let totalMixoCost =
+      prodODM + prodOCM + prodOAM + prodOSM + 10800 + 3969 + 49.92;
 
     setOptions((state) => ({
       ...state,
-      totalCostMixo: numberWithCommas(totalMixoCost),
+      totalCostMixo: numberWithCommas(totalMixoCost.toFixed(2)),
     }));
 
     // Net income Bartender
@@ -109,162 +133,251 @@ function AdvancedCalculator() {
       netIncome: numberWithCommas(netIncome.toFixed(2)),
       netIncomePercent: numberWithCommas(netIncomePercent.toFixed(2) * 100),
     }));
+
+    setShow("flex");
   };
 
   return (
     <>
       <Container>
-        <Title>
-          Con esta calculadora se puede valorar el ahorro en un año con 1 unidad
-          MIXO en vez de una barra tradicional de 1 bartender.
-        </Title>
-        <Wrapper>
-          <form action="" style={{ margin: "20px 0px 0px 20px", width: "40%" }}>
-            <div
-              className="d-flex"
-              style={{ gap: "20px", flexDirection: "column" }}
-            >
-              <span style={{ display: "flex" }}>
-                <section style={{}}>
+        <SectionTitle>
+          <Title>{language.advancedCalc.title}</Title>
+        </SectionTitle>
+        <SectionForm>
+          <Select
+            name="lang"
+            id="lang"
+            defaultValue={lang}
+            onChange={handleSelectedLanguage}
+          >
+            <option value="es">🇪🇸ES</option>
+            <option value="en">🇬🇧EN</option>
+          </Select>
+          <FormComponent action="">
+            <FormWrapper>
+              <InputWrapper>
+                <InputElement>
                   <LabelContent htmlFor="">
-                    <h5>Días operando</h5>
-                    <p>Cantidad de días a la semana que se utiliza la barra</p>
+                    <h4>{language.advancedCalc.inputs.days}</h4>
                     <InputField
                       type="number"
                       placeholder=""
                       name="operatingDays"
                       onChange={handelInputChange}
                     />
+                    <InputResume>
+                      {language.advancedCalc.labels.days}
+                    </InputResume>
                   </LabelContent>
-                </section>
-                <section>
+                </InputElement>
+                <InputElement>
                   <LabelContent htmlFor="">
-                    <h5>Horas operando</h5>
-                    <p>Horas al día que está en funcionamiento la barra</p>
+                    <h4>{language.advancedCalc.inputs.hours}</h4>
                     <InputField
                       type="number"
                       placeholder=""
                       name="operatingHours"
                       onChange={handelInputChange}
                     />
+                    <InputResume>
+                      {language.advancedCalc.labels.hours}
+                    </InputResume>
                   </LabelContent>
-                </section>
-              </span>
-              <span style={{ display: "flex" }}>
-                <section>
+                </InputElement>
+                <InputElement>
                   <LabelContent htmlFor="">
-                    <h5>Precio</h5>
-                    <p>Precio promedio del combinado</p>
+                    <h4>{language.advancedCalc.inputs.price}</h4>
                     <InputField
                       type="number"
                       placeholder=""
                       name="price"
                       onChange={(event) => handelInputChange(event)}
                     />
+                    <InputResume>
+                      {language.advancedCalc.labels.price}
+                    </InputResume>
                   </LabelContent>
-                </section>
-                <section>
+                </InputElement>
+              </InputWrapper>
+              <InputWrapper>
+                <InputElement>
                   <LabelContent htmlFor="">
-                    <h5>Promedio servico</h5>
-                    <p>
-                      Promedio de combinados que 1 bartender sirve en 1 hora
-                    </p>
+                    <h4>{language.advancedCalc.inputs.served}</h4>
+
                     <InputField
                       type="number"
                       placeholder=""
-                      name="serveRate"
+                      name="drinkDay"
                       onChange={(event) => handelInputChange(event)}
                     />
+                    <InputResume>
+                      {language.advancedCalc.labels.served}
+                    </InputResume>
                   </LabelContent>
-                </section>
-              </span>
+                </InputElement>
+                <InputElement>
+                  <LabelContent htmlFor="">
+                    <h4>{language.advancedCalc.inputs.bartender}</h4>
+                    <InputField
+                      type="number"
+                      placeholder=""
+                      name="numberElements"
+                      onChange={(event) => handelInputChange(event)}
+                    />
+                    <InputResume>
+                      {language.advancedCalc.labels.bartender}
+                    </InputResume>
+                  </LabelContent>
+                </InputElement>
+                <InputElement>
+                  <SubmitButton onClick={handleCalculations}>
+                    {language.advancedCalc.button}
+                  </SubmitButton>
+                </InputElement>
+              </InputWrapper>
+            </FormWrapper>
+          </FormComponent>
 
-              <section>
-                <LabelContent htmlFor="">
-                  <h5>Número de camareros</h5>
-                  <p>Número de camareros durante 1 día</p>
-                  <InputField
-                    type="number"
-                    placeholder=""
-                    name="numberElements"
-                    onChange={(event) => handelInputChange(event)}
-                  />
-                </LabelContent>
-              </section>
-            </div>
-            <section style={{ margin: "20px 0px" }}>
-              <SubmitButton onClick={handleCalculations}>Calcular</SubmitButton>
-            </section>
-          </form>
+          <SectionData display={show}>
+            <DataWrapper>
+              <DataSection>
+                <h3>{language.advancedCalc.results.totalIncome}</h3>
+                <h5>{language.advancedCalc.year}</h5>
 
-          <section style={{ display: "flex" }}>
-            <section style={{ padding: "20px" }}>
-              <h3>Ingreso total</h3>
+                <DataElement>
+                  <DataTitle>Bartender</DataTitle>
+                  <DataText>{options.totalRevenueBartender} €</DataText>
+                </DataElement>
 
-              <section style={{ marginTop: "20px" }}>
-                <h5 style={{ color: "#4242fb" }}>Bartender</h5>
-                <p>{options.totalRevenueBartender} €</p>
-              </section>
+                <DataElement>
+                  <DataTitle>Mixo</DataTitle>
+                  <DataText>{options.totalRevenueMixo} €</DataText>
+                </DataElement>
+              </DataSection>
 
-              <section style={{ marginTop: "20px" }}>
-                <h5 style={{ color: "#4242fb" }}>Mixo</h5>
-                {options.totalRevenueMixo} €
-              </section>
-            </section>
+              <DataSection>
+                <h3>{language.advancedCalc.results.totalCost}</h3>
+                <h5>{language.advancedCalc.year}</h5>
 
-            <section style={{ padding: "20px" }}>
-              <h3>Coste total</h3>
+                <DataElement>
+                  <DataTitle>Bartender</DataTitle>
+                  <DataText>{options.totalCostBartender} €</DataText>
+                </DataElement>
 
-              <section style={{ marginTop: "20px" }}>
-                <h5 style={{ color: "#4242fb" }}>Bartender</h5>
-                <p>{options.totalCostBartender} €</p>
-              </section>
+                <DataElement>
+                  <DataTitle>Mixo</DataTitle>
+                  <DataText>{options.totalCostMixo} €</DataText>
+                </DataElement>
+              </DataSection>
 
-              <section style={{ marginTop: "20px" }}>
-                <h5 style={{ color: "#4242fb" }}>Mixo</h5>
-                {options.totalCostMixo} €
-              </section>
-            </section>
+              <DataSection>
+                <h3>{language.advancedCalc.results.netIncome}</h3>
+                <h5>{language.advancedCalc.year}</h5>
 
-            <section style={{ padding: "20px" }}>
-              <h3>Ingreso neto</h3>
+                <DataElement>
+                  <DataTitle>Bartender</DataTitle>
+                  <DataText>{options.netIncomeB} €</DataText>
+                </DataElement>
 
-              <section style={{ marginTop: "20px" }}>
-                <h5 style={{ color: "#4242fb" }}>Bartender</h5>
-                <p>{options.netIncomeB} €</p>
-              </section>
+                <DataElement>
+                  <DataTitle>Mixo</DataTitle>
+                  <DataText>{options.netIncomeM} €</DataText>
+                </DataElement>
+              </DataSection>
+            </DataWrapper>
+          </SectionData>
 
-              <section style={{ marginTop: "20px" }}>
-                <h5 style={{ color: "#4242fb" }}>Mixo</h5>
-                {options.netIncomeM} €
-              </section>
-
-              <section style={{ marginTop: "20px" }}>
-                <h5 style={{ color: "#4242fb" }}>Total</h5>
+          <SectionDataResult display={show}>
+            <DataElement>
+              <DataTitle>Total {language.advancedCalc.year}</DataTitle>
+              <DataText
+                style={{
+                  backgroundColor: "#60ff60",
+                  padding: " 5px",
+                  borderRadius: "5px",
+                  width: "fit-content",
+                  color: "black",
+                }}
+              >
                 {options.netIncome} €
-              </section>
+              </DataText>
+            </DataElement>
 
-              <section style={{ marginTop: "20px" }}>
-                <h5 style={{ color: "#4242fb" }}>Porcentage</h5>
-                {options.netIncomePercent} %
-              </section>
-            </section>
-          </section>
-        </Wrapper>
+            <DataElement>
+              <DataTitle>Porcentage</DataTitle>
+              <DataText
+                style={{
+                  backgroundColor: "#60ff60",
+                  padding: " 5px",
+                  borderRadius: "5px",
+                  width: "fit-content",
+                  color: "black",
+                }}
+              >
+                {options.netIncomePercent}%
+              </DataText>
+            </DataElement>
+          </SectionDataResult>
+        </SectionForm>
       </Container>
     </>
   );
 }
 
-const SubmitButton = styled.button`
-  border: none;
-  width: 100px;
-  border-radius: 8px;
-  font-weight: 600;
-  padding: 10px;
+const Container = styled.section`
+  display: flex;
+`;
+
+const SectionTitle = styled.section`
+  display: flex;
+  flex-direction: column;
+  background-image: url(${coverImage});
+  background-size: 750px;
+  width: 35%;
+`;
+
+const SectionForm = styled.section`
+  width: 65%;
+  height: 100vh;
+  align-items: center;
+  padding-top: 30px;
+`;
+
+const SectionData = styled.section`
   margin-left: 40px;
-  background-color: #4242fb;
+  display: ${(props) => props.display};
+`;
+
+const SectionDataResult = styled.section`
+  margin-left: 60px;
+  display: ${(props) => props.display};
+  gap: 50px;
+`;
+
+const Title = styled.h3`
   color: #fff;
+  padding: 10%;
+  line-height: 50px;
+`;
+
+const Select = styled.select`
+  border: none;
+  position: absolute;
+  right: 40px;
+`;
+
+const FormComponent = styled.form`
+  margin: 40px 0px 0px 20px;
+  width: 40%;
+`;
+
+const FormWrapper = styled.div`
+  gap: 20px;
+  flex-direction: column;
+`;
+
+const InputWrapper = styled.span`
+  display: flex;
 `;
 
 const InputField = styled.input`
@@ -274,24 +387,47 @@ const InputField = styled.input`
   margin-top: 10px;
 `;
 
-const Container = styled.section`
-  display: flex;
-  flex-direction: column;
+const InputElement = styled.section``;
+
+const InputResume = styled.p`
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 20px;
 `;
 
-const Wrapper = styled.section`
-  display: flex;
-  justify-content: flex-start;
-`;
-
-const Title = styled.h3`
-  padding: 2% 20%;
-  width: 100%;
+const SubmitButton = styled.button`
+  border: none;
+  width: 200px;
+  margin-top: 34px;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px;
+  margin-left: 40px;
   background-color: #4242fb;
-  height: fit-content;
-  border-radius: 0px 0px 10px 0px;
-  color: white;
-  text-align: center;
+  color: #fff;
+`;
+
+const DataWrapper = styled.section`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const DataSection = styled.section`
+  padding: 20px;
+  margin: 40px 20px 0px 0px;
+`;
+
+const DataElement = styled.section`
+  margin-top: 20px;
+`;
+
+const DataTitle = styled.h5`
+  color: #4242fb;
+`;
+
+const DataText = styled.p`
+  font-weight: 800;
+  margin-top: 10px;
 `;
 
 const LabelContent = styled.label`
