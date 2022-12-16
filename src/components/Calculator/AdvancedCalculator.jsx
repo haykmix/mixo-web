@@ -409,6 +409,7 @@ const SubmitButton = styled.button`
 const DataWrapper = styled.section`
   display: flex;
   justify-content: space-around;
+  gap: 60px;
 `;
 
 const DataSection = styled.section`
