@@ -304,7 +304,7 @@ function AdvancedCalculator() {
             </DataElement>
 
             <DataElement>
-              <DataTitle>Porcentage</DataTitle>
+              <DataTitle>{language.advancedCalc.results.percentage}</DataTitle>
               <DataText
                 style={{
                   backgroundColor: "#60ff60",

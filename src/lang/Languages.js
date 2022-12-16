@@ -339,7 +339,7 @@ const en = {
       totalIncome: "Total Revenue",
       totalCost: "Total Costs",
       netIncome: "Net Income",
-      percentage: "Percentage of the total",
+      percentage: "Percentage",
     },
     button: "Calculate",
     year: "(Year)",
