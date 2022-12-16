@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { LanguageContext } from "../../context/LanguageContext";
 
 import coverImage from "../../assets/images/cover/cover-back.png";
-import coverGif from "../../assets/images/cover/cover-gif.gif";
 
 function AdvancedCalculator() {
   const { language, changeLanguage } = useContext(LanguageContext);
