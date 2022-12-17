@@ -61,15 +61,14 @@ function AdvancedCalculator() {
     }
 
     let servingRate = data.drinkDay / data.operatingHours / data.numberElements;
-    let servingRateBartender = servingRate * data.numberElements;
-    let servingRateMixo = data.drinkDay / data.operatingHours;
+    let servingRateTotal = servingRate * data.numberElements;
 
     console.log(data.drinkDay, data.operatingHours, data.numberElements);
     // Revenue Bartender
     let OperatingHoursData = [46, data.operatingDays, data.operatingHours];
     let operatingHours = OperatingHoursData.reduce((a, n) => (a *= n), 1);
     let drinksServedYearly =
-      servingRateBartender * operatingHours * data.numberElements;
+      servingRateTotal * operatingHours * data.numberElements;
     let totalRevenue = drinksServedYearly * data.price;
 
     setOptions((state) => ({
@@ -84,17 +83,10 @@ function AdvancedCalculator() {
       1
     );
     let marketingIncome = operatingHoursMixo * 5;
-    let drinksServedYearlyMixo = servingRateMixo * operatingHoursMixo;
+    let drinksServedYearlyMixo =
+      servingRateTotal * operatingHoursMixo * data.numberElements;
     let totalRevenueMixo =
       drinksServedYearlyMixo * data.price + marketingIncome;
-
-    console.log({
-      operatingHoursDataMixo,
-      operatingHoursMixo,
-      marketingIncome,
-      drinksServedYearlyMixo,
-      totalRevenueMixo,
-    });
 
     setOptions((state) => ({
       ...state,
@@ -129,14 +121,6 @@ function AdvancedCalculator() {
       2.6,
     ]);
     let bartenderIceCost = multiplicationFc([drinksServedYearly, 0.18, 0.6]);
-
-    console.log({
-      bartenderCost,
-      bartenderCleaningCost,
-      bartenderAlcoholCost,
-      bartenderSoftDrinkCost,
-      drinksServedYearly,
-    });
 
     let totalBartenderCost =
       bartenderCost +
@@ -184,14 +168,6 @@ function AdvancedCalculator() {
       0.002,
     ]);
 
-    console.log({
-      mixoCleaningCost,
-      mixoManitenceCost,
-      mixoAlcoholCost,
-      mixoSoftDrinkCost,
-      mixoWaterCost,
-    });
-
     let totalMixoCost =
       mixoCleaningCost +
       mixoManitenceCost +
@@ -207,8 +183,8 @@ function AdvancedCalculator() {
       totalCostMixo: numberWithCommas(totalMixoCost.toFixed(2)),
     }));
 
-    let netIncomeB = (totalRevenue - totalBartenderCost);
-    let netIncomeM = (totalRevenueMixo - totalMixoCost);
+    let netIncomeB = totalRevenue - totalBartenderCost;
+    let netIncomeM = totalRevenueMixo - totalMixoCost;
 
     let netIncome = netIncomeM - netIncomeB;
     let netIncomePercent = netIncome / netIncomeB;
