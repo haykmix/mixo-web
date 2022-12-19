@@ -2,16 +2,14 @@ import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { LanguageContext } from "../../context/LanguageContext";
 import { ColorRing } from "react-loader-spinner";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import coverImage from "../../assets/images/cover/cover-back.png";
 
 function AdvancedCalculator() {
   const { language, changeLanguage } = useContext(LanguageContext);
   let lang = localStorage.getItem("language");
-
-  const handleSelectedLanguage = (e) => {
-    changeLanguage(e.target.value);
-  };
 
   const [show, setShow] = useState("none");
   const [loading, setLoading] = useState("none");
@@ -33,6 +31,11 @@ function AdvancedCalculator() {
     price: "",
     numberElements: "",
   });
+
+  const handleSelectedLanguage = (e) => {
+    changeLanguage(e.target.value);
+    if (e.target.value !== "es") return 0;
+  };
 
   const handelInputChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -63,7 +66,6 @@ function AdvancedCalculator() {
     let servingRate = data.drinkDay / data.operatingHours / data.numberElements;
     let servingRateTotal = servingRate * data.numberElements;
 
-    console.log(data.drinkDay, data.operatingHours, data.numberElements);
     // Revenue Bartender
     let OperatingHoursData = [46, data.operatingDays, data.operatingHours];
     let operatingHours = OperatingHoursData.reduce((a, n) => (a *= n), 1);
@@ -73,7 +75,9 @@ function AdvancedCalculator() {
 
     setOptions((state) => ({
       ...state,
-      totalRevenueBartender: numberWithCommas(totalRevenue.toFixed(2)),
+      totalRevenueBartender: handleNumberFormat(
+        numberWithCommas(totalRevenue.toFixed(2))
+      ),
     }));
 
     // Revenue Mixo
@@ -82,7 +86,7 @@ function AdvancedCalculator() {
       (a, n) => (a *= n),
       1
     );
-    let marketingIncome = operatingHoursMixo * 5;
+    let marketingIncome = operatingHoursMixo * 5 * data.numberElements;
     let drinksServedYearlyMixo =
       servingRateTotal * operatingHoursMixo * data.numberElements;
     let totalRevenueMixo =
@@ -90,7 +94,9 @@ function AdvancedCalculator() {
 
     setOptions((state) => ({
       ...state,
-      totalRevenueMixo: numberWithCommas(totalRevenueMixo.toFixed(2)),
+      totalRevenueMixo: handleNumberFormat(
+        numberWithCommas(totalRevenueMixo.toFixed(2))
+      ),
     }));
 
     // Cost Bartender
@@ -120,6 +126,7 @@ function AdvancedCalculator() {
       0.23,
       2.6,
     ]);
+
     let bartenderIceCost = multiplicationFc([drinksServedYearly, 0.18, 0.6]);
 
     let totalBartenderCost =
@@ -133,7 +140,9 @@ function AdvancedCalculator() {
 
     setOptions((state) => ({
       ...state,
-      totalCostBartender: numberWithCommas(totalBartenderCost.toFixed(2)),
+      totalCostBartender: handleNumberFormat(
+        numberWithCommas(totalBartenderCost.toFixed(2))
+      ),
     }));
 
     // Cost Mixo
@@ -168,33 +177,41 @@ function AdvancedCalculator() {
       0.002,
     ]);
 
+    let mixoLeaseCost = multiplicationFc([data.numberElements, 12, 800]);
+    let mixoTransInstCost = multiplicationFc([data.numberElements, 1200]);
+
     let totalMixoCost =
       mixoCleaningCost +
       mixoManitenceCost +
       mixoSoftDrinkCost +
       mixoAlcoholCost +
       mixoWaterCost +
-      10800 +
+      mixoLeaseCost +
+      mixoTransInstCost +
       3969 +
       49.92;
 
     setOptions((state) => ({
       ...state,
-      totalCostMixo: numberWithCommas(totalMixoCost.toFixed(2)),
+      totalCostMixo: handleNumberFormat(
+        numberWithCommas(totalMixoCost.toFixed(2))
+      ),
     }));
 
     let netIncomeB = totalRevenue - totalBartenderCost;
     let netIncomeM = totalRevenueMixo - totalMixoCost;
 
     let netIncome = netIncomeM - netIncomeB;
-    let netIncomePercent = netIncome / netIncomeB;
+    let netIncomePercent = (netIncome / netIncomeB) * 100;
 
     setOptions((state) => ({
       ...state,
-      netIncomeB: numberWithCommas(netIncomeB.toFixed(2)),
-      netIncomeM: numberWithCommas(netIncomeM.toFixed(2)),
-      netIncome: numberWithCommas(netIncome.toFixed(2)),
-      netIncomePercent: numberWithCommas(netIncomePercent.toFixed(2) * 100),
+      netIncomeB: handleNumberFormat(numberWithCommas(netIncomeB.toFixed(2))),
+      netIncomeM: handleNumberFormat(numberWithCommas(netIncomeM.toFixed(2))),
+      netIncome: handleNumberFormat(numberWithCommas(netIncome.toFixed(2))),
+      netIncomePercent: handleNumberFormat(
+        numberWithCommas(netIncomePercent.toFixed(2))
+      ),
     }));
 
     setTimeout(() => {
@@ -206,11 +223,45 @@ function AdvancedCalculator() {
     setLoading("flex");
   };
 
+  const handleNumberFormat = (number) => {
+    if (lang === "en") return number;
+
+    let replacedCommas = number.replace(/,/, ".");
+    let indexOfDot = replacedCommas.lastIndexOf(".");
+
+    let replaced =
+      replacedCommas.substring(0, indexOfDot) +
+      "," +
+      replacedCommas.substring(indexOfDot + 1);
+
+    return replaced;
+  };
+
   return (
     <>
       <Container>
         <SectionTitle>
-          <Title>{language.advancedCalc.title}</Title>
+          <Title>
+            {language.advancedCalc.titleOne}
+            <br />
+            {language.advancedCalc.titleTwo}
+          </Title>
+          <SectionItems>
+            <ItemComponentSubtitle>
+              {language.advancedCalc.subtitle}
+            </ItemComponentSubtitle>
+            {language.advancedCalc.items.map((item, index) => {
+              return (
+                <ItemComponent style={{ color: "#fff" }} key={index}>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="check-icon"
+                  />
+                  {item}
+                </ItemComponent>
+              );
+            })}
+          </SectionItems>
         </SectionTitle>
         <SectionForm>
           <Select
@@ -299,9 +350,11 @@ function AdvancedCalculator() {
                   </LabelContent>
                 </InputElement>
                 <InputElement>
-                  <SubmitButton onClick={handleCalculations}>
-                    {language.advancedCalc.button}
-                  </SubmitButton>
+                  <LabelContent htmlFor="">
+                    <SubmitButton onClick={handleCalculations}>
+                      {language.advancedCalc.button}
+                    </SubmitButton>
+                  </LabelContent>
                 </InputElement>
               </InputWrapper>
             </FormWrapper>
@@ -418,8 +471,21 @@ const SectionTitle = styled.section`
   display: flex;
   flex-direction: column;
   background-image: url(${coverImage});
-  background-size: 750px;
-  width: 35%;
+  background-size: 800px;
+  width: 40%;
+`;
+
+const SectionItems = styled.section`
+  padding: 0% 10% 0% 10%;
+`;
+
+const ItemComponent = styled.h4`
+  margin-bottom: 10px;
+`;
+
+const ItemComponentSubtitle = styled.h3`
+  color: #fff;
+  margin-bottom: 20px;
 `;
 
 const SectionForm = styled.section`
@@ -454,7 +520,6 @@ const Select = styled.select`
 
 const FormComponent = styled.form`
   margin: 40px 0px 0px 20px;
-  width: 40%;
 `;
 
 const FormWrapper = styled.div`
@@ -464,6 +529,7 @@ const FormWrapper = styled.div`
 
 const InputWrapper = styled.span`
   display: flex;
+  justify-content: ce;
 `;
 
 const InputField = styled.input`
@@ -484,11 +550,10 @@ const InputResume = styled.p`
 const SubmitButton = styled.button`
   border: none;
   width: 200px;
-  margin-top: 34px;
+  margin-top: 37px;
   border-radius: 8px;
   font-weight: 600;
   padding: 10px;
-  margin-left: 40px;
   background-color: #4242fb;
   color: #fff;
 `;
@@ -501,7 +566,6 @@ const DataWrapper = styled.section`
 
 const DataSection = styled.section`
   padding: 20px;
-  margin: 40px 20px 0px 0px;
 `;
 
 const DataElement = styled.section`
@@ -519,7 +583,7 @@ const DataText = styled.p`
 
 const LabelContent = styled.label`
   width: 260px;
-  margin-left: 40px;
+  margin: 0px 0px 20px 40px;
 `;
 
 export default AdvancedCalculator;

@@ -8064,3 +8064,7 @@ blockquote cite {
   z-index: 20;
   background: #000000db;
 }
+
+.check-icon {
+  margin-right: 10px;
+}

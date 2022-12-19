@@ -319,8 +319,14 @@ const en = {
     },
   },
   advancedCalc: {
-    title:
-      "Maximize your savings with our advanced calculator. Calculate your savings in one year with a single MIXO unit.",
+    titleOne: "Maximize your savings with our advanced calculator.",
+    titleTwo: "Calculate your savings in one year with a single MIXO unit.",
+    subtitle: "Results",
+    items: [
+      "Total income",
+      "Total costs",
+      "Net income",
+    ],
     inputs: {
       days: "Operating days",
       hours: "Hours per day",
@@ -672,8 +678,14 @@ const es = {
     },
   },
   advancedCalc: {
-    title:
-      "Maximiza tus ahorros con nuestra calculadora avanzada. Calcula tus ahorros en un año con una sola unidad MIXO.",
+    titleOne: "Maximiza tus ahorros con nuestra calculadora avanzada.",
+    titleTwo: "Calcula tus ahorros en un año con una sola unidad MIXO.",
+    subtitle: "Resultados",
+    items: [
+      "Ingresos totales",
+      "Costes totales",
+      "Ingresos netos",
+    ],
     inputs: {
       days: "Días operativos",
       hours: "Horas por día",
@@ -686,7 +698,8 @@ const es = {
       hours: "*Horas al día que está en funcionamiento la barra",
       price: "*Precio promedio del combinado",
       served: "*Combinados que 1 bartender sirve al día",
-      bartender: "*Número de camareros durante 1 día",
+      bartender:
+        "*Número de camareros durante 1 día que seran asistidos por Mixo",
     },
     results: {
       totalIncome: "Ingresos Totales",
