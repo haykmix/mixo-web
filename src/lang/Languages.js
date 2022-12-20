@@ -320,7 +320,7 @@ const en = {
   },
   advancedCalc: {
     titleOne: "Maximize your savings with our advanced calculator.",
-    titleTwo: "Calculate your savings in one year with a single MIXO unit.",
+    titleTwo: "Calculate your savings in one year with a MIXO.",
     subtitle: "Results",
     items: [
       "Total income",
@@ -338,8 +338,8 @@ const en = {
       days: "*Number of days per week the bar is used",
       hours: "*Hours a day the bar is running",
       price: "*Average drink price",
-      served: "*Drinks that 1 bartender serves in 1 day",
-      bartender: "*Number of bartenders for 1 day",
+      served: "*Drinks served in 1 day",
+      bartender: "*Number of bartenders to be assisted by Mixo",
     },
     results: {
       totalIncome: "Total Revenue",
@@ -679,7 +679,7 @@ const es = {
   },
   advancedCalc: {
     titleOne: "Maximiza tus ahorros con nuestra calculadora avanzada.",
-    titleTwo: "Calcula tus ahorros en un año con una sola unidad MIXO.",
+    titleTwo: "Calcula tus ahorros en un año con MIXO.",
     subtitle: "Resultados",
     items: [
       "Ingresos totales",
@@ -697,9 +697,9 @@ const es = {
       days: "*Cantidad de días a la semana que se utiliza la barra",
       hours: "*Horas al día que está en funcionamiento la barra",
       price: "*Precio promedio del combinado",
-      served: "*Combinados que 1 bartender sirve al día",
+      served: "*Combinados que sirven al día",
       bartender:
-        "*Número de camareros durante 1 día que seran asistidos por Mixo",
+        "*Número de camareros durante que seran asistidos por Mixo",
     },
     results: {
       totalIncome: "Ingresos Totales",
