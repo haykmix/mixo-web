@@ -320,7 +320,7 @@ const en = {
   },
   advancedCalc: {
     titleOne: "Maximize your savings with our advanced calculator.",
-    titleTwo: "Calculate your savings in one year with a MIXO.",
+    titleTwo: "Calculate your savings in one year with MIXO.",
     subtitle: "Results",
     items: [
       "Total income",
