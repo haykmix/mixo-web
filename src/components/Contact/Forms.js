@@ -71,6 +71,9 @@ function Forms({ innerRef, text }) {
     lastName: "",
     email: "",
     phone: "",
+    location: "",
+    company: "",
+    position: "",
     subject: "",
     message: "",
     checkbox: "",
@@ -85,6 +88,9 @@ function Forms({ innerRef, text }) {
     if (!values.firstName) errors.firstName = form.errors[0];
     if (!values.lastName) errors.lastName = form.errors[0];
     if (!values.subject) errors.subject = form.errors[0];
+    if (!values.location) errors.location = form.errors[0];
+    if (!values.company) errors.company = form.errors[0];
+    if (!values.position) errors.position = form.errors[0];
     if (!values.message) errors.message = form.errors[0];
     if (!values.checkbox) errors.checkbox = form.errors[0];
 
@@ -218,6 +224,55 @@ function Forms({ innerRef, text }) {
                             />
                             <span>
                               {errors.phone && touched.phone && errors.phone}
+                            </span>
+                          </label>
+                        </div>
+                        <div
+                          className="col-md-12 d-flex"
+                          style={{ gap: "10px" }}
+                        >
+                          <label htmlFor="" className="input-label">
+                            <input
+                              type="text"
+                              name="location"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.location}
+                              placeholder={form.inputLocation}
+                            />
+                            <span>
+                              {errors.location && touched.location && errors.location}
+                            </span>
+                          </label>
+                          <label htmlFor="" className="input-label">
+                            <input
+                              type="text"
+                              name="company"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.company}
+                              placeholder={form.inputCompany}
+                            />
+                            <span>
+                              {errors.company && touched.company && errors.company}
+                            </span>
+                          </label>
+                        </div>
+                        <div
+                          className="col-md-12 d-flex"
+                          style={{ gap: "10px" }}
+                        >
+                          <label htmlFor="" className="input-label">
+                            <input
+                              type="text"
+                              name="position"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.position}
+                              placeholder={form.inputPosition}
+                            />
+                            <span>
+                              {errors.position && touched.position && errors.position}
                             </span>
                           </label>
                         </div>

@@ -283,6 +283,9 @@ const en = {
       inputLastname: "Last Name",
       inputEmail: "Email Address",
       inputPhone: "Phone Number",
+      inputLocation: "Location",
+      inputCompany: "Company",
+      inputPosition: "Position",
       inputSubject: "Subject",
       inputMessage: "How can we help you?",
       checkbox: ["I agree to the", "Terms & Conditions"],
@@ -424,7 +427,7 @@ const es = {
         subtitle: "Visualiza datos de facturación de una forma sencilla.",
       },
       {
-        title: "Estadisticas",
+        title: "Estadísticas",
         subtitle:
           "Encuentra mejoras en tu servicio y gestión segun tus metricas.",
       },
@@ -642,6 +645,9 @@ const es = {
       inputLastname: "Apellidos",
       inputEmail: "Correo electrónico",
       inputPhone: "Número de teléfono",
+      inputLocation: "Ubicación",
+      inputCompany: "Empresa",
+      inputPosition: "Cargo",
       inputSubject: "Asunto",
       inputMessage: "¿Cómo podemos ayudarte?",
       checkbox: ["Acepto los", "Términos y Condiciones"],
