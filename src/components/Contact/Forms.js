@@ -84,7 +84,7 @@ function Forms({ innerRef, text }) {
 
   const validate = (values) => {
     const errors = {};
-
+    
     if (!values.firstName) errors.firstName = form.errors[0];
     if (!values.lastName) errors.lastName = form.errors[0];
     if (!values.subject) errors.subject = form.errors[0];
@@ -96,7 +96,7 @@ function Forms({ innerRef, text }) {
 
     if (!values.email) {
       errors.email = form.errors[0];
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+    } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
       errors.email = form.errors[1];
     }
 
