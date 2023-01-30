@@ -96,15 +96,19 @@ function Forms({ innerRef, text }) {
 
     if (!values.email) {
       errors.email = form.errors[0];
-    } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
-      errors.email = form.errors[1];
     }
+
+    // else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
+    //   errors.email = form.errors[1];
+    // }
 
     if (!values.phone) {
       errors.phone = form.errors[0];
-    } else if (!/^[679]{1}[0-9]{8}$/.test(values.phone.replace(/\s/g, ""))) {
-      errors.phone = form.errors[2];
-    }
+    } 
+
+    // else if (!/^[679]{1}[0-9]{8}$/.test(values.phone.replace(/\s/g, ""))) {
+    //   errors.phone = form.errors[2];
+    // }
 
     if (!values.checkbox) errors.checkbox = form.errors[0];
 
