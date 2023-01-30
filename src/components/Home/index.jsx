@@ -1,6 +1,5 @@
 import React, { useContext, useRef } from "react";
 import useToggle from "../../Hooks/useToggle";
-import BackToTop from "../BackToTop";
 import Drawer from "../Mobile/Drawer";
 import BlogHome from "./BlogHome";
 import FaqHome from "./FaqHome";

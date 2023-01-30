@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { LanguageContext } from '../../context/LanguageContext';
 import useToggle from '../../Hooks/useToggle';
-import BackToTop from '../BackToTop';
 import FooterHome from '../Home/FooterHome';
 import HomeHeader from '../Home/HomeHeader';
 import Drawer from '../Mobile/Drawer';
