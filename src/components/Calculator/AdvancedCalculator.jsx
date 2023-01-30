@@ -42,7 +42,7 @@ function AdvancedCalculator() {
   };
 
   const numberWithCommas = (x) => {
-    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    return Intl.NumberFormat('en-US').format(x.toString());
   };
 
   const multiplicationFc = (arr) => {
