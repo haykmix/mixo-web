@@ -91,6 +91,10 @@ const en = {
     title: "Meet our team members",
     subtitle: "The team that makes it possible  ",
   },
+  homeCollaboration: {
+    title: "Our trusted collaborators",
+    subtitle: "We have the best support to offer you the best product",
+  },
   homeFaq: {
     title: "Frequently asked questions",
     subtitle: "You can find the most asked information quickly",
@@ -448,6 +452,10 @@ const es = {
   homeTeam: {
     title: "Conozca a los miembros del equipo",
     subtitle: "El equipo que lo hace todo posible",
+  },
+  homeCollaboration: {
+    title: "Nuestros colaboradores de confianza",
+    subtitle: "Tenemos el mejor soporte para ofrecerle el mejor producto",
   },
   homeFaq: {
     title: "Preguntas frecuentes",

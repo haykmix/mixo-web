@@ -16,6 +16,7 @@ import { LanguageContext } from "../../context/LanguageContext";
 import Calculator from "../Calculator/Calculator";
 import GalleryHome from "./GalleryHome";
 import Contact from "../Contact/index";
+import CollaborationHome from './CollaborationHome';
 
 function Home() {
   const [drawer, drawerAction] = useToggle(false);
@@ -62,6 +63,7 @@ function Home() {
       <DashboardHome text={language} />
       <GalleryHome text={language} />
       <TeamHome text={language} innerRef={teamRef} />
+      <CollaborationHome text={language} />
       <BlogHome text={language} />
       <Contact innerRef={contactRef} text={language} />
       <WhatsappHome text={language} />

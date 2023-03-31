@@ -133,7 +133,7 @@ function Forms({ innerRef, text }) {
 
   return (
     <>
-      <section className="contact-section">
+      <section className="contact-section" style={{backgroundColor: '#f7f6fa'}}>
         <div className="container">
           <div className="row">
             <div className="col-md-4">

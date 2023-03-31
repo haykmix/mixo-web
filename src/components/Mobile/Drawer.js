@@ -135,7 +135,7 @@ function Drawer({
                 <div className="offcanvas-social">
                   <ul className="text-center">
                     <li>
-                      <a href="$">
+                      <a href="https://www.instagram.com/mixo.drink/?hl=es">
                         <i className="fab fa-instagram"></i>
                       </a>
                     </li>
@@ -145,18 +145,17 @@ function Drawer({
                   <ul>
                     <li>
                       <a href="/">
-                        <i className="fal fa-envelope"></i> support@appie.com
+                        <i className="fal fa-envelope"></i> clientes@mixodrink.com
                       </a>
                     </li>
                     <li>
                       <a href="/">
-                        <i className="fal fa-phone"></i> +(642) 342 762 44
+                        <i className="fal fa-phone"></i> +(34) 695 273 507
                       </a>
                     </li>
                     <li>
                       <a href="/">
-                        <i className="fal fa-map-marker-alt"></i> 442 Belle
-                        Terre St Floor 7, San Francisco, AV 4206
+                        <i className="fal fa-map-marker-alt"></i> C/ Valencia, 359, 4-2 Barcelona
                       </a>
                     </li>
                   </ul>

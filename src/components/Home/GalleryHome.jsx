@@ -35,13 +35,6 @@ function GalleryHome({ className, text }) {
     });
   };
 
-  const ComponentSpan = styled.span`
-    width: ${(props) => props.width}px;
-    height: 520px;
-    background-color: #0000007a;
-    position: absolute;
-  `;
-
   return (
     <>
       <section>
@@ -147,5 +140,12 @@ function GalleryHome({ className, text }) {
     </>
   );
 }
+
+const ComponentSpan = styled.span`
+  width: ${(props) => props.width}px;
+  height: 520px;
+  background-color: #0000007a;
+  position: absolute;
+`;
 
 export default GalleryHome;

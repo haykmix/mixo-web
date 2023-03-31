@@ -91,8 +91,8 @@ function TeamHome({ className, text, innerRef }) {
                   <img src={teamFour} alt="" />
                 </div>
                 <div className="content text-center">
-                  <h5 className="title">Eric Achtman</h5>
-                  <span>Advisor</span>
+                  <h5 className="title">Vicente Rubio</h5>
+                  <span>Business Developer</span>
                 </div>
               </div>
             </div>
