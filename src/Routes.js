@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import SingleNews from "./components/News";
 import AdvancedCalculator from "./components/Calculator/AdvancedCalculator";
+import SimpleCalculator from "./components/Calculator/SimpleCalculator";
 
 function Routes() {
   const [loading, setLoading] = useState(true);
@@ -22,6 +23,7 @@ function Routes() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/advanced-calc" component={AdvancedCalculator} />
+            <Route exact path="/simple-calc" component={SimpleCalculator} />
             <Route exact path="/news/single-news-0" component={SingleNews} />
             <Route exact path="/news/single-news-1" component={SingleNews} />
             <Route exact path="/news/single-news-2" component={SingleNews} />

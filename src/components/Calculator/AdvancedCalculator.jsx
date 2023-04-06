@@ -284,6 +284,8 @@ function AdvancedCalculator() {
                       placeholder=""
                       name="operatingDays"
                       onChange={handelInputChange}
+                      min="1" 
+                      max="7"
                     />
                     <InputResume>
                       {language.advancedCalc.labels.days}
