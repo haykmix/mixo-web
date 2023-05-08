@@ -96,9 +96,7 @@ function Forms({ innerRef, text }) {
 
     if (!values.email) {
       errors.email = form.errors[0];
-    }
-
-    else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
+    } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
       errors.email = form.errors[1];
     }
 

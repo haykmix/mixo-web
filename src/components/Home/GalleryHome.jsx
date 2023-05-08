@@ -62,6 +62,7 @@ function GalleryHome({ className, text }) {
               overlayClassName="my-overlay"
               closeTimeoutMS={100}
             >
+              
               <video autoPlay={true} loop={true} className="video-modal">
                 <source src={videoOne} />
               </video>
