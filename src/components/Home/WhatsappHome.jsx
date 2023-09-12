@@ -23,7 +23,7 @@ function WhatsappHome({ className, text }) {
                       <h5> {text.homeCta.subtitle}</h5>
                       <div className="input-box mt-30">
                         <a
-                          href="https://wa.me/34695273507?text=Hola Martin, ¿te va bien hablar?"
+                          href="https://wa.me/34685564527?text=Hola Vicente, encantado..."
                           target={"_blank"}
                           rel="noreferrer"
                         >

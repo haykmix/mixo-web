@@ -271,7 +271,7 @@ const en = {
     subtitle: "Looking for help? Fill the form and start a new adventure.",
     items: [
       { title: "Headquarters", data: "C/ Valencia 359, 4-2 Barcelona" },
-      { title: "Phone", data: "+(34) 695 273 507" },
+      { title: "Phone", data: "+(34) 685 56 45 27" },
       { title: "Support", data: "clientes@mixodrink.com" },
       { title: "Follow Us" },
     ],
@@ -321,7 +321,7 @@ const en = {
     },
     info: {
       street: "C/ Valencia 359, 4-2 Barcelona",
-      phone: "+(34) 695 273 507",
+      phone: "+(34) 685 56 45 27",
       email: "hola@mixodrink.com",
     },
   },
@@ -658,7 +658,7 @@ const es = {
     subtitle: "¿Busca ayuda? Rellena el formulario y conoce Mixo.",
     items: [
       { title: "Headquarters", data: "C/ Valencia, 359, 4-2 Barcelona" },
-      { title: "Teléfono", data: "+(34) 695 273 507" },
+      { title: "Teléfono", data: "+(34) 685 56 45 27" },
       { title: "Soporte", data: "clientes@mixodrink.com" },
       { title: "Síguenos" },
     ],
@@ -708,7 +708,7 @@ const es = {
     },
     info: {
       street: "C/ Valencia, 359, 4-2 Barcelona",
-      phone: "+(34) 695 273 507",
+      phone: "+(34) 685 56 45 27",
       email: "clientes@mixodrink.com",
     },
   },
