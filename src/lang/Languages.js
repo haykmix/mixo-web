@@ -2,10 +2,9 @@ const en = {
   menu: ["Home", "Product", "Software", "Team", "Contact"],
   homeCover: {
     upTitle: "👋 Welcome To Mixo",
-    title: "The first fully automated cocktail 🍹 machine",
-    subtitle:
-      "Enjoy what really matters, avoid queues, drink safely and responsibly",
-    buttonDemo: "Get a demo",
+    title: "Elevating Mixology: Where Engineering, Precision, and Design Converge in Every Sip 🍹",
+    subtitle: "Experience the Future of Crafted Cocktails",
+    buttonDemo: "Contact",
     buttonInfo: "Know more",
   },
   homeService: {
@@ -320,9 +319,10 @@ const en = {
       contact: { title: "Contact", data: ["Form", "Whtasapp"] },
     },
     info: {
+      title: "Get in Touch",
       street: "C/ Valencia 359, 4-2 Barcelona",
       phone: "+(34) 685 56 45 27",
-      email: "hola@mixodrink.com",
+      email: "clientes@mixodrink.com",
     },
   },
   advancedCalc: {
@@ -384,10 +384,10 @@ const es = {
   menu: ["Inicio", "Producto", "Software", "Equipo", "Contacto"],
   homeCover: {
     upTitle: "👋 Bienvenid@ a Mixo",
-    title: "La primera máquina de cócteles 🍹 totalmente automatizada",
+    title: "Mixología: Donde la ingeniería, la precisión y el diseño se unen en cada sorbo",
     subtitle:
-      "Disfrutar de lo que realmente importa, evita colas, bebe de forma segura y responsable",
-    buttonDemo: "Obtener una demostración",
+      "Experimenta el futuro de los bebidas",
+    buttonDemo: "Escribenos",
     buttonInfo: "Conoce más",
   },
   homeService: {
@@ -401,15 +401,15 @@ const es = {
       },
       {
         title: "Control",
-        text: "Visibilidad de todo el proceso de servicio",
+        text: "Control de todo el proceso de servicio",
       },
       {
-        title: "Organización",
-        text: "Recopila datos estratégicos",
+        title: "Data Analisis",
+        text: "Recopila y analiza datos estratégicos",
       },
       {
-        title: "Ahorro",
-        text: "Reduce costes y aumenta ventas",
+        title: "Finanzas",
+        text: "Control de gastos, consumos y demanda",
       },
     ],
   },
@@ -471,7 +471,7 @@ const es = {
     subtitle: "Conoce más sobre los servicios de Mixo",
   },
   homeTeam: {
-    title: "Conozca a los miembros del equipo",
+    title: "Conoce a los miembros del equipo",
     subtitle: "El equipo que lo hace todo posible",
   },
   homeCollaboration: {
@@ -707,6 +707,7 @@ const es = {
       contact: { title: "Contacto", data: ["Formulario", "WhtasApp"] },
     },
     info: {
+      title: "Contacta con nosotros",
       street: "C/ Valencia, 359, 4-2 Barcelona",
       phone: "+(34) 685 56 45 27",
       email: "clientes@mixodrink.com",

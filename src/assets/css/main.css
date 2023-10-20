@@ -178,7 +178,7 @@ p {
 .appie-section-title .appie-title {
   font-size: 44px;
   line-height: 54px;
-  color: #000;
+  color: #fff;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -355,7 +355,7 @@ p {
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #ededed;
-  color: #222;
+  color: #222 !important;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -856,7 +856,7 @@ p {
   top: 0;
   right: 0;
   z-index: 1010;
-  background: #fff;
+  background: #5d00c8db;
   box-shadow: 0 15px 30px 0 #0000000f;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -867,7 +867,7 @@ p {
   position: absolute;
   left: 0;
   height: 90px;
-  background-color: #fff;
+  background-color: #5e00c8;
   top: 0;
   right: 0;
   z-index: 999;
@@ -1411,7 +1411,7 @@ p {
     3.APPIE HERO css 
 ===========================*/
 .appie-hero-area {
-  padding-top: 200px;
+  padding-top: 150px;
   padding-bottom: 110px;
   overflow: hidden;
   position: relative;
@@ -1726,19 +1726,19 @@ p {
 .appie-hero-content .appie-title {
   font-size: 60px;
   line-height: 70px;
-  margin-top: 10px;
-  margin-bottom: 22px;
-  font-family: "Monoton", cursive;
+  margin-top: -20px;
+  margin-bottom: 42px;
+  font-family: 'Lexend', sans-serif;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .appie-hero-content .appie-title {
-    font-size: 48px;
+    font-size: 58px;
     line-height: 58px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .appie-hero-content .appie-title {
-    font-size: 48px;
+    font-size: 58px;
     line-height: 58px;
   }
 }
@@ -1796,10 +1796,10 @@ p {
   }
 }
 .appie-hero-content ul li p {
-  background: #ff3e66;
+  background: #ff0084;
   color: #fff;
   line-height: 40px;
-  padding: 0 23px;
+  padding: 5px 23px;
   border-radius: 6px;
   border: 2px solid #0e1133;
 }
@@ -1980,7 +1980,7 @@ p {
   height: 500px;
   width: 500px;
   transform: translate(-50%, -50%);
-  background: #ff3e66;
+  background: url(../images/shape/blob.svg);
   border-radius: 50%;
   z-index: -1;
 }
@@ -2294,7 +2294,7 @@ p {
 ===========================*/
 .appie-service-area {
   position: relative;
-  background-color: #f7f6fa;
+  background-color: #000000;
 }
 .appie-service-area.appie-service-3-area {
   background: none;
@@ -2310,13 +2310,27 @@ p {
   }
 }
 
+.appie-single-service-wrapper {
+  margin-top: 50px;
+}
+
 .appie-single-service {
   padding: 50px 30px 43px;
-  background: #fff;
+  /* background: linear-gradient(217deg, rgba(144, 0, 255, 0.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(255, 0, 247, 0.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0, 102, 255, 0.8), rgba(0,0,255,0) 70.71%); */
+  background-color: #111111;
+  border-bottom: 8px solid #853eff;
   border-radius: 6px;
   height: 278px;
   transition: all linear 0.3s;
 }
+
+.appie-single-service:hover {
+  border-bottom: 80px solid #853eff;
+}
+
+
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .appie-single-service {
     padding: 50px 15px 43px;
@@ -2351,11 +2365,11 @@ p {
   font-weight: 700;
   padding-top: 33px;
   padding-bottom: 20px;
-  color: #000;
+  color: #ffffff;
 }
 
 .appie-single-service .appie-subtitle {
-  color: #000;
+  color: #ffffff;
 }
 
 .appie-single-service:hover {
@@ -2716,7 +2730,7 @@ p {
   border-radius: 0;
   font-size: 15px;
   font-weight: 500;
-  color: #505056;
+  color: #ffffff;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .appie-features-tabs-btn .nav a {
@@ -2916,6 +2930,16 @@ p {
   opacity: 1;
 }
 
+.appie-features-thumb img{
+  height: 600px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .appie-features-thumb img {
+    height: 500px;
+  }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .appie-features-thumb {
     text-align: center;
@@ -2963,6 +2987,13 @@ p {
   transform: translateY(-50%);
   width: 42%;
 }
+
+.appie-traffic-area .traffic-thumb img {
+ height: 100%;
+ width: 100%;
+ border-radius: 10px 0px 0px 10px;
+}
+
 @media (max-width: 767px) {
   .appie-traffic-area .traffic-thumb {
     display: flex;
@@ -3595,10 +3626,12 @@ p {
   font-weight: 700;
   padding-bottom: 8px;
 }
+
 .appie-team-item .content span {
   font-size: 14px;
-  color: #81818d;
+  color: #ffffff;
 }
+
 .appie-team-item:hover .thumb::before {
   opacity: 0.5;
 }
@@ -4132,13 +4165,23 @@ p {
     right: 20px;
   }
 }
+
 .faq-accrodion .accrodion .accrodion-title h4 {
   margin: 0;
-  color: #0e1133;
+  color: #0e1133 !important;
   font-size: 18px;
   font-weight: 700;
   width: 90%;
 }
+
+.faq-accrodion .accrodion .accrodion-content p {
+  margin: 0;
+  color: #505056 !important;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
 .faq-accrodion .accrodion .accrodion-content .inner {
   padding: 0 38px;
   padding-right: 35px;
@@ -4150,13 +4193,7 @@ p {
     padding: 0 38px 0 20px;
   }
 }
-.faq-accrodion .accrodion .accrodion-content p {
-  margin: 0;
-  color: #505056;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 400;
-}
+
 
 .appie-faq-8-area {
   background: #eef1f6;
@@ -4290,7 +4327,7 @@ p {
   margin-top: 2px;
 }
 .appie-blog-item .content .title a {
-  color: #0e1133;
+  color: #ffffff;
 }
 .appie-blog-item .content .title a:hover {
   color: #2b70fa;
@@ -4298,7 +4335,7 @@ p {
 .appie-blog-item .content > a {
   font-size: 15px;
   font-weight: 500;
-  color: #0e1133;
+  color: #ffffff;
   margin-top: 14px;
 }
 .appie-blog-item .content > a i {
@@ -5524,7 +5561,7 @@ blockquote cite {
     10.APPIE FOOTER css 
 ===========================*/
 .appie-footer-area {
-  background: #eef1f6;
+  background: #000;
   padding-top: 50px;
   padding-bottom: 60px;
 }
@@ -5646,14 +5683,14 @@ blockquote cite {
   height: 36px;
   width: 36px;
   text-align: center;
-  background: #fff;
+  background: #2b70fa;
   color: #0e1133;
   border-radius: 6px;
   line-height: 36px;
   margin-right: 5px;
 }
 .footer-about-widget .social ul li a:hover {
-  background: #2b70fa;
+  background: #7b70fa;
   color: #fff;
 }
 .footer-about-widget.footer-about-widget-2 ul li a:hover {
@@ -6700,14 +6737,14 @@ blockquote cite {
 
 .contact--info-area h3 {
   font-size: 30px;
-  color: #2c234d;
+  color: #fff;
   font-weight: 800;
   line-height: 0.8;
   margin-bottom: 16px;
 }
 
 .contact--info-area > p {
-  color: #686875;
+  color: #fff;
   line-height: 24px;
   border-bottom: 1px solid #e5e4ed;
   margin-bottom: 33px;
@@ -6724,16 +6761,15 @@ blockquote cite {
   line-height: 26px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #2c234d;
+  color: #fff;
 }
 
 .single-info p {
   position: relative;
   font-size: 14px;
   line-height: 22px;
-  color: #686875;
+  color: #fff;
   margin: 0;
-  padding-left: 32px;
 }
 
 .single-info p i {
@@ -6750,7 +6786,7 @@ blockquote cite {
   line-height: 26px;
   font-weight: 600;
   margin-bottom: 24px;
-  color: #2c234d;
+  color: #fff;
 }
 
 .bisylms-map {
@@ -6786,14 +6822,14 @@ blockquote cite {
 
 .contact-form h4 {
   font-size: 24px;
-  color: #2c234d;
+  color: #2c234d !important;
   line-height: 30px;
   margin-bottom: 8px;
 }
 
 .contact-form p {
   font-size: 16px;
-  color: #686875;
+  color: #686875 !important;
   line-height: 26px;
   position: relative;
   z-index: 3;
@@ -7662,6 +7698,10 @@ blockquote cite {
   font-size: 15px;
 }
 
+.calc-container .calc-content h2, h5 {
+  color: #000;
+}
+
 .error {
   color: red;
   padding: 10px 7px;
@@ -7910,22 +7950,31 @@ blockquote cite {
 
 .gallery_Section_left {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
 .gallery_Section_left .gallery_item_container img,
 .gallery_Section_right .gallery_item_container img {
   margin-bottom: 20px;
-  width: 500px;
-  height: 520px;
+  width: 400px;
+  height: 420px;
   object-fit: cover;
   transition: transform 0.7s ease-in-out;
+  border-radius: 20px;
+}
+
+.gallery_Section_left .gallery_item_container .gallery_item_image {
+  border: 5px solid #fff;
 }
 
 .gallery_Section_left .gallery_item_container span:hover,
 .gallery_Section_right .gallery_item_container span:hover {
   transform: scale(1.03);
   background: rgb(186, 0, 255);
+  border-radius: 20px;
   background: linear-gradient(
     00deg,
     rgba(106, 0, 255, 0.6) 0%,
@@ -7953,7 +8002,7 @@ blockquote cite {
 .gallery_Section_right .gallery_item_container span h1 {
   color: #fff;
   position: absolute;
-  bottom: 120px;
+  bottom: 160px;
   left: 40px;
 }
 
@@ -7965,7 +8014,20 @@ blockquote cite {
   left: 40px;
 }
 
+@media (max-width: 1024px) {
+  .gallery_Section_left h1 {
+    font-size: 30px;
+  }
+
+  .gallery_Section_left h4 {
+    font-size: 15px;
+  }
+}
 @media (max-width: 425px) {
+  .gallery_Section_left {
+    flex-direction: column;
+  }
+
   .gallery_Section_left .gallery_item_container span h1,
   .gallery_Section_right .gallery_item_container span h1 {
     font-size: 38px;

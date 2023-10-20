@@ -58,44 +58,47 @@ function CollaborationHome({ className, text, innerRef }) {
             </div>
           </div>
         </div>
-        <div className="row justify-content-around align-items-center">
-          {listData.map((item, index) => {
-            return (
-              <div className="mt-40" key={index}>
-                <div className="">
-                  <a href={item.link}>
-                    <img
-                      src={item.img}
-                      alt=""
-                      width={item.width}
-                      height={item.height}
-                    />
-                  </a>
+        <div style={{ backgroundColor: "#fff", padding: 40, borderRadius: 10 }}>
+          <div className="row justify-content-around align-items-center">
+            {listData.map((item, index) => {
+              return (
+                <div className="" key={index}>
+                  <div className="">
+                    <a href={item.link}>
+                      <img
+                        src={item.img}
+                        alt=""
+                        width={item.width}
+                        height={item.height}
+                      />
+                    </a>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-        <div
-          className="row justify-content-center align-items-center"
-          style={{ gap: "100px", marginTop: "40px" }}
-        >
-          {listDataTwo.map((item, index) => {
-            return (
-              <div className="" key={index}>
-                <div className="">
-                  <a href={item.link}>
-                    <img
-                      src={item.img}
-                      alt=""
-                      width={item.width}
-                      height={item.height}
-                    />
-                  </a>
+              );
+            })}
+          </div>
+
+          <div
+            className="row justify-content-center align-items-center"
+            style={{ gap: "100px", marginTop: "40px" }}
+          >
+            {listDataTwo.map((item, index) => {
+              return (
+                <div className="" key={index}>
+                  <div className="">
+                    <a href={item.link}>
+                      <img
+                        src={item.img}
+                        alt=""
+                        width={item.width}
+                        height={item.height}
+                      />
+                    </a>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

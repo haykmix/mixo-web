@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import thumbOneEs from "../../assets/images/features/features-thumb-1-es.jpg";
-import thumbTwoEs from "../../assets/images/features/features-thumb-2-es.jpg";
-import thumbThreeEs from "../../assets/images/features/features-thumb-3-es.jpg";
-import thumbFourEs from "../../assets/images/features/features-thumb-4-es.jpg";
+import thumbOneEs from "../../assets/images/features/frame-one.png";
+import thumbTwoEs from "../../assets/images/features/frame-two.png";
+import thumbThreeEs from "../../assets/images/features/frame-three.png";
+import thumbFourEs from "../../assets/images/features/frame-four.png";
 import thumbOneEn from "../../assets/images/features/features-thumb-1-en.jpg";
 import thumbTwoEn from "../../assets/images/features/features-thumb-2-en.jpg";
 import thumbThreeEn from "../../assets/images/features/features-thumb-3-en.jpg";
@@ -54,7 +54,7 @@ function FeaturesHomeOne({ className, text, innerRef }) {
 
   return (
     <section
-      className={`appie-features-area pt-100 mb-65 mt-65 ${className}`}
+      className={`appie-features-area pt-100 mb-200 mt-85 ${className}`}
       id="features"
       ref={innerRef}
     >

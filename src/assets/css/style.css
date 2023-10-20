@@ -1,3 +1,9 @@
+html, body, * {
+  font-family: 'Lexend', sans-serif !important;
+}
+p, h1, h2, h3, h4, h5, h6, div, section, a{
+  color: #fff;
+}
 .appie-color-mode {
   transition: all 0.5s ease-in-out;
 }
@@ -30,6 +36,7 @@
 }
 .appie-visible.active {
   opacity: 100;
+  background-color: #000;
 }
 .appie-init {
   transition: all 0.5s ease-in-out;

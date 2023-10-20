@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import heroThumbOne from "../../assets/images/hero-thumb-1-new.png";
+import heroThumbOne2 from "../../assets/images/mixo_machine_lights.png";
 import video from "../../assets/video/video-cover.mp4";
 
 function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
@@ -41,14 +42,14 @@ function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="appie-hero-content">
-                <span>{upTitle}</span>
+                {/* <span style={{fontSize: 20}}>{upTitle}</span>
                 <p className="glitch">
                   <span aria-hidden="true">{title}</span>
                   {title}
                   <span aria-hidden="true">{title}</span>
-                </p>
-                {/* <h1 className="appie-title">{title}</h1> */}
-                <p>{subtitle}</p>
+                </p> */}
+                <h1 className="appie-title">{title}</h1>
+                <h4>{subtitle}</h4>
                 <ul>
                   <li>
                     <p onClick={executeScrollContact}>
@@ -70,7 +71,7 @@ function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
                   data-wow-duration="2000ms"
                   data-wow-delay="200ms"
                 >
-                  <img src={heroThumbOne} alt="" width="310px" height="616px" />
+                  <img src={heroThumbOne2} alt="" width="310px" height="616px" />
                 </div>
                 <div
                   className="thumb-2 wow animated fadeInRight"

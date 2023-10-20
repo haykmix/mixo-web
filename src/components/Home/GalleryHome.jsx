@@ -46,12 +46,13 @@ function GalleryHome({ className, text }) {
           <div className="gallery_Section_left">
             <div className="gallery_item_container" ref={ref}>
               <ComponentSpan width={spanWidth}>
-                <h1>Video presentación</h1>
+                <h1>Presentación</h1>
+                <h4>Inovación y Tecnología</h4>
                 <button onClick={() => handleToggleVideo("v0")}>
                   <img src={playButton} alt="" />
                 </button>
               </ComponentSpan>
-              <img src={imageVideoOne} alt="" />
+              <img src={imageVideoOne} alt="" className="gallery_item_image" />
             </div>
 
             <Modal
@@ -62,7 +63,6 @@ function GalleryHome({ className, text }) {
               overlayClassName="my-overlay"
               closeTimeoutMS={100}
             >
-              
               <video autoPlay={true} loop={true} className="video-modal">
                 <source src={videoOne} />
               </video>
@@ -76,12 +76,13 @@ function GalleryHome({ className, text }) {
 
             <div className="gallery_item_container">
               <ComponentSpan width={spanWidth}>
-                <h1>Video render</h1>
+                <h1>Modelo Renderizado</h1>
+                <h4>Producto y Diseño</h4>
                 <button onClick={() => handleToggleVideo("v1")}>
                   <img src={playButton} alt="" />
                 </button>
               </ComponentSpan>
-              <img src={imageVideoTwo} alt="" />
+              <img src={imageVideoTwo} alt="" className="gallery_item_image" />
             </div>
             <Modal
               isOpen={toggleVideo.v1}
@@ -106,16 +107,20 @@ function GalleryHome({ className, text }) {
                 <FontAwesomeIcon icon={faXmark} className="close-icon" />
               </button>
             </Modal>
-          </div>
-          <div className="gallery_Section_right">
+
             <div className="gallery_item_container">
               <ComponentSpan width={spanWidth}>
-                <h1>Mixo en Pacha</h1>
+                <h1>Colaboración Pacha</h1>
+                <h4>Pruebas y Eventos</h4>
                 <button onClick={() => handleToggleVideo("v2")}>
                   <img src={playButton} alt="" />
                 </button>
               </ComponentSpan>
-              <img src={imageVideoThree} alt="" />
+              <img
+                src={imageVideoThree}
+                alt=""
+                className="gallery_item_image"
+              />
             </div>
             <Modal
               isOpen={toggleVideo.v2}
@@ -144,7 +149,7 @@ function GalleryHome({ className, text }) {
 
 const ComponentSpan = styled.span`
   width: ${(props) => props.width}px;
-  height: 520px;
+  height: 420px;
   background-color: #0000007a;
   position: absolute;
 `;

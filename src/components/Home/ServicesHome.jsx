@@ -14,11 +14,11 @@ function ServicesHomeOne({ className, text, innerRef }) {
     },
     {
       ...items[1],
-      icon: IconThree,
+      icon: IconTwo,
     },
     {
       ...items[2],
-      icon: IconTwo,
+      icon: IconThree,
     },
     {
       ...items[3],
@@ -40,7 +40,7 @@ function ServicesHomeOne({ className, text, innerRef }) {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row appie-single-service-wrapper">
           {listData.map((item, index) => {
             return (
               <div className="col-lg-3 col-md-6" key={index}>
@@ -53,15 +53,7 @@ function ServicesHomeOne({ className, text, innerRef }) {
                   data-wow-duration="2000ms"
                   data-wow-delay="200ms"
                 >
-                  <div className="icon">
-                    <img
-                      src={item.icon}
-                      alt=""
-                      width={"30px"}
-                      height={"30px"}
-                    />
-                    <span>{index + 1}</span>
-                  </div>
+                  <img src={item.icon} alt="" width={"80px"} height={"80px"} />
                   <h4 className="appie-title">{item.title}</h4>
                   <p className="appie-subtitle">{item.text}</p>
                 </div>

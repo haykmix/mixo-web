@@ -1,5 +1,5 @@
 import React from "react";
-import thumb from "../../assets/images/traffic-thumb.png";
+import thumb from "../../assets/images/dashboard/dashboard2.png";
 
 function DashboardHome({ className, text }) {
   const { uptitle, title, subtitle, items } = text.homeDashboard;

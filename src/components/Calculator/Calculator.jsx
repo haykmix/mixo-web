@@ -50,7 +50,7 @@ function Calculator({ text }) {
         onClick={handleToggleCalc}
         onMouseEnter={toggleCalc ? () => 0 : handleShowText}
         onMouseLeave={toggleCalc ? () => 0 : handleShowText}
-        style={{ width: showText ? "210px" : "" }}
+        style={{ width: !toggleCalc ? "230px" : "70px", transition: 'all 0.5s ease-in' }}
       >
         <img
           src={toggleCalc ? crossImg : calulatorImg}
@@ -59,7 +59,7 @@ function Calculator({ text }) {
           alt="Icon calc"
         />
         <h4
-          style={{ marginLeft: "15px", display: showText ? "block" : "none" }}
+          style={{ marginLeft: "15px", display: !toggleCalc ? "block" : "none", color: '#000' }}
         >
           {data.buttonText}
         </h4>
@@ -69,7 +69,7 @@ function Calculator({ text }) {
         style={{ display: toggleCalc ? "block" : "none" }}
       >
         <h2>{data.title}</h2>
-        <h5>{data.subtitle}</h5>
+        <h5 style={{color: '#000'}}>{data.subtitle}</h5>
         <form>
           <label>
           {data.inputClients}

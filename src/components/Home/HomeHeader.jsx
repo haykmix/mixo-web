@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../../assets/images/logo-new-2.png";
+
+import logo from "../../assets/images/logo-new.png";
+
 import { LanguageContext } from "../../context/LanguageContext";
 import StickyMenu from "../../lib/StickyMenu";
 
@@ -33,7 +35,7 @@ function HomeHeader({
       ? history.push("/")
       : homeRef.current.scrollIntoView();
   }
-  
+
   function executeScrollService() {
     window.location.pathname !== "/"
       ? history.push("/")
@@ -109,7 +111,13 @@ function HomeHeader({
                   onClick={(e) => action(e)}
                   className="toggle-btn ml-30 canvas_open d-lg-none d-block"
                 >
-                  <i className="fa fa-bars" />
+                  <i
+                    className="fa fa-bars "
+                    style={{
+                      color: "#fff",
+                      fontFamily: "Font Awesome 5 Pro !important",
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -122,6 +130,12 @@ function HomeHeader({
 
 const Select = styled.select`
   border: none;
+  border-radius: 5px;
+  color: #000;
+  width: 65px;
+  outline: none;
+  height: 32px;
+  cursor: pointer;
 `;
 
 export default HomeHeader;

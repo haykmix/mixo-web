@@ -1,9 +1,60 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo-new-2.png";
+import { Link, useHistory } from "react-router-dom";
+import logo from "../../assets/images/logo-new.png";
 
-function FooterHome({ className, text }) {
+import instagram from "../../assets/images/social/instagram.png";
+import linkedin from "../../assets/images/social/linkedin.png";
+
+function FooterHome({
+  className,
+  text,
+  homeRef,
+  serviceRef,
+  featureRef,
+  teamRef,
+  contactRef,
+}) {
   const { menus, info } = text.homeFooter;
+  const history = useHistory();
+
+  function executeScrollHome() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : homeRef.current.scrollIntoView();
+  }
+
+  function executeScrollService() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : serviceRef.current.scrollIntoView();
+  }
+
+  function executeScrollFeatures() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : featureRef.current.scrollIntoView();
+  }
+
+  function executeScrollTeam() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : teamRef.current.scrollIntoView();
+  }
+
+  function executeScrollContact() {
+    window.location.pathname !== "/"
+      ? history.push("/")
+      : contactRef.current.scrollIntoView();
+  }
+
+  const funList = [
+    executeScrollHome,
+    executeScrollService,
+    executeScrollFeatures,
+    executeScrollTeam,
+    executeScrollContact,
+  ];
+
   return (
     <>
       <section className={`appie-footer-area ${className || ""}`}>
@@ -21,18 +72,32 @@ function FooterHome({ className, text }) {
                   <ul>
                     <li>
                       <a
+                        className="fac"
                         href="https://www.instagram.com/mixo.drink/"
                         target="blank"
                       >
-                        <i className="fab fa-instagram" />
+                        <img
+                          src={instagram}
+                          alt=""
+                          width={20}
+                          height={20}
+                          style={{ marginTop: -5 }}
+                        />
                       </a>
                     </li>
                     <li>
                       <a
+                        className="lin"
                         href="https://es.linkedin.com/company/mixodrink"
                         target="blank"
                       >
-                        <i className="fab fa-linkedin-in" />
+                        <img
+                          src={linkedin}
+                          alt=""
+                          width={20}
+                          height={20}
+                          style={{ marginTop: -5 }}
+                        />
                       </a>
                     </li>
                   </ul>
@@ -41,12 +106,12 @@ function FooterHome({ className, text }) {
             </div>
             <div className="col-lg-2 col-md-6">
               <div className="footer-navigation">
-                <h4 className="title">Company</h4>
+                <h4 className="title">{menus.company.title}</h4>
                 <ul>
                   {menus.company.data.map((item, index) => {
                     return (
-                      <li key={index}>
-                        <Link to="/about-us">{item}</Link>
+                      <li key={index} onClick={funList[index]}>
+                        <p>{item}</p>
                       </li>
                     );
                   })}
@@ -55,12 +120,12 @@ function FooterHome({ className, text }) {
             </div>
             <div className="col-lg-3 col-md-6">
               <div className="footer-navigation">
-                <h4 className="title">Contact</h4>
+                <h4 className="title">{menus.contact.title}</h4>
                 <ul>
                   {menus.contact.data.map((item, index) => {
                     return (
                       <li key={index}>
-                        <Link to="/about-us">{item}</Link>
+                        <p>{item}</p>
                       </li>
                     );
                   })}
@@ -69,23 +134,11 @@ function FooterHome({ className, text }) {
             </div>
             <div className="col-lg-3 col-md-6">
               <div className="footer-widget-info">
-                <h4 className="title">Get In Touch</h4>
+                <h4 className="title">{info.title}</h4>
                 <ul>
-                  <li>
-                    <a href="/">
-                      <i className="fal fa-envelope" /> {info.email}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <i className="fal fa-phone" /> {info.phone}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <i className="fal fa-map-marker-alt" /> {info.street}
-                    </a>
-                  </li>
+                  <li>{info.email}</li>
+                  <li>{info.phone}</li>
+                  <li>{info.street}</li>
                 </ul>
               </div>
             </div>
