@@ -60,14 +60,6 @@ function FaqHomeOne({ className, text }) {
                 </div>
               );
             })}
-            <div className="col-lg-12">
-              <div className="faq-text text-center pt-40">
-                <p>
-                  Can't find an answer?{" "}
-                  <a href="mailto:demo@gmail.com">Email us</a>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
