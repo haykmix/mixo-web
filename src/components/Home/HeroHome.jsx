@@ -11,13 +11,13 @@ import styled from "styled-components";
 import heroThumbOne from "../../assets/images/hero-thumb-1-new.png";
 import heroThumbOne2 from "../../assets/images/mixo_machine_lights.png";
 import video from "../../assets/video/video-cover.mp4";
+import video2 from "../../assets/video/video-cover2.mp4";
 
 function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
   const history = useHistory();
   const { upTitle, title, subtitle, buttonDemo, buttonInfo } = text.homeCover;
 
   const [videoToggle, setVideoToggle] = useState(false);
-
 
   const handleVideo = () => {
     setVideoToggle(!videoToggle);
@@ -38,6 +38,15 @@ function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
   return (
     <>
       <section className={`appie-hero-area ${className || ""}`} ref={innerRef}>
+        <Video
+          autoPlay={true}
+          muted={true}
+          loop={true}
+          toggle={videoToggle}
+          className="video"
+        >
+          <source src={video2} />
+        </Video>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -71,7 +80,12 @@ function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
                   data-wow-duration="2000ms"
                   data-wow-delay="200ms"
                 >
-                  <img src={heroThumbOne2} alt="" width="310px" height="616px" />
+                  <img
+                    src={heroThumbOne2}
+                    alt=""
+                    width="310px"
+                    height="616px"
+                  />
                 </div>
                 <div
                   className="thumb-2 wow animated fadeInRight"
@@ -79,13 +93,13 @@ function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
                   data-wow-delay="600ms"
                   onClick={handleVideo}
                 >
-                  <VideoOpen toggle={videoToggle}>
+                  {/* <VideoOpen toggle={videoToggle}>
                     <FontAwesomeIcon
                       icon={faCompress}
                       style={{ color: "#fff" }}
                     />
-                  </VideoOpen>
-                  <Video
+                  </VideoOpen> */}
+                  {/* <Video
                     autoPlay={true}
                     muted={true}
                     loop={true}
@@ -93,7 +107,7 @@ function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
                     className="video"
                   >
                     <source src={video} />
-                  </Video>
+                  </Video> */}
                 </div>
               </div>
             </div>
@@ -105,18 +119,21 @@ function HeroHome({ className, text, innerRef, contactRef, featureRef }) {
 }
 
 const Video = styled.video`
-  width: auto;
+  /* width: auto;
   height: ${(props) => (props.toggle === true ? 300 : 150)}px;
   border: 3px solid #fff;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0px 30px 70px 0px rgba(0, 0, 0, 0.349);
+  box-shadow: 0px 30px 70px 0px rgba(0, 0, 0, 0.349); */
+  position: absolute;
+  top: 0;
+  filter: brightness(0.3);
 `;
 
 const VideoOpen = styled.span`
   position: absolute;
   top: ${(props) => (props.toggle === true ? 85 : 74)}%;
-  left: ${(props) => (props.toggle === true ? 3 : 5)}%; ;
+  left: ${(props) => (props.toggle === true ? 3 : 5)}%;
 `;
 
 export default HeroHome;

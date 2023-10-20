@@ -67,11 +67,11 @@ function HomeHeader({
     <header className={`appie-header-area appie-sticky ${className || ""}`}>
       <div className="container">
         <div className="header-nav-box">
-          <div className="row align-items-center justify-content-center">
+          <div className="row align-items-center justify-content-space-between">
             <div className="col-lg-2 col-md-4 col-sm-5 col-6 order-1 order-sm-1">
               <div className="appie-logo-box">
                 <a href="/">
-                  <img src={logo} alt="" height="30px" />
+                  <img src={logo} alt="" height="50px" />
                 </a>
               </div>
             </div>
