@@ -386,7 +386,7 @@ const es = {
     upTitle: "👋 Bienvenid@ a Mixo",
     title: "Mixología: Donde la ingeniería, la precisión y el diseño se unen en cada sorbo",
     subtitle:
-      "Experimenta el futuro de los bebidas",
+      "Experimenta el futuro de las bebidas",
     buttonDemo: "Escribenos",
     buttonInfo: "Conoce más",
   },

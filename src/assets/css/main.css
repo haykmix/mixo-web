@@ -7821,6 +7821,10 @@ blockquote cite {
   margin-top: 20px;
 }
 
+.result-container h3 {
+  color: #000 !important;
+}
+
 @media only screen and (max-width: 425px) {
   .calc-button {
     width: fit-content;
