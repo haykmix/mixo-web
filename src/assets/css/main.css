@@ -4339,6 +4339,7 @@ p {
 }
 .appie-blog-item .content .title a {
   color: #ffffff;
+  font-size: 16px;
 }
 .appie-blog-item .content .title a:hover {
   color: #2b70fa;
@@ -4348,6 +4349,9 @@ p {
   font-weight: 500;
   color: #ffffff;
   margin-top: 14px;
+  background-color: #6900e1;
+  padding: 5px;
+  border-radius: 5px;
 }
 .appie-blog-item .content > a i {
   padding-left: 6px;
@@ -8126,6 +8130,22 @@ blockquote cite {
   }
 }
 
+@media (max-width: 380px) {
+  .gallery_Section_left {
+    flex-direction: column;
+  }
+
+  .gallery_Section_left .gallery_item_container span h1,
+  .gallery_Section_right .gallery_item_container span h1 {
+    font-size: 30px;
+  }
+
+  .gallery_Section_left .gallery_item_container span h4,
+  .gallery_Section_right .gallery_item_container span h4 {
+    font-size: 12px;
+  }
+}
+
 .my-modal {
   position: fixed;
   top: 50%;
@@ -8148,6 +8168,32 @@ blockquote cite {
   position: absolute;
   right: 50px;
   z-index: 100;
+}
+
+@media (max-width: 380px) {
+  .my-modal {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    outline: none;
+    z-index: 20;
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-modal .close-button {
+    background: transparent;
+    border: none;
+    margin-top: 10px;
+    position: absolute;
+    right: 100px;
+    z-index: 100;
+  }
 }
 
 .my-modal .close-button .close-icon {

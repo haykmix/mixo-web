@@ -44,16 +44,16 @@ function BlogHomeOne({ className, text }) {
               return (
                 <div className="col-lg-4 col-md-6" key={index}>
                   <div
-                    className="appie-blog-item mt-30 wow animated fadeInUp"
+                    className="appie-blog-item mt-30 mr-30 ml-30 wow animated fadeInUp"
                     data-wow-duration="3000ms"
                     data-wow-delay="200ms"
                   >
-                  <div className="blog-meta">
-                        <ul>
-                          <li>{item.date}</li>
-                          {item.publisher}
-                        </ul>
-                      </div>
+                    <div className="blog-meta">
+                      <ul>
+                        <li>{item.date}</li>
+                        {item.publisher}
+                      </ul>
+                    </div>
                     <div className="thumb">
                       <img
                         src={item.image}
@@ -66,9 +66,7 @@ function BlogHomeOne({ className, text }) {
                       <h3 className="title">
                         <a href={"/news/single-news-" + index}>{item.title}</a>
                       </h3>
-                      <a href="/news/single-news">
-                      {text.homeNews.button} <i className="fal fa-arrow-right" />
-                      </a>
+                      <a href="/news/single-news">{text.homeNews.button}</a>
                     </div>
                   </div>
                 </div>
