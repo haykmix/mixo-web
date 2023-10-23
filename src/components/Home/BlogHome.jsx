@@ -66,7 +66,7 @@ function BlogHomeOne({ className, text }) {
                       <h3 className="title">
                         <a href={"/news/single-news-" + index}>{item.title}</a>
                       </h3>
-                      <a href="/news/single-news">{text.homeNews.button}</a>
+                      <a href={"/news/single-news-"+ index}>{text.homeNews.button}</a>
                     </div>
                   </div>
                 </div>
