@@ -12,6 +12,11 @@ import shapeSix from "../../assets/images/shape/shape-6.png";
 import shapeSeven from "../../assets/images/shape/shape-7.png";
 import shapeEight from "../../assets/images/shape/shape-8.png";
 
+import integration from "../../assets/images/icon/integration.png";
+import screen from "../../assets/images/icon/screen.png";
+import service from "../../assets/images/icon/service.png";
+import payment from "../../assets/images/icon/payment.png";
+
 function FeaturesHomeOne({ className, text, innerRef }) {
   const { items } = text.homeProduct;
   let lang = localStorage.getItem("language");
@@ -26,28 +31,28 @@ function FeaturesHomeOne({ className, text, innerRef }) {
       ...items[0],
       name: "setting",
       pill: "home",
-      icon: "far fa-vector-square",
+      icon: integration,
       image: lang === "es" ? thumbOneEs : thumbOneEn,
     },
     {
       ...items[1],
       name: "report",
       pill: "profile",
-      icon: "fal fa-tablet-android",
+      icon: screen,
       image: lang === "es" ? thumbTwoEs : thumbTwoEn,
     },
     {
       ...items[2],
       name: "notice",
       pill: "messages",
-      icon: "far fa-cocktail",
+      icon: service,
       image: lang === "es" ? thumbThreeEs : thumbThreeEn,
     },
     {
       ...items[3],
       name: "app",
       pill: "settings",
-      icon: "fal fa-credit-card",
+      icon: payment,
       image: lang === "es" ? thumbFourEs : thumbFourEn,
     },
   ];
@@ -83,7 +88,10 @@ function FeaturesHomeOne({ className, text, innerRef }) {
                       aria-selected="true"
                       key={index}
                     >
-                      <i className={item.icon} /> {item.menu}
+                      <span>
+                        <img src={item.icon} alt="" width={30} height={30} />
+                      </span>
+                      {item.menu}
                     </a>
                   );
                 })}

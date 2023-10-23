@@ -16,7 +16,7 @@ function DashboardHome({ className, text }) {
             }
           >
             <div className="icon">
-              <i className="fal fa-check" />
+              <span></span>
             </div>
             <h5 className="title">{item.title}</h5>
             <p>{item.subtitle}</p>
@@ -27,7 +27,7 @@ function DashboardHome({ className, text }) {
   };
   return (
     <section
-      className={`appie-traffic-area pt-140 pb-100 mb-45 mt-65 ${
+      className={`appie-traffic-area pt-sm-140 pb-100 mb-45 mt-65 ${
         className || ""
       }`}
     >

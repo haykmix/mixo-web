@@ -306,9 +306,9 @@ const en = {
     title: "Calculator",
     subtitle:
       "With this calculator you can value the savings in one year with Mixo",
-    inputClients: "Average number of customers in a day",
     inputDays: "Number of days open per week",
-    saving: "Savings",
+    inputPrice: "Average price of a drink",
+    saving: "Facturation",
   },
   homeFooter: {
     menus: {
@@ -693,10 +693,10 @@ const es = {
     buttonText: "Calculadora ahorro",
     title: "Calculadora",
     subtitle:
-      "Con esta calculadora se puede valorar el ahorro en un año con Mixo",
-    inputClients: "Número promedio de clientes en un día",
+      "Con esta calculadora se puede valorar la facturación en un año con una Mixo",
     inputDays: "Número de días abiertos por semana",
-    saving: "Ahorro",
+    inputPrice: "Precio promedio del combinado",
+    saving: "Facturación",
   },
   homeFooter: {
     menus: {

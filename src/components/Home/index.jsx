@@ -17,6 +17,7 @@ import Calculator from "../Calculator/Calculator";
 import GalleryHome from "./GalleryHome";
 import Contact from "../Contact/index";
 import CollaborationHome from "./CollaborationHome";
+import { FloatingButton } from "../FloatingButton";
 
 function Home() {
   const [drawer, drawerAction] = useToggle(false);
@@ -69,6 +70,8 @@ function Home() {
       <WhatsappHome text={language} />
       <FaqHome text={language} />
       <Calculator text={language} />
+      <Calculator text={language} />
+      <FloatingButton />
       <FooterHome
         text={language}
         homeRef={homeRef}

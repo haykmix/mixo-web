@@ -458,6 +458,7 @@ p {
   line-height: 38px;
   color: #2b70fa;
   border: 1px solid #eaeaea;
+  background-color: #2b70fa;
   border-radius: 50%;
   margin: 0 5px;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -2746,23 +2747,33 @@ p {
     width: 180px;
   }
 }
-.appie-features-tabs-btn .nav a i {
-  height: 35px;
-  width: 35px;
+
+.appie-features-tabs-btn .nav a  {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.appie-features-tabs-btn .nav a span {
+  height: 45px;
+  width: 45px;
   text-align: center;
   line-height: 35px;
-  background: #f1f2f7;
+  background: #292929;
   color: #63636a;
   display: inline-block;
   border-radius: 50%;
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .appie-features-tabs-btn .nav a.active {
   border-right-color: #2b70fa;
   background: transparent;
   color: #2b70fa;
 }
-.appie-features-tabs-btn .nav a.active i {
+.appie-features-tabs-btn .nav a.active span {
   color: #fff;
   background: #2b70fa;
 }
@@ -3085,7 +3096,7 @@ p {
   left: 0;
   top: 5px;
 }
-.appie-traffic-service .icon i {
+.appie-traffic-service .icon span {
   height: 26px;
   width: 26px;
   text-align: center;
@@ -3104,13 +3115,13 @@ p {
 .appie-traffic-service p {
   font-size: 15px;
 }
-.appie-traffic-service.item-2 .icon i {
+.appie-traffic-service.item-2 .icon span {
   background: linear-gradient(135deg, #f7b8af 0%, #f8452d 100%);
 }
-.appie-traffic-service.item-3 .icon i {
+.appie-traffic-service.item-3 .icon span {
   background: linear-gradient(135deg, #a0eac2 0%, #31c369 100%);
 }
-.appie-traffic-service.item-4 .icon i {
+.appie-traffic-service.item-4 .icon span {
   background: linear-gradient(135deg, #d8aaff 0%, #9b2cfa 100%);
 }
 
@@ -5763,13 +5774,17 @@ blockquote cite {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .footer-widget-info ul li a {
   color: #505056;
+  text-align: left;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 10px;
-  padding-left: 30px;
   position: relative;
 }
 .footer-widget-info ul li a i {
@@ -6811,6 +6826,19 @@ blockquote cite {
   box-shadow: 0px 1px 3px 0px rgba(11, 2, 55, 0.06);
 }
 
+@media only screen and (min-width: 768px) {
+  .contact-form div:nth-last-child(7) {
+    display: flex;
+  }
+  .contact-form div:nth-last-child(6) {
+    display: flex;
+  }
+  .contact-form div:nth-last-child(5) {
+    display: flex;
+  }
+}
+
+
 .input-label {
   width: 100%;
 }
@@ -7797,7 +7825,7 @@ blockquote cite {
 .calc-button {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   margin-right: 30px;
   background-color: #fff;
   box-shadow: 0px 5px 5px 0px rgb(0 0 0 / 10%);
@@ -7807,6 +7835,11 @@ blockquote cite {
   position: fixed;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.calc-button .calc-button-open img{
+  width: 210px;
+  transition: 'all 1s ease-in-out';
 }
 
 .calc-button:focus,
@@ -7878,6 +7911,56 @@ blockquote cite {
 .PhoneInputCountry {
   margin-left: 20px;
 }
+
+
+/* ------------------- WhatsappButton ------------------- */
+.contact-floating-button a {
+  background-color: #fff;
+  border-radius: 100px;
+}
+.contact-floating-button {
+  position: fixed;
+  bottom: -5px;
+  right: 0px;
+  z-index: 100;
+  padding: 30px;
+  display: flex;
+}
+
+.contact-floating-button img {
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 #5eeb34;
+  animation: pulse 1.5s infinite;
+}
+
+.contact-floating-button img:hover {
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  70% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(90, 153, 212, 0);
+  }
+  100% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+}
+
 
 /* ___________________ GLITCH _____________________*/
 
@@ -8062,6 +8145,9 @@ blockquote cite {
   background: transparent;
   border: none;
   margin-top: 10px;
+  position: absolute;
+  right: 50px;
+  z-index: 100;
 }
 
 .my-modal .close-button .close-icon {

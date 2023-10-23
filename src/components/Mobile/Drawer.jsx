@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import logo from "../../assets/images/logo-new-2.png";
+import instagram from "../../assets/images/social/instagram.png";
+import linkedin from "../../assets/images/social/linkedin.png";
+import email from "../../assets/images/icon/mail-blue.png";
+import phone from "../../assets/images/icon/phone-blue.png";
+import pin from "../../assets/images/icon/pin-blue.png";
+import close from "../../assets/images/icon/close.png";
 
 function Drawer({
   drawer,
@@ -10,7 +16,7 @@ function Drawer({
   featureRef,
   teamRef,
   contactRef,
-  text
+  text,
 }) {
   const history = useHistory();
 
@@ -76,7 +82,7 @@ function Drawer({
               >
                 <div className="canvas_close">
                   <a href="/" onClick={handleClose}>
-                    <i className="fa fa-times"></i>
+                    <img src={close} alt="" width={13} height={13} style={{marginTop: -5, marginLeft: -1}}/>
                   </a>
                 </div>
                 <div className="offcanvas-brand text-center mb-40">
@@ -125,7 +131,24 @@ function Drawer({
                   <ul className="text-center">
                     <li>
                       <a href="https://www.instagram.com/mixo.drink/?hl=es">
-                        <i className="fab fa-instagram"></i>
+                        <img
+                          src={instagram}
+                          alt=""
+                          width={20}
+                          height={20}
+                          style={{ marginTop: -5 }}
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/mixo.drink/?hl=es">
+                        <img
+                          src={linkedin}
+                          alt=""
+                          width={20}
+                          height={20}
+                          style={{ marginTop: -5 }}
+                        />
                       </a>
                     </li>
                   </ul>
@@ -134,17 +157,20 @@ function Drawer({
                   <ul>
                     <li>
                       <a href="/">
-                        <i className="fal fa-envelope"></i> clientes@mixodrink.com
+                        <img src={email} alt="" width={20} height={20}/>{" "}
+                        clientes@mixodrink.com
                       </a>
                     </li>
                     <li>
                       <a href="/">
-                        <i className="fal fa-phone"></i> +(34) 685 56 45 27
+                      <img src={phone} alt="" width={20} height={20}/>{" "} 
+                      +(34) 685 56 45 27
                       </a>
                     </li>
                     <li>
                       <a href="/">
-                        <i className="fal fa-map-marker-alt"></i> C/ Valencia, 359, 4-2 Barcelona
+                      <img src={pin} alt="" width={20} height={20}/>{" "} 
+                      C/ Valencia, 359, 4-2 Barcelona
                       </a>
                     </li>
                   </ul>

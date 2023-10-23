@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import logo from "../../assets/images/logo-new.png";
+import hamburger from "../../assets/images/icon/hamburger.png";
 
 import { LanguageContext } from "../../context/LanguageContext";
 import StickyMenu from "../../lib/StickyMenu";
@@ -111,13 +112,7 @@ function HomeHeader({
                   onClick={(e) => action(e)}
                   className="toggle-btn ml-30 canvas_open d-lg-none d-block"
                 >
-                  <i
-                    className="fa fa-bars "
-                    style={{
-                      color: "#fff",
-                      fontFamily: "Font Awesome 5 Pro !important",
-                    }}
-                  />
+                  <img src={hamburger} alt="" width={25} height={17} style={{marginTop: -5}}/>
                 </div>
               </div>
             </div>

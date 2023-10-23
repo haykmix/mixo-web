@@ -200,7 +200,7 @@ function Forms({ innerRef, text }) {
                     }) => (
                       <form onSubmit={handleSubmit} ref={contactForm}>
                         <div
-                          className="col-md-12 d-flex"
+                          className="col-md-12"
                           style={{ gap: "10px" }}
                         >
                           <label htmlFor="" className="input-label">
@@ -235,7 +235,7 @@ function Forms({ innerRef, text }) {
                           </label>
                         </div>
                         <div
-                          className="col-md-12 d-flex"
+                          className="col-md-12"
                           style={{ gap: "10px" }}
                         >
                           <label htmlFor="" className="input-label">
@@ -266,7 +266,7 @@ function Forms({ innerRef, text }) {
                           </label>
                         </div>
                         <div
-                          className="col-md-12 d-flex"
+                          className="col-md-12"
                           style={{ gap: "10px" }}
                         >
                           <label htmlFor="" className="input-label">
@@ -301,7 +301,7 @@ function Forms({ innerRef, text }) {
                           </label>
                         </div>
                         <div
-                          className="col-md-12 d-flex"
+                          className="col-md-12"
                           style={{ gap: "10px" }}
                         >
                           <label htmlFor="" className="input-label">

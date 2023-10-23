@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import calulatorImg from "../../assets/images/icon/calculator.png";
+import calculatorImg from "../../assets/images/icon/calculator.png";
 import crossImg from "../../assets/images/icon/cross.png";
 
 function Calculator({ text }) {
   const data = text.calculator;
   const daysInput = useRef();
-  const peopleInput = useRef();
+  const priceInput = useRef();
   const [toggleCalc, setToggleCalc] = useState(false);
   const [showText, setShowText] = useState(false);
   const [result, setResult] = useState(0);
@@ -18,18 +18,16 @@ function Calculator({ text }) {
 
   const handleCalculation = (e) => {
     let daysValue = daysInput.current.value;
-    let peopleValue = peopleInput.current.value;
+    let priceValue = priceInput.current.value;
+    let factMonth, res;
 
-    if (daysValue > 0 && peopleValue > 0) {
-      if (daysValue > 7) {
-        setError("Days can't be bigger than 7");
-        setResult(0);
-        return 0;
-      } else {
-        let x = daysValue * peopleValue * 19.5;
-        setResult(x);
-        setError("");
-      }
+    const constantValue = 100;
+
+    if (daysValue > 0 && priceValue > 0) {
+      factMonth = daysValue * constantValue * priceValue;
+      res = factMonth * 12;
+      setResult(res);
+      setError("");
     } else {
       setResult(0);
     }
@@ -46,49 +44,52 @@ function Calculator({ text }) {
   return (
     <section className="calc-container">
       <div
-        className="calc-button"
+        className={showText ? "calc-button" : "calc-button calc-button-open"}
         onClick={handleToggleCalc}
         onMouseEnter={toggleCalc ? () => 0 : handleShowText}
         onMouseLeave={toggleCalc ? () => 0 : handleShowText}
-        style={{ width: !toggleCalc ? "230px" : "70px", transition: 'all 0.5s ease-in' }}
       >
         <img
-          src={toggleCalc ? crossImg : calulatorImg}
+          src={toggleCalc ? crossImg : calculatorImg}
           width={"50px"}
           height={"50px"}
           alt="Icon calc"
         />
-        <h4
-          style={{ marginLeft: "15px", display: !toggleCalc ? "block" : "none", color: '#000' }}
+        <h5
+          style={{
+            marginLeft: "15px",
+            display: showText ? "block" : "none",
+            color: "#000",
+          }}
         >
           {data.buttonText}
-        </h4>
+        </h5>
       </div>
       <div
         className="calc-content"
         style={{ display: toggleCalc ? "block" : "none" }}
       >
         <h2>{data.title}</h2>
-        <h5 style={{color: '#000'}}>{data.subtitle}</h5>
+        <h5 style={{ color: "#000" }}>{data.subtitle}</h5>
         <form>
           <label>
-          {data.inputClients}
+            <p style={{ color: "#000" }}>{data.inputDays}</p>
             <input
               type="number"
               name="days"
               placeholder="0"
               min="0"
               onChange={handleCalculation}
-              ref={peopleInput}
+              ref={priceInput}
             />
           </label>
           <label>
-          {data.inputDays}
+            <p style={{ color: "#000" }}>{data.inputPrice}</p>
             <input
               type="number"
-              name="people"
-              max="7"
-              min="0"
+              name="price"
+              max="100"
+              min="1"
               placeholder="0"
               ref={daysInput}
               onChange={handleCalculation}
@@ -99,7 +100,9 @@ function Calculator({ text }) {
           </p>
         </form>
         <section className="result-container">
-          <h3>{currencyFormat(result)} {data.saving}</h3>
+          <h4 style={{color: '#000'}}>
+            {currencyFormat(result)} {data.saving}
+          </h4>
         </section>
       </div>
     </section>

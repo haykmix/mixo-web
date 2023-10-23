@@ -72,68 +72,73 @@ function TeamHome({ className, text, innerRef }) {
                 </div>
               </div>
             </div>
-            <div className="col-lg-2 col-md-4">
-              <div
-                className="appie-team-item mt-30 wow animated fadeInUp"
-                data-wow-duration="2000ms"
-                data-wow-delay="600ms"
-              >
-                <div className="thumb">
-                  <img src={teamFour} alt="" />
+            <div className="d-flex justify-content-center">
+              <div className="col-lg-2 col-md-4">
+                <div
+                  className="appie-team-item mt-30 wow animated fadeInUp"
+                  data-wow-duration="2000ms"
+                  data-wow-delay="600ms"
+                >
+                  <div className="thumb">
+                    <img src={teamFour} alt="" />
+                  </div>
+                  <div className="content text-center">
+                    <h5 className="title">Vicente Rubio</h5>
+                    <span>Business Developer</span>
+                  </div>
                 </div>
-                <div className="content text-center">
-                  <h5 className="title">Vicente Rubio</h5>
-                  <span>Business Developer</span>
+              </div>
+
+              <div className="col-lg-2 col-md-4">
+                <div
+                  className="appie-team-item mt-30 wow animated fadeInUp"
+                  data-wow-duration="2000ms"
+                  data-wow-delay="600ms"
+                >
+                  <div className="thumb">
+                    <img src={teamSix} alt="" />
+                  </div>
+                  <div className="content text-center">
+                    <h5 className="title">Ezequiel Sanchez</h5>
+                    <span>Operations Manager</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-2 col-md-4">
+                <div
+                  className="appie-team-item mt-30 wow animated fadeInUp"
+                  data-wow-duration="2000ms"
+                  data-wow-delay="600ms"
+                >
+                  <div className="thumb">
+                    <img src={teamFive} alt="" />
+                  </div>
+                  <div className="content text-center">
+                    <h5 className="title">Xavier Guillem</h5>
+                    <span>Advisor</span>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div className="col-lg-2 col-md-4">
-              <div
-                className="appie-team-item mt-30 wow animated fadeInUp"
-                data-wow-duration="2000ms"
-                data-wow-delay="600ms"
-              >
-                <div className="thumb">
-                  <img src={teamSix} alt="" />
-                </div>
-                <div className="content text-center">
-                  <h5 className="title">Ezequiel Sanchez</h5>
-                  <span>Operations Manager</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-md-4">
-              <div
-                className="appie-team-item mt-30 wow animated fadeInUp"
-                data-wow-duration="2000ms"
-                data-wow-delay="600ms"
-              >
-                <div className="thumb">
-                  <img src={teamFive} alt="" />
-                </div>
-                <div className="content text-center">
-                  <h5 className="title">Xavier Guillem</h5>
-                  <span>Advisor</span>
+            <div className="d-flex justify-content-center">
+              <div className="col-lg-2 col-md-4">
+                <div
+                  className="appie-team-item mt-30 wow animated fadeInUp"
+                  data-wow-duration="2000ms"
+                  data-wow-delay="600ms"
+                >
+                  <div className="thumb">
+                    <img src={teamSeven} alt="" />
+                  </div>
+                  <div className="content text-center">
+                    <h5 className="title">Oriol Pascual</h5>
+                    <span>Advisor</span>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="col-lg-2 col-md-4">
-              <div
-                className="appie-team-item mt-30 wow animated fadeInUp"
-                data-wow-duration="2000ms"
-                data-wow-delay="600ms"
-              >
-                <div className="thumb">
-                  <img src={teamSeven} alt="" />
-                </div>
-                <div className="content text-center">
-                  <h5 className="title">Oriol Pascual</h5>
-                  <span>Advisor</span>
-                </div>
-              </div>
+              <div className="col-lg-2 col-md-4"></div>
+              <div className="col-lg-2 col-md-4"></div>
             </div>
           </div>
         </div>
