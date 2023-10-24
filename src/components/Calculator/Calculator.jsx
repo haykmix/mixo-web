@@ -24,7 +24,8 @@ function Calculator({ text }) {
     const constantValue = 100;
 
     if (daysValue > 0 && priceValue > 0) {
-      factMonth = daysValue * constantValue * priceValue;
+      let multDays = daysValue * 4;
+      factMonth = multDays * constantValue * priceValue;
       res = factMonth * 12;
       setResult(res);
       setError("");

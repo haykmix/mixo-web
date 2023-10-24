@@ -4,10 +4,11 @@ import thumbOneEs from "../../assets/images/features/frame-one.png";
 import thumbTwoEs from "../../assets/images/features/frame-two.png";
 import thumbThreeEs from "../../assets/images/features/frame-three.png";
 import thumbFourEs from "../../assets/images/features/frame-four.png";
-import thumbOneEn from "../../assets/images/features/features-thumb-1-en.jpg";
-import thumbTwoEn from "../../assets/images/features/features-thumb-2-en.jpg";
-import thumbThreeEn from "../../assets/images/features/features-thumb-3-en.jpg";
-import thumbFourEn from "../../assets/images/features/features-thumb-4-en.jpg";
+import thumbOneEn from "../../assets/images/features/frame-one-en.png";
+import thumbTwoEn from "../../assets/images/features/frame-two-en.png";
+import thumbThreeEn from "../../assets/images/features/frame-three-en.png";
+import thumbFourEn from "../../assets/images/features/frame-four-en.png";
+
 import shapeSix from "../../assets/images/shape/shape-6.png";
 import shapeSeven from "../../assets/images/shape/shape-7.png";
 import shapeEight from "../../assets/images/shape/shape-8.png";

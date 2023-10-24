@@ -2,7 +2,8 @@ const en = {
   menu: ["Home", "Product", "Software", "Team", "Contact"],
   homeCover: {
     upTitle: "👋 Welcome To Mixo",
-    title: "Elevating Mixology: Where Engineering, Precision, and Design Converge in Every Sip 🍹",
+    title:
+      "Elevating Mixology: Where Engineering, Precision, and Design Converge in Every Sip 🍹",
     subtitle: "Experience the Future of Crafted Cocktails",
     buttonDemo: "Contact",
     buttonInfo: "Know more",
@@ -85,6 +86,20 @@ const en = {
   homeGallery: {
     title: "Gallery of videos",
     subtitle: "Learn more about Mixo services",
+    videos: [
+      {
+        title: "Presentation",
+        subtitle: "Innovation and Technology",
+      },
+      {
+        title: "Collaboration Shoko",
+        subtitle: "Trials and Events",
+      },
+      {
+        title: "Collaboration Pacha",
+        subtitle: "Trials and Events",
+      },
+    ],
   },
   homeTeam: {
     title: "Meet our team members",
@@ -384,9 +399,9 @@ const es = {
   menu: ["Inicio", "Producto", "Software", "Equipo", "Contacto"],
   homeCover: {
     upTitle: "👋 Bienvenid@ a Mixo",
-    title: "Mixología: Donde la ingeniería, la precisión y el diseño se unen en cada sorbo",
-    subtitle:
-      "Experimenta el futuro de las bebidas",
+    title:
+      "Mixología: Donde la ingeniería, la precisión y el diseño se unen en cada sorbo",
+    subtitle: "Experimenta el futuro de las bebidas",
     buttonDemo: "Escribenos",
     buttonInfo: "Conoce más",
   },
@@ -469,6 +484,20 @@ const es = {
   homeGallery: {
     title: "Galería de videos",
     subtitle: "Conoce más sobre los servicios de Mixo",
+    videos: [
+      {
+        title: "Presentación",
+        subtitle: "Inovación y Tecnología",
+      },
+      {
+        title: "Colaboración Shoko",
+        subtitle: "Pruebas y Eventos",
+      },
+      {
+        title: "Colaboración Pacha",
+        subtitle: "Pruebas y Eventos",
+      },
+    ],
   },
   homeTeam: {
     title: "Conoce a los miembros del equipo",

@@ -70,7 +70,6 @@ function Home() {
       <WhatsappHome text={language} />
       <FaqHome text={language} />
       <Calculator text={language} />
-      <Calculator text={language} />
       <FloatingButton />
       <FooterHome
         text={language}

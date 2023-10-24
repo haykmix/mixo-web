@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Modal from "react-modal";
 
 import videoOne from "../../assets/video/video-voice-gallery.mp4";
-import videoTwo from "../../assets/video/video-render.mp4";
+import videoTwo from "../../assets/video/shoko.mp4";
 import videoThree from "../../assets/video/video-cover.mp4";
 import imageVideoOne from "../../assets/images/video/video-cover.jpg";
-import imageVideoTwo from "../../assets/images/video/image-render.jpg";
+import imageVideoTwo from "../../assets/images/video/shoko.jpg";
 import imageVideoThree from "../../assets/images/video/party-cover.jpg";
 import playButton from "../../assets/images/video/boton-de-play.png";
 
@@ -14,7 +14,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function GalleryHome({ className, text }) {
-  const { title, subtitle } = text.homeGallery;
+  const { title, subtitle, videos } = text.homeGallery;
   const ref = useRef(null);
 
   const [spanWidth, setSpanWidth] = useState(0);
@@ -46,8 +46,8 @@ function GalleryHome({ className, text }) {
           <div className="gallery_Section_left">
             <div className="gallery_item_container" ref={ref}>
               <ComponentSpan width={spanWidth}>
-                <h1>Presentación</h1>
-                <h4>Inovación y Tecnología</h4>
+                <h1>{videos[0].title}</h1>
+                <h4>{videos[0].subtitle}</h4>
                 <button onClick={() => handleToggleVideo("v0")}>
                   <img src={playButton} alt="" />
                 </button>
@@ -76,8 +76,8 @@ function GalleryHome({ className, text }) {
 
             <div className="gallery_item_container">
               <ComponentSpan width={spanWidth}>
-                <h1>Modelo Renderizado</h1>
-                <h4>Producto y Diseño</h4>
+                <h1>{videos[1].title}</h1>
+                <h4>{videos[1].subtitle}</h4>
                 <button onClick={() => handleToggleVideo("v1")}>
                   <img src={playButton} alt="" />
                 </button>
@@ -110,8 +110,8 @@ function GalleryHome({ className, text }) {
 
             <div className="gallery_item_container">
               <ComponentSpan width={spanWidth}>
-                <h1>Colaboración Pacha</h1>
-                <h4>Pruebas y Eventos</h4>
+                <h1>{videos[2].title}</h1>
+                <h4>{videos[2].subtitle}</h4>
                 <button onClick={() => handleToggleVideo("v2")}>
                   <img src={playButton} alt="" />
                 </button>
