@@ -6,6 +6,9 @@ import teamFour from "../../assets/images/team-4.jpg";
 import teamFive from "../../assets/images/team-5.jpg";
 import teamSix from "../../assets/images/team-6.jpg";
 import teamSeven from "../../assets/images/team-7.jpg";
+import teamEight from "../../assets/images/team-8.jpg";
+import teamNine from "../../assets/images/team-9.jpg";
+
 
 function TeamHome({ className, text, innerRef }) {
   const { title, subtitle } = text.homeTeam;
@@ -38,21 +41,6 @@ function TeamHome({ className, text, innerRef }) {
                   <div className="content text-center">
                     <h5 className="title">Martin Cohen</h5>
                     <span>CEO-Founder</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2 col-md-4">
-                <div
-                  className="appie-team-item mt-30 wow animated fadeInUp"
-                  data-wow-duration="2000ms"
-                  data-wow-delay="400ms"
-                >
-                  <div className="thumb">
-                    <img src={teamTwo} alt="" />
-                  </div>
-                  <div className="content text-center">
-                    <h5 className="title">Xavier Olivé</h5>
-                    <span>Lead Engineer</span>
                   </div>
                 </div>
               </div>
@@ -96,11 +84,11 @@ function TeamHome({ className, text, innerRef }) {
                   data-wow-delay="600ms"
                 >
                   <div className="thumb">
-                    <img src={teamSix} alt="" />
+                    <img src={teamNine} alt="" />
                   </div>
                   <div className="content text-center">
-                    <h5 className="title">Ezequiel Sanchez</h5>
-                    <span>Operations Manager</span>
+                    <h5 className="title">Paola Fernández</h5>
+                    <span>Content Creator</span>
                   </div>
                 </div>
               </div>
